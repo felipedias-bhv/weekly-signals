@@ -184,6 +184,36 @@ body {
   .pain-row { grid-template-columns: 1fr; }
   .pain-col-headers { grid-template-columns: 1fr; }
 }
+
+/* CONSOLIDADO */
+.consol-filters { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; padding: 14px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+.consol-select { font-size: 12px; font-family: 'Inter', sans-serif; border: 1px solid var(--border); border-radius: 8px; padding: 5px 10px; background: var(--bg); color: var(--text2); outline: none; cursor: pointer; }
+.consol-select:focus { border-color: var(--accent); }
+.consol-count { margin-left: auto; font-size: 12px; color: var(--text3); font-weight: 600; }
+.consol-list { display: flex; flex-direction: column; gap: 8px; }
+.consol-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: box-shadow .15s; }
+.consol-card:hover { box-shadow: var(--shadow-lg); }
+.consol-card-header { display: flex; align-items: center; gap: 10px; padding: 12px 18px; flex-wrap: wrap; }
+.consol-id { font-size: 10px; font-weight: 700; color: var(--text3); font-family: 'Quicksand', sans-serif; flex-shrink: 0; min-width: 44px; }
+.consol-meta { display: flex; gap: 6px; flex-shrink: 0; }
+.consol-quarter { font-size: 10px; font-weight: 700; background: rgba(79,106,245,0.1); color: var(--accent); border-radius: 20px; padding: 2px 8px; }
+.consol-semana { font-size: 10px; color: var(--text3); background: var(--bg); border-radius: 20px; padding: 2px 8px; border: 1px solid var(--border2); }
+.consol-tema { font-size: 10px; font-weight: 600; border-radius: 20px; padding: 2px 10px; flex-shrink: 0; }
+.consol-escola { font-size: 11px; color: var(--text2); font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.consol-chevron { margin-left: auto; font-size: 18px; color: var(--text3); transition: transform .2s; flex-shrink: 0; }
+.consol-card.expanded .consol-chevron { transform: rotate(90deg); }
+.consol-dores { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border2); }
+.consol-dor-cell { padding: 10px 18px; display: flex; flex-direction: column; gap: 3px; }
+.consol-dor-cell + .consol-dor-cell { border-left: 1px solid var(--border2); }
+.consol-label-de { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #EF4444; }
+.consol-label-para { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: #10B981; }
+.consol-dor-text { font-size: 12px; color: var(--text2); line-height: 1.45; }
+.consol-detail { display: none; border-top: 1px solid var(--border2); background: rgba(79,106,245,0.015); }
+.consol-card.expanded .consol-detail { display: grid; grid-template-columns: 1fr 1fr; }
+.consol-detail-col { padding: 16px 20px; }
+.consol-detail-col + .consol-detail-col { border-left: 1px solid var(--border2); }
+.consol-detail-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text3); margin-bottom: 8px; }
+.consol-detail-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -338,7 +368,6 @@ function filterSemanas(semanas){
   if(currentFilter==="Q2") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15&&n<=26;});
   if(currentFilter==="Q3") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=27&&n<=38;});
   if(currentFilter==="Q4") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=39;});
-  if(currentFilter==="consolidado") return [];
   return semanas;
 }
 function setFilter(f,btn){
@@ -348,7 +377,109 @@ function setFilter(f,btn){
   if(allData) render(allData);
 }
 
+
+function renderConsolidado(data) {
+  const allSemanas = data.semanas || [];
+  const items = [];
+  let gid = 1;
+  allSemanas.forEach(sem => {
+    const wn = parseInt((sem.name.match(/\d+/)||[0])[0]);
+    const quarter = wn<=14?'Q1':wn<=26?'Q2':wn<=38?'Q3':'Q4';
+    (sem.items||[]).forEach(item => {
+      const fs = t => { if(!t) return ''; const s=t.split(/(?<=[.!?])\s+/)[0].trim(); return s.length>10?s:t.slice(0,120); };
+      items.push({
+        id: String(gid++).padStart(5,'0'),
+        semana: sem.name,
+        quarter,
+        tema_central: item.category||'',
+        escola: isUnknownSchool(item.school)?'':(item.school||''),
+        dor_curta: fs(item.context)||item.title||'',
+        resolve_curto: item.title||'',
+        dor_detalhada: item.context||'',
+        resolve_detalhado: item.suggestion||'',
+        priority: item.priority||''
+      });
+    });
+  });
+  window._cItems = items;
+  const quarters = [...new Set(items.map(i=>i.quarter))].sort();
+  const temas = [...new Set(items.map(i=>i.tema_central).filter(Boolean))].sort();
+  const semanas = [...new Set(items.map(i=>i.semana))];
+  const updTxt = data.updated_at?'Atualizado em '+new Date(data.updated_at).toLocaleString('pt-BR'):'';
+  document.querySelector('.page').innerHTML = `
+    <div class="profile-row">
+      <div class="profile-info"><div>
+        <h1>Weekly Signals Intelligence</h1>
+        <div class="sub">${allSemanas.length} semanas · ${[...new Set(items.map(i=>i.escola).filter(Boolean))].length} escolas</div>
+      </div></div>
+      <div class="updated-tag">${updTxt}</div>
+    </div>
+    <div style="display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;">
+      <button class="nav-btn" onclick="setFilter('all',this)">Todos</button>
+      <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
+      <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
+      <button class="nav-btn" onclick="setFilter('Q3',this)">Q3</button>
+      <button class="nav-btn" onclick="setFilter('Q4',this)">Q4</button>
+      <button class="nav-btn active" onclick="setFilter('consolidado',this)" style="margin-left:8px;border-style:dashed;">Consolidado</button>
+    </div>
+    <div class="consol-filters">
+      <select class="consol-select" id="cf-q" onchange="filterConsol()">
+        <option value="">Todos os quarters</option>
+        ${quarters.map(q=>`<option value="${q}">${q}</option>`).join('')}
+      </select>
+      <select class="consol-select" id="cf-t" onchange="filterConsol()">
+        <option value="">Todos os temas</option>
+        ${temas.map(t=>`<option value="${t}">${t}</option>`).join('')}
+      </select>
+      <select class="consol-select" id="cf-s" onchange="filterConsol()">
+        <option value="">Todas as semanas</option>
+        ${semanas.map(s=>`<option value="${s}">${s}</option>`).join('')}
+      </select>
+      <div class="consol-count" id="cf-n">${items.length} insights</div>
+    </div>
+    <div id="consol-list" class="consol-list"></div>`;
+  filterConsol();
+}
+
+function filterConsol() {
+  const qf=(document.getElementById('cf-q')||{}).value||'';
+  const tf=(document.getElementById('cf-t')||{}).value||'';
+  const sf=(document.getElementById('cf-s')||{}).value||'';
+  const items=window._cItems||[];
+  const f=items.filter(i=>(!qf||i.quarter===qf)&&(!tf||i.tema_central===tf)&&(!sf||i.semana===sf));
+  const el=document.getElementById('cf-n'); if(el) el.textContent=f.length+' insights';
+  const list=document.getElementById('consol-list'); if(!list) return;
+  list.innerHTML=f.map(item=>{
+    const pc=item.priority==='Muito Alta'?'chip-red':item.priority==='Alta'?'chip-amber':'chip-blue';
+    const cc=CATS[item.tema_central]||'#94A3B8';
+    return `<div class="consol-card" id="cc-${item.id}" onclick="toggleCC('${item.id}')">
+      <div class="consol-card-header">
+        <div class="consol-id">#${item.id}</div>
+        <div class="consol-meta">
+          <span class="consol-quarter">${item.quarter}</span>
+          <span class="consol-semana">${item.semana}</span>
+        </div>
+        <div class="consol-tema" style="background:${cc}20;color:${cc};">${item.tema_central}</div>
+        ${item.escola?`<div class="consol-escola">${item.escola}</div>`:'<div class="consol-escola"></div>'}
+        ${item.priority?`<span class="chip ${pc}" style="font-size:10px;flex-shrink:0;">${item.priority}</span>`:''}
+        <div class="consol-chevron">›</div>
+      </div>
+      <div class="consol-dores">
+        <div class="consol-dor-cell"><span class="consol-label-de">Dor</span><span class="consol-dor-text">${item.dor_curta}</span></div>
+        <div class="consol-dor-cell"><span class="consol-label-para">Resolve</span><span class="consol-dor-text">${item.resolve_curto}</span></div>
+      </div>
+      <div class="consol-detail">
+        <div class="consol-detail-col"><div class="consol-detail-label">Dor detalhada</div><div class="consol-detail-text">${item.dor_detalhada||'—'}</div></div>
+        <div class="consol-detail-col"><div class="consol-detail-label">O que resolve</div><div class="consol-detail-text">${item.resolve_detalhado||'—'}</div></div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleCC(id){const c=document.getElementById('cc-'+id);if(c)c.classList.toggle('expanded');}
+
 function render(data){
+  if(currentFilter==="consolidado"){renderConsolidado(data);return;}
   const semanas=filterSemanas(data.semanas||[]);
   const all=semanas.flatMap(s=>s.items||[]);
   const total=all.length;
