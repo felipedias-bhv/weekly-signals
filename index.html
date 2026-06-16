@@ -214,6 +214,40 @@ body {
 .consol-detail-col + .consol-detail-col { border-left: 1px solid var(--border2); }
 .consol-detail-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text3); margin-bottom: 8px; }
 .consol-detail-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+/* FILTER BAR */
+.filter-bar { position: sticky; top: 52px; z-index: 49; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 8px 32px; display: flex; gap: 6px; align-items: center; }
+
+/* FADE IN */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.page-fade { animation: fadeIn .2s ease forwards; }
+
+/* SEARCH INPUT */
+.consol-search { font-size: 12px; font-family: 'Inter', sans-serif; border: 1px solid var(--border); border-radius: 8px; padding: 5px 12px; background: var(--bg); color: var(--text2); outline: none; flex: 1; min-width: 140px; max-width: 250px; }
+.consol-search:focus { border-color: var(--accent); }
+.consol-search::placeholder { color: var(--text3); }
+
+/* THEME CARD CLICKABLE */
+.theme-card.clickable { cursor: pointer; }
+.theme-card.clickable:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.theme-link-hint { font-size: 11px; color: var(--accent); font-weight: 600; margin-top: 2px; opacity: 0; transition: opacity .15s; }
+.theme-card.clickable:hover .theme-link-hint { opacity: 1; }
+
+/* MOBILE */
+@media (max-width: 680px) {
+  .top3-grid { grid-template-columns: 1fr !important; }
+  .filter-bar { overflow-x: auto; flex-wrap: nowrap; padding: 8px 16px; scrollbar-width: none; }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .nav, .page { padding-left: 16px; padding-right: 16px; }
+  .page { padding-top: 16px; padding-bottom: 60px; }
+  .kpi-grid { grid-template-columns: 1fr 1fr !important; }
+  .theme-grid { grid-template-columns: 1fr !important; }
+}
+
+/* TREND FILTER BUTTONS */
+.trend-btn { font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; font-family: 'Inter', sans-serif; transition: all .15s; white-space: nowrap; }
+.trend-btn:hover { background: var(--bg); }
+.trend-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 </style>
 </head>
 <body>
@@ -223,6 +257,14 @@ body {
     <span>Teachy</span>&nbsp;/&nbsp;<strong>Weekly Signals</strong>
   </div>
 </nav>
+<div class="filter-bar" id="filter-bar">
+  <button class="nav-btn active" onclick="setFilter('all',this)">Todos</button>
+  <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
+  <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
+  <button class="nav-btn" onclick="setFilter('Q3',this)">Q3</button>
+  <button class="nav-btn" onclick="setFilter('Q4',this)">Q4</button>
+  <button class="nav-btn" onclick="setFilter('consolidado',this)" style="margin-left:8px;border-style:dashed;">Consolidado</button>
+</div>
 
 <div class="page">
   <div id="error-area"></div>
@@ -235,15 +277,6 @@ body {
       </div>
     </div>
     <div class="updated-tag" id="updated-tag"></div>
-  </div>
-
-  <div style="display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;">
-    <button class="nav-btn active" onclick="setFilter('all',this)">Todos</button>
-    <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
-    <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
-    <button class="nav-btn" onclick="setFilter('Q3',this)">Q3</button>
-    <button class="nav-btn" onclick="setFilter('Q4',this)">Q4</button>
-    <button class="nav-btn" onclick="setFilter('consolidado',this)" style="margin-left:8px;border-style:dashed;">Consolidado</button>
   </div>
 
   <!-- TOP 3 -->
@@ -272,6 +305,24 @@ body {
   </div>
   <div class="theme-grid" id="theme-grid"></div>
 
+  <!-- TREND CHART -->
+  <div class="section-hd" style="margin-top:36px;">
+    <div class="section-num" style="background:rgba(16,185,129,0.12);color:#10B981;">↗</div>
+    <div>
+      <div class="section-title">Tendência dos temas</div>
+      <div class="section-sub">Top 5 temas — sinais por semana</div>
+    </div>
+    <div style="margin-left:auto;display:flex;gap:4px;align-items:center;">
+      <button class="trend-btn" onclick="setTrendWeeks(1,this)">1 sem</button>
+      <button class="trend-btn" onclick="setTrendWeeks(2,this)">2 sem</button>
+      <button class="trend-btn" onclick="setTrendWeeks(3,this)">3 sem</button>
+      <button class="trend-btn active" onclick="setTrendWeeks(4,this)">4 sem</button>
+    </div>
+  </div>
+  <div class="chart-card" id="trend-card">
+    <div style="position:relative;height:260px;"><canvas id="trendChart"></canvas></div>
+  </div>
+
   <!-- SECTION 2 -->
   <div class="section-hd">
     <div class="section-num">2</div>
@@ -281,6 +332,7 @@ body {
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
       <div class="chart-title" style="margin-bottom:0;">Sinais por semana</div>
       <div class="chart-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#1A2240;"></div>Última sem.</div>
         <div class="leg-item"><div class="leg-dot" style="background:#4F6AF5;"></div>Q1</div>
         <div class="leg-item"><div class="leg-dot" style="background:#A5B4FC;"></div>Q2</div>
         <div class="leg-item"><div class="leg-dot" style="background:#F87171;"></div>&lt;3 sinais</div>
@@ -338,6 +390,18 @@ body {
 </div>
 
 <script>
+function goToTheme(tema){
+  currentFilter='consolidado';
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.remove('active');
+    if(b.textContent.trim()==='Consolidado') b.classList.add('active');
+  });
+  if(allData){
+    renderConsolidado(allData);
+    const sel=document.getElementById('cf-t');
+    if(sel){sel.value=tema;filterConsol();}
+  }
+}
 function togglePainRows(btn, cardId, extra){
   const card=document.getElementById(cardId);
   const rows=card.querySelectorAll('.pain-row.hidden');
@@ -361,7 +425,7 @@ const PRIO_COLORS={"Muito Alta":"#EF4444","Alta":"#F59E0B","Média-Alta":"#6366F
 function catColor(cat){return CATS[cat]||"#94A3B8";}
 function isUnknownSchool(s){return !s||s.toLowerCase().includes("nao identificad")||s.toLowerCase().includes("não identificad");}
 
-let allData=null,weekCI=null,qCI=null,pdCI=null,currentFilter="all";
+let allData=null,weekCI=null,qCI=null,pdCI=null,trendCI=null,currentFilter="all",trendWeeks=4,_lastSemanas=null;
 
 function filterSemanas(semanas){
   if(currentFilter==="Q1") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
@@ -372,8 +436,14 @@ function filterSemanas(semanas){
 }
 function setFilter(f,btn){
   currentFilter=f;
-  document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  if(f!=="consolidado" && window._pageTemplate && !document.getElementById('kpi-grid')){
+    document.querySelector('.page').innerHTML=window._pageTemplate;
+  }
+  document.querySelectorAll(".nav-btn").forEach(b=>{
+    b.classList.remove("active");
+    const lbl=b.textContent.trim();
+    if((f==="all"&&lbl==="Todos")||(f===lbl)) b.classList.add("active");
+  });
   if(allData) render(allData);
 }
 
@@ -414,14 +484,6 @@ function renderConsolidado(data) {
       </div></div>
       <div class="updated-tag">${updTxt}</div>
     </div>
-    <div style="display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;">
-      <button class="nav-btn" onclick="setFilter('all',this)">Todos</button>
-      <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
-      <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
-      <button class="nav-btn" onclick="setFilter('Q3',this)">Q3</button>
-      <button class="nav-btn" onclick="setFilter('Q4',this)">Q4</button>
-      <button class="nav-btn active" onclick="setFilter('consolidado',this)" style="margin-left:8px;border-style:dashed;">Consolidado</button>
-    </div>
     <div class="consol-filters">
       <select class="consol-select" id="cf-q" onchange="filterConsol()">
         <option value="">Todos os quarters</option>
@@ -435,6 +497,7 @@ function renderConsolidado(data) {
         <option value="">Todas as semanas</option>
         ${semanas.map(s=>`<option value="${s}">${s}</option>`).join('')}
       </select>
+      <input class="consol-search" id="cf-search" type="text" placeholder="Buscar..." oninput="filterConsol()">
       <div class="consol-count" id="cf-n">${items.length} insights</div>
     </div>
     <div id="consol-list" class="consol-list"></div>`;
@@ -446,7 +509,8 @@ function filterConsol() {
   const tf=(document.getElementById('cf-t')||{}).value||'';
   const sf=(document.getElementById('cf-s')||{}).value||'';
   const items=window._cItems||[];
-  const f=items.filter(i=>(!qf||i.quarter===qf)&&(!tf||i.tema_central===tf)&&(!sf||i.semana===sf));
+  const sq=((document.getElementById('cf-search')||{}).value||'').toLowerCase();
+  const f=items.filter(i=>(!qf||i.quarter===qf)&&(!tf||i.tema_central===tf)&&(!sf||i.semana===sf)&&(!sq||[i.dor_curta,i.resolve_curto,i.dor_detalhada,i.resolve_detalhado].join(' ').toLowerCase().includes(sq)));
   const el=document.getElementById('cf-n'); if(el) el.textContent=f.length+' insights';
   const list=document.getElementById('consol-list'); if(!list) return;
   list.innerHTML=f.map(item=>{
@@ -478,8 +542,65 @@ function filterConsol() {
 
 function toggleCC(id){const c=document.getElementById('cc-'+id);if(c)c.classList.toggle('expanded');}
 
+function setTrendWeeks(n, btn){
+  trendWeeks=n;
+  document.querySelectorAll('.trend-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(_lastSemanas) renderTrendChart(_lastSemanas);
+}
+
+function renderTrendChart(semanas){
+  _lastSemanas=semanas;
+  const ctx=document.getElementById('trendChart');
+  if(!ctx) return;
+  const recent=semanas.slice(-trendWeeks);
+  if(!recent.length){if(trendCI){trendCI.destroy();trendCI=null;}return;}
+
+  // top 5 themes by total across recent weeks
+  const totals={};
+  recent.forEach(s=>(s.items||[]).forEach(i=>{const c=i.category||'Outros';totals[c]=(totals[c]||0)+1;}));
+  const top5=Object.entries(totals).sort((a,b)=>b[1]-a[1]).slice(0,5).map(e=>e[0]);
+
+  const labels=recent.map(s=>s.name.replace(/Week\s+/i,'W').replace(/\s*[–-]\s*.*/,''));
+  const datasets=top5.map(cat=>{
+    const color=catColor(cat);
+    return {
+      label: cat,
+      data: recent.map(s=>(s.items||[]).filter(i=>i.category===cat).length),
+      borderColor: color,
+      backgroundColor: color+'18',
+      tension: 0.35,
+      pointRadius: recent.length===1?6:4,
+      pointHoverRadius: 7,
+      borderWidth: 2.5,
+      fill: false
+    };
+  });
+
+  if(trendCI) trendCI.destroy();
+  trendCI=new Chart(ctx.getContext('2d'),{
+    type:'line',
+    data:{labels,datasets},
+    options:{
+      responsive:true,
+      maintainAspectRatio:false,
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:11},padding:14,boxWidth:12,usePointStyle:true}},
+        tooltip:{callbacks:{label:i=>` ${i.dataset.label}: ${i.raw} sinais`}}
+      },
+      scales:{
+        y:{beginAtZero:true,ticks:{font:{size:11},color:'#9AA0B8',stepSize:1},grid:{color:'rgba(79,106,245,0.06)'}},
+        x:{ticks:{font:{size:10},color:'#9AA0B8',maxRotation:30},grid:{display:false}}
+      }
+    }
+  });
+}
+
+
 function render(data){
   if(currentFilter==="consolidado"){renderConsolidado(data);return;}
+  const _pg=document.querySelector('.page');
+  _pg.classList.remove('page-fade');void _pg.offsetWidth;_pg.classList.add('page-fade');
   const semanas=filterSemanas(data.semanas||[]);
   const all=semanas.flatMap(s=>s.items||[]);
   const total=all.length;
@@ -553,7 +674,7 @@ function render(data){
     // 3 main pains: pick 3 unique short sentences from contexts
     const pains=[...new Set(d.contexts.map(c=>c.split(/[.!?]/)[0].trim()).filter(s=>s.length>20&&s.length<120))].slice(0,3);
     const painHtml=pains.length?`<div class="theme-pains">${pains.map(p=>`<div class="theme-pain-item"><div class="theme-pain-dot" style="background:${color};"></div><span>${p}.</span></div>`).join("")}</div>`:"";
-    return `<div class="theme-card">
+    return `<div class="theme-card clickable" onclick="goToTheme('${cat}')" title="Ver sinais de ${cat} no Consolidado">
       <div>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
           <div style="width:9px;height:9px;border-radius:3px;background:${color};flex-shrink:0;"></div>
@@ -570,16 +691,19 @@ function render(data){
       </div>
       <div class="theme-priorities">${prioChips}</div>
       ${painHtml}
+      <div class="theme-link-hint">Ver no Consolidado →</div>
     </div>`;
   });
 
   document.getElementById("theme-grid").innerHTML=cards.join("");
+  renderTrendChart(semanas);
 
   // WEEK CHART
   const labels=semanas.map(s=>s.name.replace(/Week\s+/i,"W").replace(/\s*[–-]\s*.*/,""));
   const counts=semanas.map(s=>(s.items||[]).length);
   const weekNums=semanas.map(s=>parseInt((s.name.match(/\d+/)||[0])[0]));
-  const bgColors=semanas.map((s,i)=>counts[i]<3?"#F87171":weekNums[i]<=14?"#4F6AF5":"#A5B4FC");
+  const lastIdx=semanas.length-1;
+  const bgColors=semanas.map((s,i)=>i===lastIdx?"#1A2240":counts[i]<3?"#F87171":weekNums[i]<=14?"#4F6AF5":"#A5B4FC");
   const wCtx=document.getElementById("weekChart").getContext("2d");
   if(weekCI) weekCI.destroy();
   weekCI=new Chart(wCtx,{type:"bar",data:{labels,datasets:[{data:counts,backgroundColor:bgColors,borderRadius:{topLeft:4,topRight:4,bottomLeft:0,bottomRight:0},borderSkipped:'bottom'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:10},color:"#9AA0B8",maxRotation:45},grid:{display:false}}}}});
@@ -704,6 +828,7 @@ async function load(){
     const r=await fetch("dados.json?t="+Date.now());
     if(!r.ok) throw new Error("HTTP "+r.status);
     allData=await r.json();
+    if(!window._pageTemplate) window._pageTemplate=document.querySelector('.page').innerHTML;
     render(allData);
   }catch(e){
     document.getElementById("error-area").innerHTML=`<div class="error-box"><strong>Não foi possível carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br>acity:.7">${e.message}</small></div>`;
