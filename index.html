@@ -311,6 +311,13 @@ body {
 </div>
 
 <script>
+function togglePainRows(btn, cardId, extra){
+  const card=document.getElementById(cardId);
+  const rows=card.querySelectorAll('.pain-row.hidden');
+  const isHidden=rows.length>0;
+  rows.forEach(r=>r.classList.toggle('hidden',!isHidden));
+  btn.textContent=isHidden?'▲ Recolher':('▼ Ver mais +'+extra);
+}
 const CATS = {
   "Avaliacao / Simulados":"#6366F1","Avaliação / Simulados":"#6366F1",
   "Inclusao / Acessibilidade":"#10B981","Inclusão / Acessibilidade":"#10B981",
@@ -509,13 +516,6 @@ function render(data){
     const s=text.split(/[.!?]/)[0].trim();
     return s.length>10?s:text.slice(0,120);
   }
-  function togglePainRows(btn, cardId, extra){
-    const rows=document.querySelectorAll('#'+cardId+' .pain-row.hidden');
-    const hidden=rows.length>0;
-    rows.forEach(r=>r.classList.toggle('hidden',!hidden));
-    btn.textContent=hidden?'▲ Recolher':('▼ Ver mais +'+extra);
-  }
-
   const catGroups={};
   for(const item of all){const cat=item.category||"Outros";if(!catGroups[cat]) catGroups[cat]=[];catGroups[cat].push(item);}
   // Sort items within each category by priority
@@ -525,7 +525,7 @@ function render(data){
     const color=catColor(cat);
     const citems=[...rawItems].sort((a,b)=>(PW2[b.priority]||1)-(PW2[a.priority]||1));
     const shown=citems.slice(0,2);
-    const rest=citems.slice(2,9);
+    const rest=citems.slice(2,5);
     const schools=[...new Set(citems.map(i=>i.school).filter(s=>!isUnknownSchool(s)))].slice(0,3);
     const schoolChips=schools.map(s=>`<span style="font-size:11px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 10px;color:var(--text2);font-weight:500;">${s}</span>`).join("");
     const prioCount={};
