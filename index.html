@@ -471,23 +471,6 @@ function render(data){
       <div style="font-size:11px;color:var(--text3);width:32px;text-align:right;">${Math.round(prioData[i]/total*100)}%</div>
     </div>`).join("");
 
-  // PATTERNS — clickable
-  const tMap={};
-  for(const item of all){const k=item.title.replace(/\s*\(.*/,"").trim().slice(0,60);if(!tMap[k]) tMap[k]=[];tMap[k].push(item);}
-  const tops=Object.entries(tMap).sort((a,b)=>b[1].length-a[1].length).filter(([,items])=>items.length>1).slice(0,4);
-  document.getElementById("pattern-row").innerHTML=tops.length
-    ?tops.map(([t,items])=>`
-      <div class="pattern-chip-wrap">
-        <div class="pattern-chip" onclick="this.nextElementSibling.classList.toggle('open')">
-          <div class="pattern-label">${t}</div>
-          <div class="pattern-count">${items.length} evidências ›</div>
-        </div>
-        <div class="pattern-detail">
-          ${items.map(i=>`<div class="pattern-item"><strong>${i.category}</strong>${!isUnknownSchool(i.school)?" · "+i.school:""} ${i.context?'— '+i.context:""}</div>`).join("")}
-        </div>
-      </div>`).join("")
-    :"";
-
   // SECTION 4 — DE > PARA CARDS
   function extractBullets(text, max){
     max = max||3;
@@ -566,6 +549,13 @@ async function load(){
     render(allData);
   }catch(e){
     document.getElementById("error-area").innerHTML=`<div class="error-box"><strong>Não foi possível carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br>acity:.7">${e.message}</small></div>`;
+  }
+}
+load();
+setInterval(load,30000);
+</script>
+</body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                acity:.7">${e.message}</small></div>`;
   }
 }
 load();
