@@ -661,8 +661,7 @@ function render(data){
       if(text.length <= max) return text;
       // Try to cut at last sentence-ending punctuation before max
       const sub = text.slice(0, max);
-      const lastDot = Math.max(sub.lastIndexOf('. '), sub.lastIndexOf('! '), sub.lastIndexOf('? '), sub.lastIndexOf('.
-'));
+      const lastDot = Math.max(sub.lastIndexOf('. '), sub.lastIndexOf('! '), sub.lastIndexOf('? '), sub.lastIndexOf('\n'));
       if(lastDot > max*0.4) return text.slice(0, lastDot+1);
       // Fall back to last space before max
       const lastSpace = sub.lastIndexOf(' ');
@@ -708,13 +707,6 @@ async function load(){
     render(allData);
   }catch(e){
     document.getElementById("error-area").innerHTML=`<div class="error-box"><strong>Não foi possível carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br>acity:.7">${e.message}</small></div>`;
-  }
-}
-load();
-setInterval(load,30000);
-</script>
-</body>
-</html>                                                                                                                                                                                                                                                                                                                                                                                                                acity:.7">${e.message}</small></div>`;
   }
 }
 load();
