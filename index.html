@@ -92,10 +92,10 @@ body {
 .theme-card.action-card:hover { background: rgba(79,106,245,0.03); transform: none; }
 .theme-name { font-size: 15px; font-weight: 700; letter-spacing: -.1px; font-family: 'Quicksand', sans-serif; }
 .theme-base { font-size: 12px; color: var(--text3); margin-top: 2px; }
-.theme-stats { display: flex; align-items: flex-end; gap: 20px; }
-.theme-big { font-size: 32px; font-weight: 700; letter-spacing: -1.5px; font-family: 'Quicksand', sans-serif; }
+.theme-stats { display: flex; align-items: flex-end; gap: 12px; }
+.theme-big { font-size: 44px; font-weight: 700; letter-spacing: -2px; font-family: 'Quicksand', sans-serif; line-height: 1; }
 .theme-stat-grp { display: flex; flex-direction: column; }
-.theme-stat-val { font-size: 18px; font-weight: 700; font-family: 'Quicksand', sans-serif; }
+.theme-stat-val { font-size: 20px; font-weight: 700; font-family: 'Quicksand', sans-serif; }
 .theme-stat-lbl { font-size: 11px; color: var(--text3); margin-top: 2px; }
 .chip { font-size: 11px; background: var(--bg); color: var(--text2); border-radius: 20px; padding: 3px 9px; white-space: nowrap; font-weight: 500; }
 .chip-red    { background: #FEE2E2; color: #B91C1C; }
@@ -427,7 +427,7 @@ function render(data){
       ${painHtml}
     </div>`;
   });
-  cards.push(`<div class="theme-card action-card"><div class="action-icon">＋</div><div class="action-lbl">Ver mais temas</div><div class="action-sub">Role abaixo para a distribuição completa</div></div>`);
+
   document.getElementById("theme-grid").innerHTML=cards.join("");
 
   // WEEK CHART
@@ -437,7 +437,7 @@ function render(data){
   const bgColors=semanas.map((s,i)=>counts[i]<3?"#F87171":weekNums[i]<=14?"#4F6AF5":"#A5B4FC");
   const wCtx=document.getElementById("weekChart").getContext("2d");
   if(weekCI) weekCI.destroy();
-  weekCI=new Chart(wCtx,{type:"bar",data:{labels,datasets:[{data:counts,backgroundColor:bgColors,borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:10},color:"#9AA0B8",maxRotation:45},grid:{display:false}}}}});
+  weekCI=new Chart(wCtx,{type:"bar",data:{labels,datasets:[{data:counts,backgroundColor:bgColors,borderRadius:{topLeft:4,topRight:4,bottomLeft:0,bottomRight:0},borderSkipped:'bottom'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:10},color:"#9AA0B8",maxRotation:45},grid:{display:false}}}}});
 
   // CAT LIST
   const maxC=sortedCats[0]?.[1].count||1;
@@ -456,7 +456,7 @@ function render(data){
   document.getElementById("q2sub").textContent=`${q2s.length} sem · ${(q2t/Math.max(q2s.length,1)).toFixed(1)}/sem`;
   const qCtx=document.getElementById("quarterChart").getContext("2d");
   if(qCI) qCI.destroy();
-  qCI=new Chart(qCtx,{type:"bar",data:{labels:["Q1","Q2"],datasets:[{data:[q1t,q2t],backgroundColor:["#4F6AF5","#A5B4FC"],borderRadius:8,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:12},color:"#5A6480"},grid:{display:false}}}}});
+  qCI=new Chart(qCtx,{type:"bar",data:{labels:["Q1","Q2"],datasets:[{data:[q1t,q2t],backgroundColor:["#4F6AF5","#A5B4FC"],borderRadius:{topLeft:6,topRight:6,bottomLeft:0,bottomRight:0},borderSkipped:'bottom'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:12},color:"#5A6480"},grid:{display:false}}}}});
 
   // PRIORITY DONUT
   const prioOrder=["Muito Alta","Alta","Média-Alta","Média"];
