@@ -141,9 +141,9 @@ body {
 .pattern-chip:hover { box-shadow: var(--shadow-lg); }
 .pattern-label { font-size: 13px; font-weight: 600; flex: 1; }
 .pattern-count { font-size: 11px; font-weight: 700; color: var(--accent); white-space: nowrap; background: rgba(79,106,245,0.1); border-radius: 20px; padding: 3px 10px; }
-.pattern-detail { display: none; margin-top: 12px; border-top: 1px solid var(--border2); padding-top: 12px; flex-direction: column; gap: 6px; }
+.pattern-detail { display: none; margin-top: 0; border-top: 1px solid var(--border2); padding: 12px 18px; flex-direction: column; gap: 7px; max-height: 340px; overflow-y: auto; }
 .pattern-detail.open { display: flex; }
-.pattern-item { font-size: 12px; color: var(--text2); padding: 6px 10px; background: var(--bg); border-radius: 8px; line-height: 1.4; }
+.pattern-item { font-size: 12px; color: var(--text2); padding: 8px 12px; background: var(--bg); border-radius: 8px; line-height: 1.55; white-space: normal; word-break: break-word; }
 .pattern-chip-wrap { flex: 1; min-width: 220px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 .pattern-chip-wrap .pattern-chip { border: none; border-radius: 0; box-shadow: none; margin: 0; }
 
@@ -155,12 +155,23 @@ body {
 .pain-rank-badge { width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0; font-family: 'Quicksand', sans-serif; }
 .pain-title { font-size: 15px; font-weight: 700; flex: 1; font-family: 'Quicksand', sans-serif; }
 .pain-count { font-size: 12px; font-weight: 700; background: var(--bg); border-radius: 20px; padding: 4px 12px; color: var(--text2); white-space: nowrap; border: 1px solid var(--border2); }
-.pain-body { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border2); }
-.pain-col { padding: 18px 22px; }
-.pain-col + .pain-col { border-left: 1px solid var(--border2); }
-.pain-col-label { font-size: 10px; text-transform: uppercase; letter-spacing: .09em; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
-.pain-col-label-dot { width: 6px; height: 6px; border-radius: 50%; }
-.pain-col-text { font-size: 13px; color: var(--text2); line-height: 1.65; }
+.pain-rows { display: flex; flex-direction: column; }
+.pain-row { display: flex; align-items: stretch; border-top: 1px solid var(--border2); transition: background .12s; min-height: 56px; }
+.pain-row:hover { background: rgba(79,106,245,0.025); }
+.pain-row.hidden { display: none; }
+.pain-row-de { flex: 1; padding: 12px 16px 12px 22px; display: flex; flex-direction: column; justify-content: center; gap: 4px; border-right: 1px solid var(--border2); }
+.pain-row-arrow { display: flex; align-items: center; justify-content: center; padding: 0 10px; color: #C4C9E0; font-size: 16px; flex-shrink: 0; }
+.pain-row-para { flex: 1; padding: 12px 22px 12px 14px; display: flex; flex-direction: column; justify-content: center; }
+.pain-row-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+.pain-row-label-de { color: #EF4444; }
+.pain-row-label-para { color: #10B981; }
+.pain-bullets { display: flex; flex-direction: column; gap: 3px; }
+.pain-bullet { font-size: 12px; color: var(--text2); line-height: 1.4; display: flex; align-items: flex-start; gap: 6px; }
+.pain-bullet-dot { width: 4px; height: 4px; border-radius: 50%; background: #EF4444; flex-shrink: 0; margin-top: 5px; opacity: .5; }
+.pain-solution-title { font-size: 13px; font-weight: 700; color: var(--text); font-family: 'Quicksand', sans-serif; line-height: 1.35; }
+.pain-solution-sub { font-size: 11px; color: var(--text3); margin-top: 3px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pain-ver-mais { padding: 10px 22px; border-top: 1px solid var(--border2); cursor: pointer; font-size: 12px; font-weight: 600; color: var(--accent); text-align: center; background: rgba(79,106,245,0.02); user-select: none; transition: background .12s; }
+.pain-ver-mais:hover { background: rgba(79,106,245,0.06); }
 .pain-footer { display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-top: 1px solid var(--border2); flex-wrap: wrap; background: rgba(79,106,245,0.02); }
 
 /* misc */
@@ -291,8 +302,8 @@ body {
   <div class="section-hd">
     <div class="section-num">4</div>
     <div>
-      <div class="section-title">Dor real vs. o que as escolas pedem</div>
-      <div class="section-sub">Top 5 temas — o problema vivido e a direção de solução sugerida</div>
+      <div class="section-title">Dor vs. Solução</div>
+      <div class="section-sub">Top 5 temas — de onde vem a dor e o que resolve</div>
     </div>
   </div>
   <div class="pain-grid" id="pain-grid"></div>
@@ -473,44 +484,88 @@ function render(data){
           <div class="pattern-count">${items.length} evidências ›</div>
         </div>
         <div class="pattern-detail">
-          ${items.map(i=>`<div class="pattern-item"><strong>${i.category}</strong>${!isUnknownSchool(i.school)?" · "+i.school:""} ${i.context?'— '+i.context.slice(0,120)+"…":""}</div>`).join("")}
+          ${items.map(i=>`<div class="pattern-item"><strong>${i.category}</strong>${!isUnknownSchool(i.school)?" · "+i.school:""} ${i.context?'— '+i.context:""}</div>`).join("")}
         </div>
       </div>`).join("")
     :"";
 
-  // SECTION 4 — PAIN CARDS
+  // SECTION 4 — DE > PARA CARDS
+  function extractBullets(text, max){
+    max = max||3;
+    if(!text) return [];
+    const byBullet=text.split(/[•·●]/).map(s=>s.trim()).filter(s=>s.length>15);
+    if(byBullet.length>1) return byBullet.slice(0,max);
+    const bySentence=text.split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(s=>s.length>20);
+    if(bySentence.length>1) return bySentence.slice(0,max);
+    // chunk long text
+    const words=text.split(' ');
+    const chunks=[];let chunk='';
+    for(const w of words){if((chunk+' '+w).trim().length>95&&chunk.length>30){chunks.push(chunk.trim());chunk=w;}else chunk+=(chunk?' ':'')+w;}
+    if(chunk) chunks.push(chunk.trim());
+    return chunks.slice(0,max);
+  }
+  function firstSentence(text){
+    if(!text) return '';
+    const s=text.split(/[.!?]/)[0].trim();
+    return s.length>10?s:text.slice(0,120);
+  }
+  function togglePainRows(btn, cardId, extra){
+    const rows=document.querySelectorAll('#'+cardId+' .pain-row.hidden');
+    const hidden=rows.length>0;
+    rows.forEach(r=>r.classList.toggle('hidden',!hidden));
+    btn.textContent=hidden?'▲ Recolher':('▼ Ver mais +'+extra);
+  }
+
   const catGroups={};
   for(const item of all){const cat=item.category||"Outros";if(!catGroups[cat]) catGroups[cat]=[];catGroups[cat].push(item);}
+  // Sort items within each category by priority
+  const PW2={"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
   const top5=Object.entries(catGroups).sort((a,b)=>b[1].length-a[1].length).slice(0,5);
-  document.getElementById("pain-grid").innerHTML=top5.map(([cat,citems],rank)=>{
+  document.getElementById("pain-grid").innerHTML=top5.map(([cat,rawItems],rank)=>{
     const color=catColor(cat);
-    const ctxTexts=citems.filter(i=>i.context&&i.context.trim()).map(i=>i.context);
-    const sugTexts=citems.filter(i=>i.suggestion&&i.suggestion.trim()).map(i=>i.suggestion);
-    const ctx=ctxTexts.length?ctxTexts.sort((a,b)=>b.length-a.length)[0]:"Sem contexto registrado.";
-    const sug=sugTexts.length?sugTexts.sort((a,b)=>b.length-a.length)[0]:"Sem sugestão registrada.";
+    const citems=[...rawItems].sort((a,b)=>(PW2[b.priority]||1)-(PW2[a.priority]||1));
+    const shown=citems.slice(0,2);
+    const rest=citems.slice(2,9);
     const schools=[...new Set(citems.map(i=>i.school).filter(s=>!isUnknownSchool(s)))].slice(0,3);
     const schoolChips=schools.map(s=>`<span style="font-size:11px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 10px;color:var(--text2);font-weight:500;">${s}</span>`).join("");
     const prioCount={};
     citems.forEach(i=>{prioCount[i.priority]=(prioCount[i.priority]||0)+1;});
     const prioChips=Object.entries(prioCount).sort((a,b)=>b[1]-a[1]).map(([p,n])=>{const cls=p==="Muito Alta"?"chip-red":p==="Alta"?"chip-amber":"chip-blue";return `<span class="chip ${cls}" style="font-size:10px;">${p} ×${n}</span>`;}).join("");
-    const ctxShort=ctx.length>320?ctx.slice(0,320)+"…":ctx;
-    const sugShort=sug.length>320?sug.slice(0,320)+"…":sug;
-    return `<div class="pain-card">
+    const cardId='pain-card-'+rank;
+
+    function rowHtml(item, hide){
+      const bullets=extractBullets(item.context,3);
+      const bulletsHtml=bullets.length
+        ?bullets.map(b=>`<div class="pain-bullet"><div class="pain-bullet-dot"></div><span>${b}</span></div>`).join("")
+        :`<div class="pain-bullet"><div class="pain-bullet-dot"></div><span>${(item.context||'').slice(0,120)||'Sem contexto registrado.'}</span></div>`;
+      const solutionTitle=item.title;
+      const solutionSub=firstSentence(item.suggestion);
+      return `<div class="pain-row${hide?' hidden':''}">
+        <div class="pain-row-de">
+          <div class="pain-row-label pain-row-label-de">De — a dor</div>
+          <div class="pain-bullets">${bulletsHtml}</div>
+        </div>
+        <div class="pain-row-arrow">→</div>
+        <div class="pain-row-para">
+          <div class="pain-row-label pain-row-label-para">Para — solução</div>
+          <div class="pain-solution-title">${solutionTitle}</div>
+          ${solutionSub?`<div class="pain-solution-sub">${solutionSub}</div>`:''}
+        </div>
+      </div>`;
+    }
+
+    const shownRows=shown.map(i=>rowHtml(i,false)).join("");
+    const hiddenRows=rest.length?rest.map(i=>rowHtml(i,true)).join(""):"";
+    const verMais=rest.length?`<div class="pain-ver-mais" onclick="togglePainRows(this,'${cardId}',${rest.length})">▼ Ver mais +${rest.length}</div>`:"";
+
+    return `<div class="pain-card" id="${cardId}">
       <div class="pain-card-header">
         <div class="pain-rank-badge" style="background:${color};">${rank+1}</div>
         <div class="pain-title">${cat}</div>
         <div class="pain-count">${citems.length} sinais</div>
       </div>
-      <div class="pain-body">
-        <div class="pain-col">
-          <div class="pain-col-label" style="color:#EF4444;"><div class="pain-col-label-dot" style="background:#EF4444;"></div>A dor relatada</div>
-          <div class="pain-col-text">${ctxShort}</div>
-        </div>
-        <div class="pain-col">
-          <div class="pain-col-label" style="color:#10B981;"><div class="pain-col-label-dot" style="background:#10B981;"></div>O que as escolas pedem</div>
-          <div class="pain-col-text">${sugShort}</div>
-        </div>
-      </div>
+      <div class="pain-rows">${shownRows}${hiddenRows}</div>
+      ${verMais}
       <div class="pain-footer">${prioChips}<div style="flex:1;"></div>${schoolChips}</div>
     </div>`;
   }).join("");
