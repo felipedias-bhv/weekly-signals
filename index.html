@@ -184,13 +184,7 @@ body {
 
 <nav class="nav">
   <div class="nav-left">
-    <div class="nav-logo">WS</div>
     <span>Teachy</span>&nbsp;/&nbsp;<strong>Weekly Signals</strong>
-  </div>
-  <div class="nav-right">
-    <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
-    <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
-    <button class="nav-btn active" onclick="setFilter('all',this)">Todos</button>
   </div>
 </nav>
 
@@ -199,13 +193,20 @@ body {
 
   <div class="profile-row">
     <div class="profile-info">
-      <div class="avatar">WS</div>
       <div>
         <h1>Weekly Signals Intelligence</h1>
         <div class="sub" id="subtitle">Carregando dados&hellip;</div>
       </div>
     </div>
     <div class="updated-tag" id="updated-tag"></div>
+  </div>
+
+  <div style="display:flex;gap:6px;margin-bottom:24px;">
+    <button class="nav-btn active" onclick="setFilter('all',this)">Todos</button>
+    <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
+    <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
+    <button class="nav-btn" onclick="setFilter('Q3',this)">Q3</button>
+    <button class="nav-btn" onclick="setFilter('Q4',this)">Q4</button>
   </div>
 
   <!-- TOP 3 -->
@@ -327,7 +328,9 @@ let allData=null,weekCI=null,qCI=null,pdCI=null,currentFilter="all";
 
 function filterSemanas(semanas){
   if(currentFilter==="Q1") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
-  if(currentFilter==="Q2") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15;});
+  if(currentFilter==="Q2") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15&&n<=26;});
+  if(currentFilter==="Q3") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=27&&n<=38;});
+  if(currentFilter==="Q4") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=39;});
   return semanas;
 }
 function setFilter(f,btn){
