@@ -4,145 +4,172 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weekly Signals — Teachy</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg:       #f5f5f3;
-  --surface:  #ffffff;
-  --border:   rgba(0,0,0,0.08);
-  --border2:  rgba(0,0,0,0.05);
-  --text:     #1a1917;
-  --text2:    #6b6a65;
-  --text3:    #9b9a95;
-  --radius:   12px;
-  --shadow:   0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --bg:        #EDF1FB;
+  --surface:   #FFFFFF;
+  --border:    rgba(79,106,245,0.10);
+  --border2:   rgba(79,106,245,0.06);
+  --text:      #1A2240;
+  --text2:     #5A6480;
+  --text3:     #9AA0B8;
+  --accent:    #4F6AF5;
+  --radius:    14px;
+  --shadow:    0 2px 8px rgba(79,106,245,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 4px 20px rgba(79,106,245,0.10);
 }
-body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; line-height: 1.5; min-height: 100vh; }
+body {
+  background: linear-gradient(160deg, #E8EFFE 0%, #F0F6FF 60%, #EAF4FB 100%);
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-.nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 32px; height: 48px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
-.nav-left { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text3); }
+/* NAV */
+.nav { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 32px; height: 52px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.nav-left { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text3); font-family: 'Inter', sans-serif; }
 .nav-left strong { color: var(--text); font-weight: 600; }
+.nav-logo { width: 28px; height: 28px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: 'Quicksand', sans-serif; font-size: 12px; font-weight: 700; }
 .nav-right { display: flex; gap: 4px; }
-.nav-btn { font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; }
+.nav-btn { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; font-family: 'Inter', sans-serif; transition: all .15s; }
 .nav-btn:hover { background: var(--bg); }
-.nav-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+.nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 2px 8px rgba(79,106,245,0.3); }
 
-.page { max-width: 1100px; margin: 0 auto; padding: 28px 24px 64px; }
+.page { max-width: 1100px; margin: 0 auto; padding: 28px 24px 80px; }
 
-.profile-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+/* PROFILE */
+.profile-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
 .profile-info { display: flex; align-items: center; gap: 12px; }
-.avatar { width: 42px; height: 42px; border-radius: 50%; background: #e8e8e8; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--text2); flex-shrink: 0; }
-.profile-info h1 { font-size: 18px; font-weight: 600; letter-spacing: -.2px; }
-.profile-info .sub { font-size: 13px; color: var(--text2); }
+.avatar { width: 44px; height: 44px; border-radius: 12px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; font-family: 'Quicksand', sans-serif; }
+.profile-info h1 { font-size: 20px; font-weight: 700; letter-spacing: -.3px; font-family: 'Quicksand', sans-serif; }
+.profile-info .sub { font-size: 13px; color: var(--text2); margin-top: 1px; }
 .updated-tag { font-size: 12px; color: var(--text3); }
 
 /* TOP 3 */
-.top3-bar { background: var(--text); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 28px; color: #fff; }
-.top3-bar-hd { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; }
-.top3-bar-title { font-size: 16px; font-weight: 700; letter-spacing: -.2px; }
-.top3-bar-week { font-size: 13px; font-weight: 500; opacity: .5; margin-left: auto; }
+.top3-bar { background: linear-gradient(135deg, #1A2240 0%, #2D3A6B 100%); border-radius: var(--radius); padding: 22px 26px; margin-bottom: 28px; color: #fff; box-shadow: var(--shadow-lg); }
+.top3-bar-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.top3-bar-title { font-size: 17px; font-weight: 700; letter-spacing: -.2px; font-family: 'Quicksand', sans-serif; }
+.top3-bar-week { font-size: 12px; font-weight: 500; opacity: .45; margin-left: auto; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; }
 .top3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.top3-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
-.top3-rank { font-size: 11px; font-weight: 700; opacity: .45; text-transform: uppercase; letter-spacing: .06em; }
-.top3-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
-.top3-why { font-size: 12px; line-height: 1.55; opacity: .72; }
-.top3-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
-.top3-chip { font-size: 10px; font-weight: 600; border-radius: 20px; padding: 2px 8px; background: rgba(255,255,255,0.12); }
-.top3-chip-red   { background: rgba(220,60,60,0.4); }
-.top3-chip-amber { background: rgba(200,130,30,0.4); }
+.top3-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; transition: background .15s; }
+.top3-card:hover { background: rgba(255,255,255,0.12); }
+.top3-rank-row { display: flex; align-items: center; gap: 8px; }
+.top3-medal { font-size: 15px; }
+.top3-cat { font-size: 10px; font-weight: 700; opacity: .5; text-transform: uppercase; letter-spacing: .07em; }
+.top3-title { font-size: 14px; font-weight: 600; line-height: 1.4; font-family: 'Quicksand', sans-serif; }
+.top3-why { font-size: 12px; line-height: 1.6; opacity: .68; }
+.top3-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+.top3-chip { font-size: 10px; font-weight: 600; border-radius: 20px; padding: 3px 9px; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+.top3-chip-red   { background: rgba(239,68,68,0.35); }
+.top3-chip-amber { background: rgba(245,158,11,0.35); }
 
+/* KPI */
 .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 32px; }
-.kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); }
-.kpi-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
-.kpi-value { font-size: 32px; font-weight: 700; letter-spacing: -.8px; line-height: 1; }
-.kpi-delta { font-size: 12px; margin-top: 6px; }
-.delta-up { color: #1a9e6b; }
-.delta-down { color: #d44a3a; }
-.kpi-sub { font-size: 12px; color: var(--text3); margin-top: 4px; }
+.kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
+.kpi-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 10px; font-weight: 600; }
+.kpi-value { font-size: 34px; font-weight: 700; letter-spacing: -1px; line-height: 1; font-family: 'Quicksand', sans-serif; color: var(--text); }
+.kpi-delta { font-size: 12px; margin-top: 7px; font-weight: 500; }
+.delta-up { color: #10B981; }
+.delta-down { color: #EF4444; }
+.kpi-sub { font-size: 12px; color: var(--text3); margin-top: 5px; }
 
-.section-hd { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; margin-top: 36px; }
-.section-num { font-size: 15px; font-weight: 700; color: var(--text3); min-width: 18px; }
-.section-title { font-size: 17px; font-weight: 700; letter-spacing: -.2px; }
+/* SECTION HEADER */
+.section-hd { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; margin-top: 40px; }
+.section-num { font-size: 13px; font-weight: 700; color: var(--accent); background: rgba(79,106,245,0.1); border-radius: 6px; padding: 2px 8px; font-family: 'Quicksand', sans-serif; }
+.section-title { font-size: 18px; font-weight: 700; letter-spacing: -.3px; font-family: 'Quicksand', sans-serif; }
 .section-sub { font-size: 13px; color: var(--text3); margin-top: 2px; }
 
-.theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.theme-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; }
-.theme-card.action-card { border: 1.5px dashed var(--border); background: transparent; align-items: center; justify-content: center; min-height: 160px; box-shadow: none; cursor: pointer; }
-.theme-card.action-card:hover { background: rgba(0,0,0,0.02); }
-.theme-name { font-size: 15px; font-weight: 600; letter-spacing: -.1px; }
-.theme-base { font-size: 12px; color: var(--text3); }
+/* THEME CARDS */
+.theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.theme-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 14px; transition: box-shadow .15s, transform .15s; }
+.theme-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.theme-card.action-card { border: 1.5px dashed var(--border); background: transparent; align-items: center; justify-content: center; min-height: 180px; box-shadow: none; cursor: pointer; }
+.theme-card.action-card:hover { background: rgba(79,106,245,0.03); transform: none; }
+.theme-name { font-size: 15px; font-weight: 700; letter-spacing: -.1px; font-family: 'Quicksand', sans-serif; }
+.theme-base { font-size: 12px; color: var(--text3); margin-top: 2px; }
 .theme-stats { display: flex; align-items: flex-end; gap: 20px; }
-.theme-big { font-size: 28px; font-weight: 700; letter-spacing: -1px; }
+.theme-big { font-size: 32px; font-weight: 700; letter-spacing: -1.5px; font-family: 'Quicksand', sans-serif; }
 .theme-stat-grp { display: flex; flex-direction: column; }
-.theme-stat-val { font-size: 18px; font-weight: 600; }
+.theme-stat-val { font-size: 18px; font-weight: 700; font-family: 'Quicksand', sans-serif; }
 .theme-stat-lbl { font-size: 11px; color: var(--text3); margin-top: 2px; }
-.chip { font-size: 11px; background: var(--bg); color: var(--text2); border-radius: 20px; padding: 2px 8px; white-space: nowrap; }
-.chip-red    { background: #fce8e8; color: #a02525; }
-.chip-amber  { background: #fef3dc; color: #8a5200; }
-.chip-blue   { background: #e5f0fb; color: #1858a0; }
+.chip { font-size: 11px; background: var(--bg); color: var(--text2); border-radius: 20px; padding: 3px 9px; white-space: nowrap; font-weight: 500; }
+.chip-red    { background: #FEE2E2; color: #B91C1C; }
+.chip-amber  { background: #FEF3C7; color: #92400E; }
+.chip-blue   { background: #DBEAFE; color: #1D4ED8; }
 .theme-priorities { display: flex; gap: 6px; flex-wrap: wrap; }
-.theme-schools { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
-.action-icon { font-size: 24px; margin-bottom: 6px; opacity: .4; }
-.action-lbl { font-size: 14px; font-weight: 600; }
-.action-sub { font-size: 12px; color: var(--text3); text-align: center; }
+.theme-pains { display: flex; flex-direction: column; gap: 5px; border-top: 1px solid var(--border2); padding-top: 12px; }
+.theme-pain-item { display: flex; align-items: flex-start; gap: 6px; font-size: 12px; color: var(--text2); line-height: 1.45; }
+.theme-pain-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.action-icon { font-size: 28px; margin-bottom: 6px; opacity: .3; }
+.action-lbl { font-size: 14px; font-weight: 700; font-family: 'Quicksand', sans-serif; color: var(--accent); }
+.action-sub { font-size: 12px; color: var(--text3); text-align: center; margin-top: 4px; }
 
-.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); margin-bottom: 12px; }
-.chart-title { font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 14px; }
+/* CHART CARDS */
+.chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); margin-bottom: 12px; }
+.chart-title { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
 .chart-legend { display: flex; gap: 14px; }
-.leg-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text3); }
+.leg-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text2); }
 .leg-dot { width: 8px; height: 8px; border-radius: 50%; }
 
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
-.tbl thead th { text-align: left; padding: 8px 10px; font-size: 11px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); }
-.tbl tbody td { padding: 9px 10px; border-bottom: 1px solid var(--border2); vertical-align: middle; }
-.tbl tbody tr:last-child td { border-bottom: none; }
-.tbl tbody tr:hover td { background: var(--bg); }
-.rank-n { font-size: 11px; color: var(--text3); }
-.school-name { font-weight: 500; }
-.school-cat { font-size: 11px; color: var(--text3); }
-
-.cat-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border2); }
+/* CAT LIST */
+.cat-item { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border2); }
 .cat-item:last-child { border-bottom: none; }
-.cat-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
-.cat-label { font-size: 13px; flex: 1; }
-.cat-bar-bg { width: 80px; height: 4px; background: var(--bg); border-radius: 2px; flex-shrink: 0; }
-.cat-bar-fill { height: 4px; border-radius: 2px; }
-.cat-count { font-size: 12px; font-weight: 600; color: var(--text2); width: 24px; text-align: right; }
+.cat-dot { width: 9px; height: 9px; border-radius: 3px; flex-shrink: 0; }
+.cat-label { font-size: 13px; flex: 1; font-weight: 500; }
+.cat-bar-bg { width: 80px; height: 5px; background: var(--bg); border-radius: 3px; flex-shrink: 0; }
+.cat-bar-fill { height: 5px; border-radius: 3px; }
+.cat-count { font-size: 12px; font-weight: 700; color: var(--text2); width: 24px; text-align: right; }
 
+/* Q1/Q2 compare */
 .compare-row { display: flex; border-top: 1px solid var(--border2); }
-.compare-block { flex: 1; padding: 14px 18px; }
+.compare-block { flex: 1; padding: 16px 20px; }
 .compare-block + .compare-block { border-left: 1px solid var(--border2); }
-.compare-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
-.compare-val { font-size: 26px; font-weight: 700; letter-spacing: -.5px; }
+.compare-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; font-weight: 700; }
+.compare-val { font-size: 28px; font-weight: 700; letter-spacing: -.5px; font-family: 'Quicksand', sans-serif; }
 .compare-sub { font-size: 12px; color: var(--text3); margin-top: 2px; }
 
+/* PATTERNS */
 .pattern-row { display: flex; gap: 10px; flex-wrap: wrap; }
-.pattern-chip { flex: 1; min-width: 200px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: var(--shadow); }
-.pattern-label { font-size: 13px; font-weight: 500; flex: 1; }
-.pattern-count { font-size: 12px; font-weight: 600; color: var(--text2); white-space: nowrap; background: var(--bg); border-radius: 20px; padding: 2px 8px; }
+.pattern-chip { flex: 1; min-width: 200px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; box-shadow: var(--shadow); cursor: pointer; transition: box-shadow .15s; }
+.pattern-chip:hover { box-shadow: var(--shadow-lg); }
+.pattern-label { font-size: 13px; font-weight: 600; flex: 1; }
+.pattern-count { font-size: 11px; font-weight: 700; color: var(--accent); white-space: nowrap; background: rgba(79,106,245,0.1); border-radius: 20px; padding: 3px 10px; }
+.pattern-detail { display: none; margin-top: 12px; border-top: 1px solid var(--border2); padding-top: 12px; flex-direction: column; gap: 6px; }
+.pattern-detail.open { display: flex; }
+.pattern-item { font-size: 12px; color: var(--text2); padding: 6px 10px; background: var(--bg); border-radius: 8px; line-height: 1.4; }
+.pattern-chip-wrap { flex: 1; min-width: 220px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.pattern-chip-wrap .pattern-chip { border: none; border-radius: 0; box-shadow: none; margin: 0; }
 
-.empty { color: var(--text3); text-align: center; padding: 32px; font-size: 13px; }
-.error-box { background: #fce8e8; color: #8a2525; border-radius: var(--radius); padding: 16px 20px; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
-
-.pain-grid { display: flex; flex-direction: column; gap: 12px; }
-.pain-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-.pain-card-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px 12px; border-bottom: 1px solid var(--border2); }
-.pain-rank { font-size: 22px; font-weight: 800; min-width: 28px; }
-.pain-title { font-size: 14px; font-weight: 600; flex: 1; }
-.pain-count { font-size: 12px; font-weight: 600; background: var(--bg); border-radius: 20px; padding: 3px 10px; color: var(--text2); white-space: nowrap; }
-.pain-body { display: grid; grid-template-columns: 1fr 1fr; }
-.pain-col { padding: 14px 20px; }
+/* PAIN CARDS */
+.pain-grid { display: flex; flex-direction: column; gap: 16px; }
+.pain-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: box-shadow .15s; }
+.pain-card:hover { box-shadow: var(--shadow-lg); }
+.pain-card-header { display: flex; align-items: center; gap: 14px; padding: 18px 22px 14px; }
+.pain-rank-badge { width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0; font-family: 'Quicksand', sans-serif; }
+.pain-title { font-size: 15px; font-weight: 700; flex: 1; font-family: 'Quicksand', sans-serif; }
+.pain-count { font-size: 12px; font-weight: 700; background: var(--bg); border-radius: 20px; padding: 4px 12px; color: var(--text2); white-space: nowrap; border: 1px solid var(--border2); }
+.pain-body { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border2); }
+.pain-col { padding: 18px 22px; }
 .pain-col + .pain-col { border-left: 1px solid var(--border2); }
-.pain-col-label { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--text3); margin-bottom: 7px; }
-.pain-col-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
-.pain-footer { display: flex; align-items: center; gap: 6px; padding: 10px 20px; border-top: 1px solid var(--border2); flex-wrap: wrap; }
+.pain-col-label { font-size: 10px; text-transform: uppercase; letter-spacing: .09em; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.pain-col-label-dot { width: 6px; height: 6px; border-radius: 50%; }
+.pain-col-text { font-size: 13px; color: var(--text2); line-height: 1.65; }
+.pain-footer { display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-top: 1px solid var(--border2); flex-wrap: wrap; background: rgba(79,106,245,0.02); }
+
+/* misc */
+.empty { color: var(--text3); text-align: center; padding: 32px; font-size: 13px; }
+.error-box { background: #FEE2E2; color: #991B1B; border-radius: var(--radius); padding: 16px 20px; font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
 
 @media (max-width: 800px) {
-  .kpi-grid { grid-template-columns: 1fr 1fr; }
-  .theme-grid, .two-col, .top3-grid { grid-template-columns: 1fr; }
+  .kpi-grid, .top3-grid { grid-template-columns: 1fr 1fr; }
+  .theme-grid, .two-col { grid-template-columns: 1fr; }
   .pain-body { grid-template-columns: 1fr; }
   .pain-col + .pain-col { border-left: none; border-top: 1px solid var(--border2); }
 }
@@ -152,6 +179,7 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
 
 <nav class="nav">
   <div class="nav-left">
+    <div class="nav-logo">WS</div>
     <span>Teachy</span>&nbsp;/&nbsp;<strong>Weekly Signals</strong>
   </div>
   <div class="nav-right">
@@ -175,43 +203,44 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
     <div class="updated-tag" id="updated-tag"></div>
   </div>
 
-  <!-- TOP 3 DA SEMANA -->
+  <!-- TOP 3 -->
   <div class="top3-bar">
     <div class="top3-bar-hd">
       <div class="top3-bar-title">Top 3 da semana passada</div>
       <div class="top3-bar-week" id="top3-week-label"></div>
     </div>
     <div class="top3-grid" id="top3-grid">
-      <div class="top3-card" style="opacity:.35;grid-column:1/-1;justify-content:center;align-items:center;min-height:60px;text-align:center;"><span style="font-size:12px;">Carregando...</span></div>
+      <div class="top3-card" style="opacity:.3;grid-column:1/-1;justify-content:center;align-items:center;min-height:60px;text-align:center;"><span style="font-size:12px;">Carregando...</span></div>
     </div>
   </div>
 
+  <!-- KPI -->
   <div class="kpi-grid" id="kpi-grid">
-    <div class="kpi-card"><div class="kpi-label">Total de signals</div><div class="kpi-value">&#8212;</div></div>
-    <div class="kpi-card"><div class="kpi-label">Escolas</div><div class="kpi-value">&#8212;</div></div>
-    <div class="kpi-card"><div class="kpi-label">Media/semana</div><div class="kpi-value">&#8212;</div></div>
-    <div class="kpi-card"><div class="kpi-label">Muito Alta</div><div class="kpi-value">&#8212;</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total de signals</div><div class="kpi-value">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Escolas</div><div class="kpi-value">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Media/semana</div><div class="kpi-value">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Muito Alta</div><div class="kpi-value">—</div></div>
   </div>
 
   <!-- SECTION 1 -->
   <div class="section-hd">
     <div class="section-num">1</div>
-    <div class="section-title">Quais temas merecem mais atencao?</div>
+    <div class="section-title">Quais temas merecem mais atenção?</div>
   </div>
   <div class="theme-grid" id="theme-grid"></div>
 
   <!-- SECTION 2 -->
   <div class="section-hd">
     <div class="section-num">2</div>
-    <div class="section-title">Como esta a coleta semana a semana?</div>
+    <div class="section-title">Como está a coleta semana a semana?</div>
   </div>
   <div class="chart-card">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
       <div class="chart-title" style="margin-bottom:0;">Sinais por semana</div>
       <div class="chart-legend">
-        <div class="leg-item"><div class="leg-dot" style="background:#1a1917;"></div>Q1</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#9b9a95;"></div>Q2</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#e05c5c;"></div>&lt;3 sinais</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#4F6AF5;"></div>Q1</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#A5B4FC;"></div>Q2</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#F87171;"></div>&lt;3 sinais</div>
       </div>
     </div>
     <div style="position:relative;height:200px;"><canvas id="weekChart"></canvas></div>
@@ -220,24 +249,17 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
   <!-- SECTION 3 -->
   <div class="section-hd">
     <div class="section-num">3</div>
-    <div class="section-title">Quem esta sinalizando e o que?</div>
+    <div class="section-title">O que está sendo pedido?</div>
   </div>
   <div class="two-col">
     <div class="chart-card" style="margin-bottom:0;">
-      <div class="chart-title">Escolas por volume</div>
-      <table class="tbl">
-        <thead><tr><th>#</th><th>Escola</th><th>Sinais</th><th>Prioridade top</th></tr></thead>
-        <tbody id="school-tbody"></tbody>
-      </table>
+      <div class="chart-title">Categorias</div>
+      <div id="cat-list"></div>
     </div>
     <div>
       <div class="chart-card">
-        <div class="chart-title">Categorias</div>
-        <div id="cat-list"></div>
-      </div>
-      <div class="chart-card" style="margin-bottom:0;">
-        <div class="compare-row">
-          <div class="compare-block">
+        <div class="compare-row" style="border-top:none;margin:-22px -24px 0;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden;">
+          <div class="compare-block" style="background:rgba(79,106,245,0.04);">
             <div class="compare-label">Q1</div>
             <div class="compare-val" id="q1val">—</div>
             <div class="compare-sub" id="q1sub"></div>
@@ -248,10 +270,10 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
             <div class="compare-sub" id="q2sub"></div>
           </div>
         </div>
-        <div style="padding:0 18px 16px;position:relative;height:130px;"><canvas id="quarterChart"></canvas></div>
+        <div style="position:relative;height:130px;margin-top:16px;"><canvas id="quarterChart"></canvas></div>
       </div>
       <div class="chart-card" style="margin-bottom:0;">
-        <div class="chart-title">Distribuicao de prioridade</div>
+        <div class="chart-title">Distribuição de prioridade</div>
         <div style="display:flex;gap:16px;align-items:center;margin-top:4px;">
           <div style="position:relative;width:110px;height:110px;flex-shrink:0;"><canvas id="priorityDonut"></canvas></div>
           <div id="priority-legend" style="flex:1;"></div>
@@ -260,18 +282,17 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
     </div>
   </div>
 
-  <div class="section-hd" style="margin-top:12px;">
-    <div class="section-num" style="opacity:0;">0</div>
-    <div class="section-title" style="font-size:14px;font-weight:600;color:var(--text2);">Principais padroes observados</div>
+  <!-- PATTERNS -->
+  <div style="margin-top:16px;">
+    <div class="pattern-row" id="pattern-row"></div>
   </div>
-  <div class="pattern-row" id="pattern-row"></div>
 
   <!-- SECTION 4 -->
   <div class="section-hd">
     <div class="section-num">4</div>
     <div>
-      <div class="section-title">Quais sao os maiores pedidos e o que esta por tras?</div>
-      <div class="section-sub">Top 5 temas por volume — dor relatada e direcao de solucao</div>
+      <div class="section-title">Dor real vs. o que as escolas pedem</div>
+      <div class="section-sub">Top 5 temas — o problema vivido e a direção de solução sugerida</div>
     </div>
   </div>
   <div class="pain-grid" id="pain-grid"></div>
@@ -280,217 +301,135 @@ body { background: var(--bg); color: var(--text); font-family: -apple-system, Bl
 
 <script>
 const CATS = {
-  "Avaliacao / Simulados":        "#7F77DD",
-  "Avaliacao / Simulados":        "#7F77DD",
-  "Inclusao / Acessibilidade":    "#5DCAA5",
-  "Gestao Administrativa":        "#BA7517",
-  "Engajamento Familiar":         "#D4537E",
-  "Comunicacao":                  "#888780",
-  "Criacao de Conteudo":          "#5A9ED4",
-  "IA Pedagogica":                "#6DC476",
-  "Plataforma / Integracao":      "#C4A24A",
-  "Analytics / Personalizacao":   "#E07A3C",
-  "Conteudo Didatico / Autoria":  "#9B59B6",
+  "Avaliacao / Simulados":"#6366F1","Avaliação / Simulados":"#6366F1",
+  "Inclusao / Acessibilidade":"#10B981","Inclusão / Acessibilidade":"#10B981",
+  "Gestao Administrativa":"#F59E0B","Gestão Administrativa":"#F59E0B",
+  "Engajamento Familiar":"#EC4899",
+  "Comunicacao":"#64748B","Comunicação":"#64748B",
+  "Criacao de Conteudo":"#3B82F6","Criação de Conteúdo":"#3B82F6",
+  "IA Pedagogica":"#06B6D4","IA Pedagógica":"#06B6D4",
+  "Plataforma / Integracao":"#14B8A6","Plataforma / Integração":"#14B8A6",
+  "Analytics / Personalizacao":"#F97316","Analytics / Personalização":"#F97316",
+  "Conteudo Didatico / Autoria":"#8B5CF6","Conteúdo Didático / Autoria":"#8B5CF6",
 };
-// accented variants
-Object.assign(CATS, {
-  "Avaliação / Simulados":         "#7F77DD",
-  "Inclusão / Acessibilidade":          "#5DCAA5",
-  "Gestão Administrativa":              "#BA7517",
-  "Comunicação":                   "#888780",
-  "Criação de Conteúdo":      "#5A9ED4",
-  "IA Pedagógica":                      "#6DC476",
-  "Plataforma / Integração":       "#C4A24A",
-  "Analytics / Personalização":    "#E07A3C",
-  "Conteúdo Didático / Autoria":   "#9B59B6",
-});
+const PRIO_COLORS={"Muito Alta":"#EF4444","Alta":"#F59E0B","Média-Alta":"#6366F1","Media-Alta":"#6366F1","Média":"#94A3B8","Media":"#94A3B8"};
+function catColor(cat){return CATS[cat]||"#94A3B8";}
+function isUnknownSchool(s){return !s||s.toLowerCase().includes("nao identificad")||s.toLowerCase().includes("não identificad");}
 
-const PRIO_COLORS = {
-  "Muito Alta":  "#e05c5c",
-  "Alta":        "#e8a838",
-  "Media-Alta":  "#5A9ED4",
-  "Média-Alta":  "#5A9ED4",
-  "Media":       "#9b9a95",
-  "Média":       "#9b9a95",
-};
-
-function catColor(cat){ return CATS[cat]||"#9b9a95"; }
-
-let allData = null;
-let weekCI = null, qCI = null, pdCI = null;
-let currentFilter = "all";
+let allData=null,weekCI=null,qCI=null,pdCI=null,currentFilter="all";
 
 function filterSemanas(semanas){
-  if(currentFilter === "Q1") return semanas.filter(s=>{ const n=parseInt((s.name.match(/\d+/)||[0])[0]); return n>=4&&n<=14; });
-  if(currentFilter === "Q2") return semanas.filter(s=>{ const n=parseInt((s.name.match(/\d+/)||[0])[0]); return n>=15; });
+  if(currentFilter==="Q1") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
+  if(currentFilter==="Q2") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15;});
   return semanas;
 }
-
-function setFilter(f, btn){
-  currentFilter = f;
+function setFilter(f,btn){
+  currentFilter=f;
   document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
   if(allData) render(allData);
 }
 
 function render(data){
-  const semanas = filterSemanas(data.semanas||[]);
-  const all = semanas.flatMap(s=>s.items||[]);
-  const total = all.length;
-  if(!total){ document.getElementById("kpi-grid").innerHTML='<div class="empty" style="grid-column:1/-1">Nenhum dado no periodo selecionado.</div>'; return; }
+  const semanas=filterSemanas(data.semanas||[]);
+  const all=semanas.flatMap(s=>s.items||[]);
+  const total=all.length;
+  if(!total){document.getElementById("kpi-grid").innerHTML='<div class="empty" style="grid-column:1/-1">Nenhum dado no periodo selecionado.</div>';return;}
 
-  // TOP 3 DA SEMANA — sempre da semana mais recente, ignora filtro Q1/Q2
+  // TOP 3 DA SEMANA
   (function(){
-    const allSemanas = data.semanas || [];
-    if(!allSemanas.length) return;
-    const lastSem = allSemanas[allSemanas.length - 1];
-    document.getElementById("top3-week-label").textContent = lastSem.name;
-
-    const CAT_B2B = {
-      "Avaliacao / Simulados":4, "Avaliação / Simulados":4,
-      "Gestao Administrativa":4, "Gestão Administrativa":4,
-      "Analytics / Personalizacao":3, "Analytics / Personalização":3,
-      "Conteudo Didatico / Autoria":3, "Conteúdo Didático / Autoria":3,
-      "Inclusao / Acessibilidade":3, "Inclusão / Acessibilidade":3,
-      "Plataforma / Integracao":3, "Plataforma / Integração":3,
-      "Criacao de Conteudo":2, "Criação de Conteúdo":2,
-      "IA Pedagogica":2, "IA Pedagógica":2,
-      "Comunicacao":1, "Comunicação":1,
-      "Engajamento Familiar":1,
-    };
-    const PRIO_W = {"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
-    const scored = (lastSem.items||[]).map(item=>({
-      ...item,
-      score: (PRIO_W[item.priority]||1)*2 + (CAT_B2B[item.category]||1)
-    })).sort((a,b)=>b.score-a.score).slice(0,3);
-
-    const MEDALS = ["🥇","🥈","🥉"];
-    document.getElementById("top3-grid").innerHTML = scored.map((item,i)=>{
-      const pc = item.priority==="Muito Alta"?"top3-chip-red":item.priority==="Alta"?"top3-chip-amber":"";
-      const why = item.context ? item.context.slice(0,160)+(item.context.length>160?"…":"") : item.suggestion ? item.suggestion.slice(0,160)+"…" : "Sem contexto registrado.";
+    const allS=data.semanas||[];
+    if(!allS.length) return;
+    const last=allS[allS.length-1];
+    document.getElementById("top3-week-label").textContent=last.name;
+    const CAT_B2B={"Avaliação / Simulados":4,"Avaliacao / Simulados":4,"Gestão Administrativa":4,"Gestao Administrativa":4,"Analytics / Personalização":3,"Analytics / Personalizacao":3,"Conteúdo Didático / Autoria":3,"Conteudo Didatico / Autoria":3,"Inclusão / Acessibilidade":3,"Inclusao / Acessibilidade":3,"Plataforma / Integração":3,"Plataforma / Integracao":3,"Criação de Conteúdo":2,"Criacao de Conteudo":2,"IA Pedagógica":2,"IA Pedagogica":2,"Comunicação":1,"Comunicacao":1,"Engajamento Familiar":1};
+    const PW={"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
+    const scored=(last.items||[]).map(i=>({...i,score:(PW[i.priority]||1)*2+(CAT_B2B[i.category]||1)})).sort((a,b)=>b.score-a.score).slice(0,3);
+    const MEDALS=["🥇","🥈","🥉"];
+    document.getElementById("top3-grid").innerHTML=scored.map((item,i)=>{
+      const pc=item.priority==="Muito Alta"?"top3-chip-red":item.priority==="Alta"?"top3-chip-amber":"";
+      const why=item.context?item.context.slice(0,155)+(item.context.length>155?"…":""):item.suggestion?item.suggestion.slice(0,155)+"…":"";
+      const school=isUnknownSchool(item.school)?"":item.school;
       return `<div class="top3-card">
-        <div class="top3-rank">${MEDALS[i]} #${i+1} &middot; ${item.category}</div>
+        <div class="top3-rank-row"><span class="top3-medal">${MEDALS[i]}</span><span class="top3-cat">#${i+1} · ${item.category}</span></div>
         <div class="top3-title">${item.title}</div>
         <div class="top3-why">${why}</div>
         <div class="top3-chips">
           <span class="top3-chip ${pc}">${item.priority}</span>
-          <span class="top3-chip" style="opacity:.6;">${item.school}</span>
+          ${school?`<span class="top3-chip">${school}</span>`:""}
         </div>
       </div>`;
     }).join("");
   })();
 
-  const escolas = new Set(all.map(i=>i.school).filter(s=>s&&s!=="Escola não identificada"&&s!=="Escola nao identificada"));
-  const muitaAlta = all.filter(i=>i.priority==="Muito Alta").length;
-  const media = (total/semanas.length).toFixed(1);
-
-  const q1s = (data.semanas||[]).filter(s=>{ const n=parseInt((s.name.match(/\d+/)||[0])[0]); return n>=4&&n<=14; });
-  const q2s = (data.semanas||[]).filter(s=>{ const n=parseInt((s.name.match(/\d+/)||[0])[0]); return n>=15; });
-  const q1t = q1s.flatMap(s=>s.items||[]).length;
-  const q2t = q2s.flatMap(s=>s.items||[]).length;
-
-  const prevSemanas = filterSemanas(data.semanas||[]).slice(0,-1);
-  const prevAll = prevSemanas.flatMap(s=>s.items||[]);
-  const prevTotal = prevAll.length;
-  const deltaTotal = prevTotal>0 ? Math.round((total-prevTotal)/prevTotal*100) : null;
-
-  document.getElementById("subtitle").textContent = `${semanas.length} semanas · ${escolas.size} escolas`;
-
-  document.getElementById("kpi-grid").innerHTML = `
-    <div class="kpi-card">
-      <div class="kpi-label">Total de signals</div>
-      <div class="kpi-value">${total}</div>
-      ${deltaTotal!==null?`<div class="kpi-delta ${deltaTotal>=0?'delta-up':'delta-down'}">${deltaTotal>=0?'▲':'▼'} ${Math.abs(deltaTotal)}% vs periodo ant.</div>`:''}
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Escolas unicas</div>
-      <div class="kpi-value">${escolas.size}</div>
-      <div class="kpi-sub">no periodo</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Media/semana</div>
-      <div class="kpi-value">${media}</div>
-      <div class="kpi-sub">sinais por semana</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Muito Alta</div>
-      <div class="kpi-value">${muitaAlta}</div>
-      <div class="kpi-sub">${Math.round(muitaAlta/total*100)}% do total</div>
-    </div>`;
+  // KPIs
+  const escolas=new Set(all.map(i=>i.school).filter(s=>!isUnknownSchool(s)));
+  const muitaAlta=all.filter(i=>i.priority==="Muito Alta").length;
+  const media=(total/semanas.length).toFixed(1);
+  const q1s=(data.semanas||[]).filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
+  const q2s=(data.semanas||[]).filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15;});
+  const q1t=q1s.flatMap(s=>s.items||[]).length;
+  const q2t=q2s.flatMap(s=>s.items||[]).length;
+  document.getElementById("subtitle").textContent=`${semanas.length} semanas · ${escolas.size} escolas`;
+  document.getElementById("kpi-grid").innerHTML=`
+    <div class="kpi-card"><div class="kpi-label">Total de signals</div><div class="kpi-value">${total}</div><div class="kpi-sub">${semanas.length} semanas</div></div>
+    <div class="kpi-card"><div class="kpi-label">Escolas únicas</div><div class="kpi-value">${escolas.size}</div><div class="kpi-sub">no período</div></div>
+    <div class="kpi-card"><div class="kpi-label">Média/semana</div><div class="kpi-value">${media}</div><div class="kpi-sub">sinais por semana</div></div>
+    <div class="kpi-card"><div class="kpi-label">Muito Alta</div><div class="kpi-value">${muitaAlta}</div><div class="kpi-sub">${Math.round(muitaAlta/total*100)}% do total</div></div>`;
 
   // THEME CARDS
-  const catMap = {};
+  const catMap={};
   for(const item of all){
-    const cat = item.category||"Outros";
-    if(!catMap[cat]) catMap[cat] = {count:0, schools:new Set(), prios:{}};
+    const cat=item.category||"Outros";
+    if(!catMap[cat]) catMap[cat]={count:0,schools:new Set(),prios:{},contexts:[]};
     catMap[cat].count++;
-    if(item.school) catMap[cat].schools.add(item.school);
-    catMap[cat].prios[item.priority] = (catMap[cat].prios[item.priority]||0)+1;
+    if(!isUnknownSchool(item.school)) catMap[cat].schools.add(item.school);
+    catMap[cat].prios[item.priority]=(catMap[cat].prios[item.priority]||0)+1;
+    if(item.context&&item.context.trim()) catMap[cat].contexts.push(item.context);
   }
-  const sortedCats = Object.entries(catMap).sort((a,b)=>b[1].count-a[1].count);
-  const top5cats = sortedCats.slice(0,5);
-  const cards = top5cats.map(([cat,d])=>{
-    const topPrios = Object.entries(d.prios).sort((a,b)=>b[1]-a[1]).slice(0,3);
-    const prioChips = topPrios.map(([p,n])=>{
-      const cls = p==="Muito Alta"?"chip-red":p==="Alta"?"chip-amber":"chip-blue";
-      return `<span class="chip ${cls}">${p} ×${n}</span>`;
-    }).join("");
-    const topSchools = [...d.schools].slice(0,3).map(s=>`<span style="font-size:11px;color:var(--text3);">${s}</span>`).join(", ");
+  const sortedCats=Object.entries(catMap).sort((a,b)=>b[1].count-a[1].count);
+  const top5cats=sortedCats.slice(0,5);
+  const cards=top5cats.map(([cat,d])=>{
+    const topPrios=Object.entries(d.prios).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    const prioChips=topPrios.map(([p,n])=>{const cls=p==="Muito Alta"?"chip-red":p==="Alta"?"chip-amber":"chip-blue";return `<span class="chip ${cls}">${p} ×${n}</span>`;}).join("");
+    const color=catColor(cat);
+    // 3 main pains: pick 3 unique short sentences from contexts
+    const pains=[...new Set(d.contexts.map(c=>c.split(/[.!?]/)[0].trim()).filter(s=>s.length>20&&s.length<120))].slice(0,3);
+    const painHtml=pains.length?`<div class="theme-pains">${pains.map(p=>`<div class="theme-pain-item"><div class="theme-pain-dot" style="background:${color};"></div><span>${p}.</span></div>`).join("")}</div>`:"";
     return `<div class="theme-card">
       <div>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
-          <div style="width:8px;height:8px;border-radius:2px;background:${catColor(cat)};flex-shrink:0;"></div>
+          <div style="width:9px;height:9px;border-radius:3px;background:${color};flex-shrink:0;"></div>
           <div class="theme-name">${cat}</div>
         </div>
         <div class="theme-base">${d.schools.size} escola${d.schools.size!==1?"s":""}</div>
       </div>
       <div class="theme-stats">
-        <div class="theme-big">${d.count}</div>
+        <div class="theme-big" style="color:${color};">${d.count}</div>
         <div class="theme-stat-grp">
           <div class="theme-stat-val">${Math.round(d.count/total*100)}%</div>
           <div class="theme-stat-lbl">do total</div>
         </div>
       </div>
       <div class="theme-priorities">${prioChips}</div>
-      <div class="theme-schools">${topSchools}</div>
+      ${painHtml}
     </div>`;
   });
-  cards.push(`<div class="theme-card action-card"><div class="action-icon">+</div><div class="action-lbl">Explorar mais temas</div><div class="action-sub">Role abaixo para ver a distribuicao completa por categoria</div></div>`);
-  document.getElementById("theme-grid").innerHTML = cards.join("");
+  cards.push(`<div class="theme-card action-card"><div class="action-icon">＋</div><div class="action-lbl">Ver mais temas</div><div class="action-sub">Role abaixo para a distribuição completa</div></div>`);
+  document.getElementById("theme-grid").innerHTML=cards.join("");
 
   // WEEK CHART
-  const labels = semanas.map(s=>s.name.replace(/Week\s+/i,"W").replace(/\s*[–-]\s*.*/,""));
-  const counts = semanas.map(s=>(s.items||[]).length);
-  const weekNums = semanas.map(s=>parseInt((s.name.match(/\d+/)||[0])[0]));
-  const bgColors = semanas.map((s,i)=>{
-    if(counts[i]<3) return "#e05c5c";
-    return weekNums[i]<=14 ? "#1a1917" : "#9b9a95";
-  });
-  const wCtx = document.getElementById("weekChart").getContext("2d");
+  const labels=semanas.map(s=>s.name.replace(/Week\s+/i,"W").replace(/\s*[–-]\s*.*/,""));
+  const counts=semanas.map(s=>(s.items||[]).length);
+  const weekNums=semanas.map(s=>parseInt((s.name.match(/\d+/)||[0])[0]));
+  const bgColors=semanas.map((s,i)=>counts[i]<3?"#F87171":weekNums[i]<=14?"#4F6AF5":"#A5B4FC");
+  const wCtx=document.getElementById("weekChart").getContext("2d");
   if(weekCI) weekCI.destroy();
-  weekCI = new Chart(wCtx,{type:"bar",data:{labels,datasets:[{data:counts,backgroundColor:bgColors,borderRadius:4,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9b9a95"},grid:{color:"rgba(0,0,0,0.05)"}},x:{ticks:{font:{size:10},color:"#9b9a95",maxRotation:45},grid:{display:false}}}}});
-
-  // SCHOOLS TABLE
-  const schoolMap = {};
-  for(const item of all){
-    const s = item.school||"Escola nao identificada";
-    if(!schoolMap[s]) schoolMap[s] = {count:0, topPrio:"Média", topCat:item.category};
-    schoolMap[s].count++;
-    const pw = {"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
-    if((pw[item.priority]||1) > (pw[schoolMap[s].topPrio]||1)) schoolMap[s].topPrio = item.priority;
-  }
-  const sortedSchools = Object.entries(schoolMap).sort((a,b)=>b[1].count-a[1].count).slice(0,8);
-  const maxS = sortedSchools[0]?.[1].count||1;
-  document.getElementById("school-tbody").innerHTML = sortedSchools.map(([name,d],i)=>{
-    const prio = d.topPrio;
-    const pc = prio==="Muito Alta"?"chip-red":prio==="Alta"?"chip-amber":"chip-blue";
-    const cat = d.topCat||"";
-    return `<tr><td class="rank-n">${i+1}</td><td><div class="school-name">${name}</div><div class="school-cat">${CATS[cat]?`<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${catColor(cat)};margin-right:4px;vertical-align:middle;"></span>`:""}</div></td><td><span style="font-weight:700">${d.count}</span>&nbsp;<span style="display:inline-block;width:${Math.round(d.count/maxS*48)}px;height:3px;background:${catColor(cat)};border-radius:2px;vertical-align:middle;"></span></td><td><span class="chip ${pc}" style="font-size:10px;">${prio}</span></td></tr>`;
-  }).join("");
+  weekCI=new Chart(wCtx,{type:"bar",data:{labels,datasets:[{data:counts,backgroundColor:bgColors,borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:10},color:"#9AA0B8",maxRotation:45},grid:{display:false}}}}});
 
   // CAT LIST
-  const maxC = sortedCats[0]?.[1].count||1;
-  document.getElementById("cat-list").innerHTML = sortedCats.map(([cat,d])=>`
+  const maxC=sortedCats[0]?.[1].count||1;
+  document.getElementById("cat-list").innerHTML=sortedCats.map(([cat,d])=>`
     <div class="cat-item">
       <div class="cat-dot" style="background:${catColor(cat)}"></div>
       <div class="cat-label">${cat}</div>
@@ -499,74 +438,76 @@ function render(data){
     </div>`).join("");
 
   // Q1 vs Q2
-  document.getElementById("q1val").textContent = q1t;
-  document.getElementById("q1sub").textContent = `${q1s.length} semanas · ${(q1t/Math.max(q1s.length,1)).toFixed(1)}/sem`;
-  document.getElementById("q2val").textContent = q2t;
-  document.getElementById("q2sub").textContent = `${q2s.length} semanas · ${(q2t/Math.max(q2s.length,1)).toFixed(1)}/sem`;
-  const qCtx = document.getElementById("quarterChart").getContext("2d");
+  document.getElementById("q1val").textContent=q1t;
+  document.getElementById("q1sub").textContent=`${q1s.length} sem · ${(q1t/Math.max(q1s.length,1)).toFixed(1)}/sem`;
+  document.getElementById("q2val").textContent=q2t;
+  document.getElementById("q2sub").textContent=`${q2s.length} sem · ${(q2t/Math.max(q2s.length,1)).toFixed(1)}/sem`;
+  const qCtx=document.getElementById("quarterChart").getContext("2d");
   if(qCI) qCI.destroy();
-  qCI = new Chart(qCtx,{type:"bar",data:{labels:["Q1","Q2"],datasets:[{data:[q1t,q2t],backgroundColor:["#1a1917","#9b9a95"],borderRadius:6,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9b9a95"},grid:{color:"rgba(0,0,0,0.05)"}},x:{ticks:{font:{size:12},color:"#6b6a65"},grid:{display:false}}}}});
+  qCI=new Chart(qCtx,{type:"bar",data:{labels:["Q1","Q2"],datasets:[{data:[q1t,q2t],backgroundColor:["#4F6AF5","#A5B4FC"],borderRadius:8,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} signals`}}},scales:{y:{beginAtZero:true,ticks:{font:{size:11},color:"#9AA0B8"},grid:{color:"rgba(79,106,245,0.06)"}},x:{ticks:{font:{size:12},color:"#5A6480"},grid:{display:false}}}}});
 
   // PRIORITY DONUT
-  const prioOrder = ["Muito Alta","Alta","Média-Alta","Média"];
-  const prioData = prioOrder.map(p=>all.filter(i=>i.priority===p||i.priority===p.replace("é","e").replace("í","i")).length);
-  const prioC = prioOrder.map(p=>PRIO_COLORS[p]);
-  const pdCtx = document.getElementById("priorityDonut").getContext("2d");
+  const prioOrder=["Muito Alta","Alta","Média-Alta","Média"];
+  const prioData=prioOrder.map(p=>all.filter(i=>i.priority===p||i.priority===p.replace("é","e").replace("í","i")).length);
+  const prioC=prioOrder.map(p=>PRIO_COLORS[p]);
+  const pdCtx=document.getElementById("priorityDonut").getContext("2d");
   if(pdCI) pdCI.destroy();
-  pdCI = new Chart(pdCtx,{type:"doughnut",data:{labels:prioOrder,datasets:[{data:prioData,backgroundColor:prioC,borderWidth:3,borderColor:"#fff",hoverOffset:3}]},options:{cutout:"65%",plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} (${Math.round(i.raw/total*100)}%)`}}}}});
-  document.getElementById("priority-legend").innerHTML = prioOrder.map((p,i)=>`
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+  pdCI=new Chart(pdCtx,{type:"doughnut",data:{labels:prioOrder,datasets:[{data:prioData,backgroundColor:prioC,borderWidth:3,borderColor:"#fff",hoverOffset:4}]},options:{cutout:"68%",plugins:{legend:{display:false},tooltip:{callbacks:{label:i=>` ${i.raw} (${Math.round(i.raw/total*100)}%)`}}}}});
+  document.getElementById("priority-legend").innerHTML=prioOrder.map((p,i)=>`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
       <div style="width:10px;height:10px;border-radius:3px;background:${prioC[i]};flex-shrink:0;"></div>
       <div style="font-size:13px;flex:1;">${p}</div>
-      <div style="font-size:12px;font-weight:600;color:var(--text2);">${prioData[i]}</div>
-      <div style="font-size:11px;color:var(--text3);width:30px;text-align:right;">${Math.round(prioData[i]/total*100)}%</div>
+      <div style="font-size:12px;font-weight:700;color:var(--text2);">${prioData[i]}</div>
+      <div style="font-size:11px;color:var(--text3);width:32px;text-align:right;">${Math.round(prioData[i]/total*100)}%</div>
     </div>`).join("");
 
-  // PATTERNS
-  const tMap = {};
-  for(const item of all){ const k=item.title.replace(/\s*\(.*/,"").trim().slice(0,60); tMap[k]=(tMap[k]||0)+1; }
-  const tops = Object.entries(tMap).sort((a,b)=>b[1]-a[1]).filter(([,n])=>n>1).slice(0,4);
-  document.getElementById("pattern-row").innerHTML = tops.length
-    ? tops.map(([t,n])=>`<div class="pattern-chip"><div class="pattern-label">${t}</div><div class="pattern-count">${n} evidencias &rsaquo;</div></div>`).join("")
-    : '<div style="color:var(--text3);font-size:13px;">Nenhum padrao recorrente identificado.</div>';
+  // PATTERNS — clickable
+  const tMap={};
+  for(const item of all){const k=item.title.replace(/\s*\(.*/,"").trim().slice(0,60);if(!tMap[k]) tMap[k]=[];tMap[k].push(item);}
+  const tops=Object.entries(tMap).sort((a,b)=>b[1].length-a[1].length).filter(([,items])=>items.length>1).slice(0,4);
+  document.getElementById("pattern-row").innerHTML=tops.length
+    ?tops.map(([t,items])=>`
+      <div class="pattern-chip-wrap">
+        <div class="pattern-chip" onclick="this.nextElementSibling.classList.toggle('open')">
+          <div class="pattern-label">${t}</div>
+          <div class="pattern-count">${items.length} evidências ›</div>
+        </div>
+        <div class="pattern-detail">
+          ${items.map(i=>`<div class="pattern-item"><strong>${i.category}</strong>${!isUnknownSchool(i.school)?" · "+i.school:""} ${i.context?'— '+i.context.slice(0,120)+"…":""}</div>`).join("")}
+        </div>
+      </div>`).join("")
+    :"";
 
-  // SECTION 4 — TOP 5 PAIN CARDS
-  const catGroups = {};
-  for(const item of all){
-    const cat = item.category||"Outros";
-    if(!catGroups[cat]) catGroups[cat] = [];
-    catGroups[cat].push(item);
-  }
-  const top5 = Object.entries(catGroups).sort((a,b)=>b[1].length-a[1].length).slice(0,5);
-  document.getElementById("pain-grid").innerHTML = top5.map(([cat,citems],rank)=>{
-    const ctxTexts = citems.filter(i=>i.context&&i.context.trim()).map(i=>i.context);
-    const sugTexts = citems.filter(i=>i.suggestion&&i.suggestion.trim()).map(i=>i.suggestion);
-    const ctx = ctxTexts.length ? ctxTexts.sort((a,b)=>b.length-a.length)[0] : "Sem contexto registrado.";
-    const sug = sugTexts.length ? sugTexts.sort((a,b)=>b.length-a.length)[0] : "Sem sugestao registrada.";
-    const schools = [...new Set(citems.map(i=>i.school).filter(Boolean))].slice(0,3);
-    const schoolChips = schools.map(s=>`<span style="font-size:11px;background:var(--bg);border:1px solid var(--border2);border-radius:20px;padding:2px 9px;color:var(--text2);">${s}</span>`).join("");
-    const prioCount = {};
+  // SECTION 4 — PAIN CARDS
+  const catGroups={};
+  for(const item of all){const cat=item.category||"Outros";if(!catGroups[cat]) catGroups[cat]=[];catGroups[cat].push(item);}
+  const top5=Object.entries(catGroups).sort((a,b)=>b[1].length-a[1].length).slice(0,5);
+  document.getElementById("pain-grid").innerHTML=top5.map(([cat,citems],rank)=>{
+    const color=catColor(cat);
+    const ctxTexts=citems.filter(i=>i.context&&i.context.trim()).map(i=>i.context);
+    const sugTexts=citems.filter(i=>i.suggestion&&i.suggestion.trim()).map(i=>i.suggestion);
+    const ctx=ctxTexts.length?ctxTexts.sort((a,b)=>b.length-a.length)[0]:"Sem contexto registrado.";
+    const sug=sugTexts.length?sugTexts.sort((a,b)=>b.length-a.length)[0]:"Sem sugestão registrada.";
+    const schools=[...new Set(citems.map(i=>i.school).filter(s=>!isUnknownSchool(s)))].slice(0,3);
+    const schoolChips=schools.map(s=>`<span style="font-size:11px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:3px 10px;color:var(--text2);font-weight:500;">${s}</span>`).join("");
+    const prioCount={};
     citems.forEach(i=>{prioCount[i.priority]=(prioCount[i.priority]||0)+1;});
-    const prioChips = Object.entries(prioCount).sort((a,b)=>b[1]-a[1]).map(([p,n])=>{
-      const cls = p==="Muito Alta"?"chip-red":p==="Alta"?"chip-amber":"chip-blue";
-      return `<span class="chip ${cls}" style="font-size:10px;">${p} \xd7${n}</span>`;
-    }).join("");
-    const color = CATS[cat]||"#9b9a95";
-    const ctxShort = ctx.length>300 ? ctx.slice(0,300)+"…" : ctx;
-    const sugShort = sug.length>300 ? sug.slice(0,300)+"…" : sug;
+    const prioChips=Object.entries(prioCount).sort((a,b)=>b[1]-a[1]).map(([p,n])=>{const cls=p==="Muito Alta"?"chip-red":p==="Alta"?"chip-amber":"chip-blue";return `<span class="chip ${cls}" style="font-size:10px;">${p} ×${n}</span>`;}).join("");
+    const ctxShort=ctx.length>320?ctx.slice(0,320)+"…":ctx;
+    const sugShort=sug.length>320?sug.slice(0,320)+"…":sug;
     return `<div class="pain-card">
       <div class="pain-card-header">
-        <div class="pain-rank" style="color:${color};">${rank+1}</div>
+        <div class="pain-rank-badge" style="background:${color};">${rank+1}</div>
         <div class="pain-title">${cat}</div>
         <div class="pain-count">${citems.length} sinais</div>
       </div>
       <div class="pain-body">
         <div class="pain-col">
-          <div class="pain-col-label">Contexto da dor</div>
+          <div class="pain-col-label" style="color:#EF4444;"><div class="pain-col-label-dot" style="background:#EF4444;"></div>A dor relatada</div>
           <div class="pain-col-text">${ctxShort}</div>
         </div>
         <div class="pain-col">
-          <div class="pain-col-label">Como pode resolver</div>
+          <div class="pain-col-label" style="color:#10B981;"><div class="pain-col-label-dot" style="background:#10B981;"></div>O que as escolas pedem</div>
           <div class="pain-col-text">${sugShort}</div>
         </div>
       </div>
@@ -574,17 +515,17 @@ function render(data){
     </div>`;
   }).join("");
 
-  if(data.updated_at) document.getElementById("updated-tag").textContent = "Atualizado em "+new Date(data.updated_at).toLocaleString("pt-BR");
+  if(data.updated_at) document.getElementById("updated-tag").textContent="Atualizado em "+new Date(data.updated_at).toLocaleString("pt-BR");
 }
 
 async function load(){
   try{
-    const r = await fetch("dados.json?t="+Date.now());
+    const r=await fetch("dados.json?t="+Date.now());
     if(!r.ok) throw new Error("HTTP "+r.status);
-    allData = await r.json();
+    allData=await r.json();
     render(allData);
-  } catch(e){
-    document.getElementById("error-area").innerHTML = `<div class="error-box"><strong>Nao foi possivel carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br><small style="opacity:.7">${e.message}</small></div>`;
+  }catch(e){
+    document.getElementById("error-area").innerHTML=`<div class="error-box"><strong>Não foi possível carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br><small style="opacity:.7">${e.message}</small></div>`;
   }
 }
 load();
