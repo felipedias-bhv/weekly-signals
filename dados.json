@@ -1,0 +1,1431 @@
+{
+  "semanas": [
+    {
+      "name": "Week 04 – 16.01",
+      "items": [
+        {
+          "title": "Aba de Material Didático no perfil do aluno",
+          "school": "Colégio ORION",
+          "priority": "Alta",
+          "category": "Conteúdo Didático / Autoria",
+          "context": "",
+          "suggestion": "é que, ao clicar em um ano (ex: 4º ano), o administrador tenha acesso direto a todas as turmas/classes daquele ano. Isso reduz fricção operacional e melhora a experiência da coordenação. Priorização: Alta"
+        },
+        {
+          "title": "Visão “Aulas Criadas” no Admin + Calendário Compartilhado",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "",
+          "suggestion": "é um calendário que: ●​ Mostre ações que a coordenação precisa organizar ●​ Permita visualizar e acompanhar entregas dos professores Alinha expectativa, prazos e acompanhamento pedagógico. Priorização: Média"
+        }
+      ]
+    },
+    {
+      "name": "Week 05 – 23.01",
+      "items": [
+        {
+          "title": "Visibilidade da Carga Diária do Professor no",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "Quando o mesmo professor leciona mais de uma disciplina para a mesma turma, a escola enfrenta dificuldades para distribuir corretamente as aulas por falta de visibilidade da carga diária do professor.",
+          "suggestion": "Dentro da área de planejamento, permitir definir o número de aulas que um professor ministra por dia para a mesma turma, evitando sobrecarga e conflitos na grade. Por que isso importa ●​ Reduz erros na construção da grade ●​ Reflete restrições reais do contexto escolar ●​ Melhora a eficiência do planejamento antes do início do ano letivo"
+        },
+        {
+          "title": "Simulados Alinhados ao SAEB para Expansão no",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Escolas públicas precisam de ferramentas alinhadas às avaliações oficiais (como o SAEB) para preparar os alunos e acompanhar o desempenho.",
+          "suggestion": "Permitir a criação de simulados no formato do SAEB dentro da plataforma, respeitando toda a estrutura oficial da avaliação. Por que isso importa ●​ Abre oportunidades no setor público (B2G) ●​ Alinha o produto à lógica de avaliação governamental ●​ Posiciona a plataforma como preparada para avaliação, não apenas para conteúdo"
+        },
+        {
+          "title": "Governança da Metodologia Pedagógica (Restrições",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "As escolas têm receio de perder alinhamento com sua proposta pedagógica caso os professores tenham total liberdade para escolher metodologias ao criar materiais com IA. Exemplo Uma escola com abordagem de aprendizagem ativa pode acabar com materiais expositivos se as escolhas metodológicas ficarem totalmente abertas.",
+          "suggestion": "A plataforma deve orientar e restringir as metodologias disponíveis com base na proposta pedagógica definida pela escola. Por que isso importa ●​ Preserva a coerência pedagógica ●​ Reduz atritos internos entre liderança e professores ●​ Aumenta a confiança na adoção de IA"
+        },
+        {
+          "title": "Criação de Conteúdos Multidisciplinares (Seleção de",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "IA Pedagógica",
+          "context": "Escolas com filosofia multidisciplinar não conseguem representar totalmente sua abordagem quando as ferramentas permitem selecionar apenas uma disciplina por vez.",
+          "suggestion": "Permitir a seleção de múltiplas disciplinas ao criar materiais (por exemplo, no Magic Lessons). Por que isso importa ●​ Alinha a ferramenta a currículos interdisciplinares ●​ Aumenta a flexibilidade sem quebrar a estrutura pedagógica"
+        },
+        {
+          "title": "Restrição da Visibilidade de Materiais por Disciplina",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "Os professores precisam acessar materiais de forma organizada, mas o excesso de conteúdos gera ruído e confusão.",
+          "suggestion": "Permitir restringir a visibilidade dos materiais por disciplina (ex.: professor de Português vê apenas materiais de Português), com configuração opcional. Por que isso importa ●​ Reduz sobrecarga cognitiva ●​ Melhora a usabilidade no dia a dia ●​ Apoia modelos de organização por área do conhecimento"
+        },
+        {
+          "title": "Análise de Distratores por Questão nos Resultados",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Os professores/coordenadores conseguem ver a nota final, mas não quais distratores os alunos escolheram em cada questão. Insight Os distratores revelam onde estão as dúvidas e confusões conceituais dos alunos — esse dado é pedagogicamente muito relevante. Por que isso importa ●​ Permite ensino mais diagnóstico ●​ Melhora o feedback pedagógico ●​ Aumenta o valor das avaliações além da nota",
+          "suggestion": ""
+        }
+      ]
+    },
+    {
+      "name": "Week 06 – 30.01",
+      "items": [
+        {
+          "title": "Experiência Nativa de Leitura em Tablets para",
+          "school": "quizzes, palavras",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "A escola destacou que muitas plataformas digitais não conseguem oferecer uma experiência de leitura fluida, semelhante à de um livro, para estudantes que utilizam tablets. Interfaces fragmentadas, navegação instável e dependência de downloads ou ferramentas externas quebram o fluxo de aprendizagem e reduzem o engajamento. Experiências que exigem impressão, download de PDFs ou troca de plataformas comprometem a continuidade pedagógica.",
+          "suggestion": "A experiência ideal do estudante deve se aproximar da fluidez da leitura de um livro físico, potencializada por interações digitais nativas. Do ponto de vista do estudante: ●​ Virada de páginas fluida em tablets, semelhante a livros ou e-readers ●​ Possibilidade de destacar trechos, fazer anotações manuscritas ou digitadas e revisitar essas notas ●​ Realização de atividades interativas (quizzes, palavras-cruzadas, exercícios) diretamente na plata"
+        },
+        {
+          "title": "Dashboards Pedagógicos Adaptados por Segmento",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "Um único modelo de visualização de dados não atende todos os segmentos educacionais. A lógica de gestão e tomada de decisão na Educação Infantil e no Ensino Fundamental I é diferente da do Fundamental II e do Ensino Médio, tornando dashboards genéricos pouco acionáveis.",
+          "suggestion": "Os dashboards devem se adaptar à lógica pedagógica e operacional de cada segmento: ●​ Educação Infantil e Fundamental I: ○​ Visão centrada na turma e no estudante ○​ Dados granulares por aluno ○​ A turma como principal unidade de gestão ●​ Fundamental II e Ensino Médio: ○​ Visão centrada em disciplina e desempenho do professor ○​ Comparação entre turmas ministradas pelo mesmo professor ○​ Análise de alunos apenas após o recorte por professor/turm"
+        },
+        {
+          "title": "Criação Manual de Avaliações (Sem IA no Início do",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Professores desejam iniciar a criação de avaliações sem acionar a IA logo no começo do fluxo.",
+          "suggestion": "Permitir que o professor crie uma prova em branco e vá adicionando questões progressivamente, utilizando filtros como: ●​ Habilidade ●​ Série ●​ Turma ●​ Vestibular"
+        },
+        {
+          "title": "Criação Colaborativa de Simulados",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "As escolas querem que vários professores possam construir um simulado de forma colaborativa, com cada docente responsável por sua disciplina.",
+          "suggestion": "Permitir a criação colaborativa de simulados, onde: ●​ Cada professor desenvolve a parte da sua matéria ●​ O conteúdo é centralizado em um único simulado"
+        },
+        {
+          "title": "Inclusão da Disciplina “Pensamento Computacional”",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "As escolas oferecem Pensamento Computacional como disciplina paga, mas ela ainda não está disponível como opção dentro da plataforma.",
+          "suggestion": "Incluir “Pensamento Computacional” como disciplina disponível para criação de aulas, materiais e atividades."
+        },
+        {
+          "title": "Controle de Acesso a Materiais por Disciplina",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "Professores têm acesso a materiais de disciplinas que não lecionam, o que gera ruído e dificulta a navegação.",
+          "suggestion": "Restringir o acesso aos materiais didáticos com base nas disciplinas que o professor leciona, especialmente na biblioteca de conteúdos."
+        },
+        {
+          "title": "Perfil de Administrador para Redes de Ensino",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Redes de ensino não contam com um perfil de administrador focado na gestão de múltiplas unidades. Complexidades adicionais: ●​ Professores podem lecionar a mesma disciplina em unidades diferentes da mesma rede ●​ Dificuldade de diferenciar turmas de unidades distintas",
+          "suggestion": "Criar um perfil de administrador de rede com: ●​ Dados por unidade e dados consolidados ●​ Acesso granular por escola, série e turma ●​ Comparações entre unidades e turmas ●​ Diferenciação clara de turmas de unidades distintas para professores que atuam em mais de uma unidade"
+        }
+      ]
+    },
+    {
+      "name": "Week 07 – 06.02",
+      "items": [
+        {
+          "title": "Exportação do Calendário Escolar em Formato de",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Além de gerar o calendário dentro da Teachy, as escolas precisam de uma versão visual (imagem) para compartilhar com estudantes e famílias. Hoje, esses calendários são frequentemente: ●​ Impressos e colocados em agendas físicas ●​ Enviados para famílias via WhatsApp A criação dessa versão visual exige retrabalho manual.",
+          "suggestion": "Permitir a exportação do calendário escolar como imagem, facilitando o compartilhamento e reduzindo o esforço manual."
+        },
+        {
+          "title": "Ferramenta para Construção da Grade Horária das",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A construção da grade horária é um processo altamente complexo e manual, envolvendo: ●​ Disponibilidade e carga horária dos professores ●​ Professores que atuam em mais de uma escola ●​ Carga horária por disciplina ●​ Uso de espaços compartilhados (laboratórios, quadras, salas de informática) ●​ Critérios pedagógicos (desempenho dos alunos, duração das aulas, sequências interdisciplinares, continuidade de anos anteriores) Além disso, o processo e",
+          "suggestion": "Disponibilizar uma ferramenta para apoiar a construção da grade horária, permitindo definir horários, alocar professores e considerar restrições operacionais e pedagógicas, reduzindo retrabalho."
+        },
+        {
+          "title": "Criação, Aplicação e Correção de Redações em",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A rede busca uma solução que permita: ●​ Digitalização de redações em grande volume ●​ Associação automática de redações aos alunos ●​ Correção e registro de notas em escala ●​ Consolidação de resultados por turma e escola Limitações atuais dificultam a escalabilidade.",
+          "suggestion": "Desenvolver um fluxo robusto de escaneamento e correção de redações em massa, com identificação automática de alunos e consolidação de notas."
+        },
+        {
+          "title": "Construtor Modular de Simulados (Estrutura por",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola precisa criar um único simulado, dividido por disciplina, com controle total sobre a composição da prova, evitando modelos engessados.",
+          "suggestion": "Desenvolver um construtor modular de simulados que permita estruturar a prova por disciplina, com controle manual da distribuição de questões."
+        },
+        {
+          "title": "Simulado no Formato Vestibular com Randomização",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola deseja simulados que reproduzam fielmente o formato dos vestibulares, garantindo integridade da prova.",
+          "suggestion": "Criar um modelo de simulado alinhado ao vestibular, com: ●​ Estrutura padronizada ●​ Customização controlada ●​ Randomização automática das alternativas por aluno"
+        },
+        {
+          "title": "Simulados Personalizados em Larga Escala",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola já personaliza simulados manualmente e deseja escalar esse processo.",
+          "suggestion": "Desenvolver um fluxo de simulados adaptativos em larga escala, permitindo geração automatizada de provas personalizadas com base no desempenho dos alunos."
+        },
+        {
+          "title": "Funcionalidades de Engajamento Inspiradas em",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Criação de Conteúdo",
+          "context": "As escolas enfrentam dificuldades para engajar estudantes em um contexto dominado por plataformas visuais, rápidas e interativas.",
+          "suggestion": "Criar funcionalidades de engajamento, como: ●​ Vídeos curtos e dinâmicos (microlearning) ●​ Desafios interativos e mini-apps ●​ Um recurso de “stories” educacionais dentro de um ambiente seguro e controlado"
+        },
+        {
+          "title": "Loop Estruturado de Feedback Pedagógico e",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "O feedback pedagógico acontece de forma informal, dificultando acompanhamento e rastreabilidade.",
+          "suggestion": "Aprimorar a experiência da coordenação com: ●​ Filtro do calendário por professor ●​ Observações ligadas a aulas ou sequências ●​ Notificações para professores ●​ Status de acompanhamento (“pendente” / “resolvido”) ●​ Visão clara para a coordenação"
+        },
+        {
+          "title": "Teclados Específicos por Disciplina em Avaliações",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Teclados comuns não atendem bem respostas discursivas em Matemática, Física e Química.",
+          "suggestion": "Implementar teclados contextuais por disciplina, com símbolos, fórmulas e notações científicas."
+        },
+        {
+          "title": "Orquestração de Simulados Gerais da Escola",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A organização de simulados gerais envolve múltiplos atores e ferramentas desconectadas.",
+          "suggestion": "Criar um fluxo centralizado onde: ●​ A coordenação define a data ●​ O evento aparece na agenda dos professores ●​ Cada professor contribui com sua disciplina ●​ A coordenação consolida e gera o simulado final ●​ Haja opções de capa e layout personalizados"
+        },
+        {
+          "title": "Engajamento de Famílias na Educação Infantil",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "Na Educação Infantil, o engajamento depende quase totalmente das famílias, mas o acesso a conteúdos pedagógicos é fragmentado.",
+          "suggestion": "Criar uma experiência voltada às famílias, com: ●​ Vídeos pedagógicos curtos ●​ Músicas educativas originais ●​ Conteúdos alinhados ao desenvolvimento infantil ●​ Um ambiente seguro e curado"
+        },
+        {
+          "title": "Compartilhamento de Fotos e Vídeos da Escola",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "Pais valorizam visibilidade do dia a dia escolar, mas a comunicação é dispersa.",
+          "suggestion": "Permitir o envio de fotos e vídeos de eventos diretamente para o ambiente das famílias, criando um histórico centralizado."
+        },
+        {
+          "title": "Criação de Pictogramas para Acessibilidade e",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A ausência de ferramentas nativas para criação de pictogramas limita a adaptação de materiais para alunos neurodivergentes.",
+          "suggestion": "Permitir a criação de pictogramas com ícones e imagens, apoiando acessibilidade e aprendizagem inclusiva."
+        }
+      ]
+    },
+    {
+      "name": "Week 08 – 13.02",
+      "items": [
+        {
+          "title": "Redação Avaliativa como Objeto Dedicado",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Escolas enfrentam dificuldades para vincular produções escritas em papel a um objeto avaliativo formal dentro da plataforma. O fluxo atual exige criação manual de temas e vinculação individual de redações, o que não escala.",
+          "suggestion": "Criar um objeto específico de “Redação Avaliativa”, permitindo definir tema e critérios previamente, gerar templates com QR code, fazer upload em lote das redações escaneadas e realizar o vínculo automático com alunos e turmas."
+        },
+        {
+          "title": "Fluxo Integrado de Adaptação de Provas (“Adaptar",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Para adaptar uma prova criada dentro da plataforma, é necessário baixar o arquivo e reenviá-lo, gerando fricção e quebra de experiência.",
+          "suggestion": "Implementar um botão direto de “Adaptar Prova” dentro do fluxo de criação, permitindo adaptação imediata e integrada."
+        },
+        {
+          "title": "Diferenciação Visual e Experiencial da Plataforma do",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Criação de Conteúdo",
+          "context": "Não há distinção clara entre o ambiente do aluno e do professor, o que enfraquece a percepção de valor por licença de aluno no modelo B2B.",
+          "suggestion": "Desenvolver uma camada visual e experiencial própria para o aluno, com elementos de progressão estruturada como: ●​ Sistema de XP e níveis ●​ Missões semanais ●​ Conquistas e badges ●​ Linguagem motivacional"
+        },
+        {
+          "title": "Registro Manual de Notas Externas",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Escolas aplicam avaliações fora da Teachy e não conseguem integrar essas notas ao cálculo de médias e boletins.",
+          "suggestion": "Permitir inserção manual de notas externas com integração completa a médias automáticas, regras de peso e boletins."
+        },
+        {
+          "title": "Dashboard Financeiro por Turma (Módulo Admin)",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola não possui dentro da Teachy visibilidade sobre: ●​ Matrículas ativas por turma ●​ Valor médio de mensalidade ●​ Projeção de receita",
+          "suggestion": "Criar um dashboard financeiro no módulo Admin com visão por turma e consolidado geral."
+        },
+        {
+          "title": "Revisão de Posicionamento do Website (Percepção",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "O site comunica uma ferramenta voltada ao professor, e não um sistema institucional completo, enfraquecendo a percepção B2B.",
+          "suggestion": "Revisar linguagem e posicionamento para destacar impacto institucional, liderança e eficiência operacional."
+        },
+        {
+          "title": "Importação de Dados Históricos para Dashboards",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Os dashboards utilizam apenas dados gerados após implementação, limitando análises longitudinais e preditivas.",
+          "suggestion": "Permitir importação de histórico acadêmico para gerar análises mais profundas e preditivas."
+        },
+        {
+          "title": "Terminologia Mais Intuitiva e Pedagógica",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "Termos técnicos como “Directory” geram confusão e não são pedagogicamente intuitivos.",
+          "suggestion": "Revisar a nomenclatura da plataforma para alinhamento com linguagem educacional."
+        },
+        {
+          "title": "Adaptação de Avaliações para Estudantes",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Escolas precisam adaptar avaliações para alunos com TDAH, dislexia, TEA e outros perfis neurodivergentes.",
+          "suggestion": "Desenvolver funcionalidade de “Adaptação de Avaliação” com geração automática de versões diferenciadas com um clique."
+        },
+        {
+          "title": "Configuração de Percentual de Dificuldade nas",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Não é possível definir a distribuição percentual de dificuldade (ex.: 30% fácil, 40% médio, 30% difícil) na criação de provas.",
+          "suggestion": "Permitir configuração da distribuição percentual de dificuldade dentro do fluxo de criação de prova."
+        },
+        {
+          "title": "Critério de Aprovação Baseado em Presença",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Disciplinas como Educação Física e Itinerários são aprovadas por presença, mas o sistema está centrado em nota mínima.",
+          "suggestion": "Permitir configurar disciplinas com aprovação baseada exclusivamente em presença."
+        },
+        {
+          "title": "Importação e Edição de Provas Próprias",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Não é possível importar uma prova existente da escola e editá-la nativamente dentro da Teachy.",
+          "suggestion": "Permitir upload e conversão automática de provas externas em formato totalmente editável na plataforma."
+        }
+      ]
+    },
+    {
+      "name": "Week 09 – 20.02",
+      "items": [
+        {
+          "title": "Perfil de Família (Experiência do Responsável)",
+          "school": "Estratégica",
+          "priority": "Alta",
+          "category": "Engajamento Familiar",
+          "context": "Não existe uma visualização clara do perfil da família/responsável, dificultando a demonstração de como os pais acompanham desempenho, tarefas e comunicação com a escola.",
+          "suggestion": "Criar um perfil dedicado para Famílias, incluindo: ●​ Acesso a boletins e desempenho do aluno ●​ Acompanhamento de tarefas e avaliações ●​ Mensagens diretas com a escola ●​ Comunicados e avisos institucionais"
+        },
+        {
+          "title": "Fluxo Estruturado de Comunicação e Ativação Diária",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Professores podem perder informações importantes como planejamentos pendentes, observações da coordenação, provas próximas ou atividades a corrigir. A plataforma corre o risco de se tornar reativa.",
+          "suggestion": "Desenvolver comunicação proativa via WhatsApp ou e-mail, incluindo: ●​ Resumo diário de aulas prontas vs. pendentes ●​ Notificação quando a coordenação adiciona observações ●​ Lembretes de provas, atividades e correções ●​ Alertas de eventos importantes no calendário"
+        },
+        {
+          "title": "Definição Estruturada da Distribuição de Questões",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "O tipo de questão (objetiva ou discursiva) é definido após a geração da prova, podendo gerar retrabalho.",
+          "suggestion": "Permitir definir no início da criação: ●​ X questões objetivas ●​ Y questões discursivas"
+        },
+        {
+          "title": "Visão Global da Carga de Tarefas do Aluno",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Professores não conseguem visualizar a carga total de tarefas do aluno em todas as disciplinas, gerando risco de sobrecarga e falta de coordenação.",
+          "suggestion": "Criar uma visão consolidada da carga semanal do aluno e alertas de sobrecarga quando limites forem excedidos."
+        },
+        {
+          "title": "Diferenciação Visual no Calendário do Aluno",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "As atividades no calendário não possuem distinção visual clara quanto à origem (professor, recomendação da plataforma ou autoestudo).",
+          "suggestion": "Implementar categorização visual por cores para: ●​ Tarefas atribuídas por professores ●​ Planos de estudo criados pelo aluno ●​ Recomendações geradas pela plataforma"
+        },
+        {
+          "title": "Randomização Inteligente de Questões com",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "Apenas alterar a ordem das questões não impede cola em larga escala. A escola precisa manter equivalência e controle por tópicos.",
+          "suggestion": "Permitir: ●​ Randomização a partir de banco amplo de questões ●​ Definição de blueprint por tema (ex.: 3 álgebra, 2 trigonometria) ●​ Controle de nível de dificuldade ●​ Geração automática de versões equivalentes"
+        },
+        {
+          "title": "Modo de Prova Seguro / Integração com Navegador",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Alunos podem sair da plataforma durante provas digitais, comprometendo a integridade da avaliação.",
+          "suggestion": "Permitir: ●​ Integração com ferramentas como Safe Exam Browser ●​ Modo de prova bloqueado ●​ Forte compatibilidade com iOS"
+        },
+        {
+          "title": "Consolidação de Ferramentas de Secretaria na",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Funções administrativas (declarações, registros acadêmicos, documentos oficiais) estão fragmentadas em sistemas diferentes.",
+          "suggestion": "Permitir: ●​ Emissão de declarações de frequência ●​ Gestão de documentos acadêmicos ●​ Configuração flexível de currículo e regras acadêmicas"
+        }
+      ]
+    },
+    {
+      "name": "Week 10 – 27.02",
+      "items": [
+        {
+          "title": "Educação Infantil | Registro de Aprendizagem e",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "Na Educação Infantil, as famílias valorizam fortemente a visibilidade sobre o desenvolvimento das crianças, especialmente em atividades sensoriais, motoras e dinâmicas de sala que não são capturadas por avaliações tradicionais. Atualmente, essa documentação acontece de forma informal ou fragmentada, o que limita o acompanhamento estruturado da evolução da criança.",
+          "suggestion": "Permitir que professores registrem aprendizados diretamente na interface da família, incluindo fotos das atividades, observações pedagógicas curtas e contextualização do desenvolvimento, criando um canal estruturado e formal entre escola e família."
+        },
+        {
+          "title": "Tarefas Adaptadas | Anexar Histórico do Aluno",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Ao criar atividades adaptadas, a escola gostaria de incorporar relatórios pedagógicos e histórico do aluno para tornar a personalização mais precisa. Atualmente, não há uma forma estruturada de anexar esse material dentro do fluxo de adaptação.",
+          "suggestion": "Adicionar a opção de anexar histórico ou documentos do aluno na ferramenta de tarefas adaptadas, aprofundando a personalização e fortalecendo o posicionamento da Teachy em acessibilidade."
+        },
+        {
+          "title": "Upload de Prova Física com Conversão Editável",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola precisa subir provas já existentes e gerar uma versão digital idêntica e totalmente editável. Hoje, sem preservação adequada de estrutura e formatação, o professor precisa reconstruir manualmente a prova, reduzindo eficiência e adoção.",
+          "suggestion": "Melhorar o processo de upload garantindo preservação de estrutura, formatação e total editabilidade após a conversão."
+        },
+        {
+          "title": "Acesso Offline a Materiais",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "IA Pedagógica",
+          "context": "A dependência total de conexão com internet limita o uso em alguns contextos operacionais. A escola gostaria ao menos de visualizar materiais previamente criados sem conexão.",
+          "suggestion": "Avaliar viabilidade de um modo offline controlado, permitindo acesso seguro a materiais preparados previamente, com limites claros de uso."
+        },
+        {
+          "title": "Filtro de Provas por Instituição (IME, ITA etc.)",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola prepara alunos para instituições altamente competitivas e precisa gerar simulados apenas com questões dessas instituições específicas.",
+          "suggestion": "Implementar tag estruturada por instituição e filtro dedicado na geração de provas."
+        },
+        {
+          "title": "Avaliação Colaborativa Multi-Professor com",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola precisa que múltiplos professores construam uma única avaliação de forma colaborativa e que essa avaliação seja aplicada online. Atualmente, não há um fluxo estruturado que una colaboração e aplicação digital.",
+          "suggestion": "Permitir coautoria de avaliação entre professores de diferentes disciplinas, com aplicação online estruturada."
+        },
+        {
+          "title": "Visão Administrativa de Presença",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Embora a presença seja registrada, não há uma visualização estruturada no ambiente de gestão para monitoramento institucional.",
+          "suggestion": "Criar dashboard de presença no perfil administrativo para análise e acompanhamento institucional."
+        },
+        {
+          "title": "Modelos Padronizados de Provas (Trimestrais /",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola deseja estruturar modelos fixos de prova, definindo número total de questões e distribuição entre objetivas e discursivas, alinhados ao padrão interno.",
+          "suggestion": "Permitir criação e reutilização de templates padronizados com distribuição configurável de questões."
+        },
+        {
+          "title": "Relatórios de Atividade do Professor",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A liderança quer maior visibilidade sobre engajamento docente, criação de aulas e produção de materiais, mas os relatórios atuais não oferecem profundidade suficiente.",
+          "suggestion": "Expandir relatórios com métricas robustas de uso da plataforma e produção pedagógica."
+        },
+        {
+          "title": "Resumos Automáticos com IA (Desempenho e Uso)",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "Gestores precisam analisar múltiplos dados manualmente para entender desempenho e engajamento.",
+          "suggestion": "Gerar resumos automáticos com IA consolidando dados de professores e alunos para apoiar decisões."
+        },
+        {
+          "title": "Monitoramento Socioemocional Diário com",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Gestão Administrativa",
+          "context": "Três escolas solicitaram ferramenta estruturada para registrar comportamento socioemocional diário e consolidar essas informações em relatório formal ao final do período. Hoje, o processo é manual ou fragmentado.",
+          "suggestion": "Desenvolver funcionalidade de registro socioemocional diário com consolidação automática em relatório periódico e visibilidade para famílias."
+        }
+      ]
+    },
+    {
+      "name": "Week 11 – 06.03",
+      "items": [
+        {
+          "title": "Socioemotional Monitoring with Family Visibility",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Schools highlighted the need to systematically track students’ socioemotional development, including behaviors such as participation, collaboration, discipline, and behavioral challenges. Currently, these observations are often recorded informally or through fragmented tools, which limits consistency, long-term monitoring, and structured communication with families. School Suggestion Develop a socioemotional monitoring feature that allows teacher",
+          "suggestion": "Develop a socioemotional monitoring feature that allows teachers to log daily behavioral observations for each student, share these updates with families in a structured way, and automatically consolidate them into a summary report at the end of each academic period."
+        },
+        {
+          "title": "Teacher Availability & Timetable Automation",
+          "school": "Colégio Gênesis",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Organizing teachers’ weekly schedules and constructing the school timetable is a highly complex process that requires balancing multiple variables such as teacher availability, subjects taught, teaching workload, and available teaching periods. Currently, coordinators perform this process manually and must iterate several times until a viable timetable is reached. School Suggestion Develop a scheduling feature that allows coordinators to register",
+          "suggestion": "Develop a scheduling feature that allows coordinators to register teacher availability, teaching periods, subjects, and workload constraints, enabling the platform to automatically assist in generating and organizing the weekly school timetable."
+        },
+        {
+          "title": "Expanded Accessibility Adaptations for Learning",
+          "school": "Colégio Evolução",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Teachers need more advanced accessibility adaptations when preparing materials for neurodivergent students. Current tools focus mostly on text simplification, while real classroom adaptations often require structural and visual changes that help students process information more effectively. Examples include converting text to uppercase, highlighting key concepts, using color-coded information, transforming paragraphs into diagrams or visual stru",
+          "suggestion": "Expand the material adaptation tools to include structural, visual, and instructional transformations that allow teachers to quickly adapt learning materials to different cognitive and accessibility needs."
+        },
+        {
+          "title": "Dedicated Workspace for Pedagogical Advisors",
+          "school": "Colégio MJP",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Pedagogical advisors have a different workflow from teachers and coordinators, focusing on student monitoring, family meetings, and documentation of pedagogical interventions. Currently, many of these tasks are handled manually, including writing meeting minutes, preparing presentations for family meetings, and organizing diagnostic reports. School Suggestion Create a dedicated workspace for pedagogical advisors with tools such as access to diagn",
+          "suggestion": "Create a dedicated workspace for pedagogical advisors with tools such as access to diagnostic student reports, automatic generation of meeting minutes, and AI-assisted creation of presentations for family meetings based on the meeting topic."
+        },
+        {
+          "title": "Assessment Generation Based on Bloom’s",
+          "school": "Adventist School (Director Feedback)",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Current test generation allows teachers to create assessments through prompts and later edit them, but there is no structured way to intentionally design the cognitive distribution of the test from the beginning. This makes it harder to ensure pedagogical balance across cognitive levels. School Suggestion Enhance the assessment generation flow to allow teachers to predefine both the cognitive distribution (based on Bloom’s Taxonomy) and the diffi",
+          "suggestion": "Enhance the assessment generation flow to allow teachers to predefine both the cognitive distribution (based on Bloom’s Taxonomy) and the difficulty ratio (easy, medium, hard). The system would then generate the test respecting this matrix and display a visual heat map showing the distribution of questions across cognitive levels and difficulty."
+        }
+      ]
+    },
+    {
+      "name": "Week 12 – 13.03",
+      "items": [
+        {
+          "title": "Otimização do Layout de Provas para",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola relatou que o layout atual das provas geradas pela plataforma utiliza mais páginas do que o necessário devido ao uso ineficiente do espaço, com espaçamento excessivo entre questões, margens grandes e quebras de página desnecessárias. Para escolas que imprimem provas para centenas de alunos, isso aumenta significativamente os custos de impressão e dificulta a logística de aplicação das avaliações.",
+          "suggestion": "Melhorar a otimização do layout das provas para reduzir o número de páginas impressas, ajustando o espaçamento entre questões e alternativas, evitando quebras de página desnecessárias e criando um possível modo de impressão econômica, com margens e espaçamentos reduzidos."
+        },
+        {
+          "title": "Upload de Provas Corrigidas no Papel",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Muitas escolas ainda aplicam e corrigem provas em papel, mas não possuem uma forma simples de subir essas provas corrigidas e registrar as notas dentro da plataforma. Como consequência, os professores precisam registrar notas em outros sistemas, o que impede a centralização dos dados de avaliação e limita a geração de análises acadêmicas.",
+          "suggestion": "Permitir que professores façam upload das provas corrigidas (PDF ou imagens) e registrem rapidamente as notas dos alunos associadas à avaliação, organizando automaticamente os resultados por turma e permitindo dashboards de análise de desempenho."
+        },
+        {
+          "title": "Geração de Questões com Prompts",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "Os professores esperam uma forma mais intuitiva e flexível de gerar questões utilizando prompts em linguagem natural, semelhante ao uso de ferramentas como ChatGPT. O fluxo atual exige vários passos e filtros, o que reduz a velocidade quando o professor quer gerar novas questões rapidamente.",
+          "suggestion": "Permitir que professores gerem questões diretamente por meio de prompts, como por exemplo: ●​ “Crie uma questão estilo Fuvest sobre genética” ●​ “Gere uma questão difícil de citologia para ensino médio”"
+        },
+        {
+          "title": "Destaque de Texto nas Ferramentas",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola sugeriu permitir que professores destaquem partes do texto com cores, como amarelo, dentro das ferramentas de adaptação de materiais para acessibilidade. Esse tipo de destaque visual ajuda estudantes a identificar informações importantes e melhora a leitura, especialmente para alunos que se beneficiam de pistas visuais.",
+          "suggestion": "Adicionar a possibilidade de aplicar marcação colorida (highlight) em trechos do texto dentro das ferramentas de adaptação de materiais."
+        },
+        {
+          "title": "Criação Colaborativa de Simulados",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola destacou a necessidade de criar simulados de forma colaborativa, onde diferentes professores contribuem com suas partes da prova de acordo com suas disciplinas. Atualmente não existe uma estrutura clara que permita múltiplos professores construírem diferentes partes de uma mesma avaliação.",
+          "suggestion": "Permitir a criação colaborativa de simulados usando usuários compartilhados, onde cada professor possa construir sua seção da prova dentro de uma avaliação unificada."
+        },
+        {
+          "title": "Definição de Prazo para Entrega de",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola solicitou a possibilidade de definir uma data limite para a realização ou entrega de provas, garantindo alinhamento com o calendário acadêmico da instituição.",
+          "suggestion": "Permitir que professores ou administradores definam prazo de entrega ou conclusão no momento da criação da prova."
+        },
+        {
+          "title": "Agendamento de Reuniões Internas da",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Comunicação",
+          "context": "Reuniões internas entre professores, coordenação e equipe pedagógica são normalmente organizadas fora da plataforma, o que fragmenta a comunicação e dificulta manter o fluxo pedagógico centralizado.",
+          "suggestion": "Criar uma funcionalidade de calendário interno para agendamento de reuniões pedagógicas, alinhamentos e acompanhamentos de alunos dentro da plataforma."
+        },
+        {
+          "title": "Contexto Personalizado para IA da",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Analytics / Personalização",
+          "context": "Escolas frequentemente possuem projetos pedagógicos próprios, eventos e temas institucionais. No entanto, a IA da plataforma não possui acesso a essas informações, o que limita sua capacidade de interagir com os alunos sobre temas importantes para a escola.",
+          "suggestion": "Permitir que a escola insira contextos personalizados ou prompts institucionais, permitindo que a IA considere projetos e iniciativas da escola em suas interações com alunos."
+        },
+        {
+          "title": "Micro Vídeo Aulas para Apoio ao",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "Escolas buscam maneiras simples de reforçar conteúdos fora da sala de aula, mas atualmente os professores não possuem um espaço centralizado na plataforma para compartilhar vídeos curtos explicativos.",
+          "suggestion": "Permitir que professores façam upload de micro vídeo aulas diretamente na plataforma para compartilhar com suas turmas."
+        },
+        {
+          "title": "Agendamento de Reuniões entre Pais",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "O agendamento de reuniões entre pais e coordenação ainda acontece por canais informais, como telefone ou mensagens, o que gera atrasos e sobrecarga administrativa.",
+          "suggestion": "Permitir que famílias agendem reuniões com a coordenação diretamente na plataforma, escolhendo horários disponíveis."
+        },
+        {
+          "title": "Templates de Layout para ENEM e",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Escolas destacaram a importância de preparar alunos para exames nacionais como ENEM e vestibulares, mas atualmente é difícil replicar o formato visual dessas provas ao criar simulados.",
+          "suggestion": "Disponibilizar templates oficiais de layout de provas semelhantes ao ENEM e vestibulares para criação de simulados mais realistas."
+        },
+        {
+          "title": "Geração de Provas com IA usando",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Ao gerar provas com IA usando o banco de questões, professores não conseguem definir filtros antes da geração, como tipo de questão ou universidade associada.",
+          "suggestion": "Adicionar uma etapa antes da geração da prova permitindo que professores definam filtros como: ●​ tipo de questão ●​ universidade"
+        },
+        {
+          "title": "Suporte ao Currículo IB (International",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Escolas que seguem o currículo IB possuem estruturas pedagógicas específicas para planejamento, avaliações e materiais, que não estão totalmente contempladas pela estrutura atual da plataforma.",
+          "suggestion": "Desenvolver suporte para o framework International Baccalaureate, incluindo: ●​ estrutura curricular ●​ formatos de planejamento ●​ formatos de avaliação ●​ organização de materiais"
+        },
+        {
+          "title": "Benchmark de Desempenho com",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola destacou a necessidade de comparar o desempenho de seus alunos com médias de exames como ENEM e vestibulares em diferentes estados ou regiões.",
+          "suggestion": "Permitir comparação de desempenho dos alunos com médias externas de exames nacionais, possibilitando análises pedagógicas mais estratégicas."
+        },
+        {
+          "title": "Construção de Grade Horária Escolar",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A construção da grade horária escolar envolve muitas variáveis, como disponibilidade de professores, carga horária de disciplinas e restrições de agenda. Por isso, escolas geralmente utilizam softwares específicos para essa tarefa.",
+          "suggestion": "Explorar a possibilidade de criar uma funcionalidade de construção de grade horária dentro da plataforma, considerando restrições como disponibilidade de professores, carga horária e horários de aula."
+        }
+      ]
+    },
+    {
+      "name": "Week 13 – 20.03",
+      "items": [
+        {
+          "title": "Cabeçalho de Avaliação Totalmente Customizável",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola precisa ter controle total sobre a estrutura do cabeçalho das avaliações, incluindo a definição exata dos campos (labels) que os alunos devem preencher (ex: nome, turma, data, professor, nota, etc.). Atualmente, a plataforma não permite essa customização completa, o que impede o alinhamento com os padrões internos da escola e obriga ajustes manuais fora da plataforma.",
+          "suggestion": "Permitir a customização completa dos cabeçalhos de avaliação, possibilitando que a escola defina e configure todos os campos e labels de acordo com seus padrões internos, garantindo consistência e reduzindo retrabalho manual."
+        },
+        {
+          "title": "Flexibilidade de Layout e Padronização de Provas",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola apontou um desalinhamento relevante entre o layout das provas geradas pela plataforma e seus padrões internos de formatação. Eles já seguem um modelo estruturado e consistente, e o output atual não atende às expectativas em termos de organização visual, espaçamento e estrutura. Isso gera fricção, pois os professores não conseguem utilizar as provas diretamente sem ajustes adicionais.",
+          "suggestion": "Aumentar a flexibilidade do layout e da formatação das provas, permitindo adaptar estrutura, espaçamento e organização visual aos padrões internos da escola. A plataforma deve suportar templates customizáveis alinhados ao modelo de cada instituição."
+        },
+        {
+          "title": "Análise de Lacunas por Múltiplas Habilidades e",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "As escolas querem ir além da análise individual e ter uma visão pedagógica mais ampla das lacunas de aprendizagem por turma e subgrupos. Hoje, a plataforma destaca apenas uma",
+          "suggestion": "Permitir análise de múltiplas habilidades por turma e subgrupos, destacando as principais lacunas e possibilitando a criação de diferentes grupos de intervenção com base nas diversas necessidades de aprendizagem."
+        },
+        {
+          "title": "Acesso Digital aos Materiais da Escola com",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "IA Pedagógica",
+          "context": "As escolas desejam que os alunos tenham acesso aos próprios materiais (como livros e conteúdos) em formato digital dentro da plataforma, com uma experiência mais próxima da leitura física. Hoje, o acesso ao conteúdo é fragmentado e não reproduz o fluxo natural de leitura, o que reduz o engajamento e a continuidade da jornada de aprendizagem.",
+          "suggestion": "Permitir acesso centralizado aos materiais da escola em formato digital, com uma experiência de leitura semelhante à de livros físicos, tornando a jornada do aluno mais fluida e engajadora."
+        }
+      ]
+    },
+    {
+      "name": "Week 14 – 27/03",
+      "items": [
+        {
+          "title": "Acesso Mobile-First para Famílias & Engajamento",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "IA Pedagógica",
+          "context": "A escola destacou que o acesso via navegador não se encaixa na rotina das famílias. Pais e alunos precisam logar, navegar e buscar informações ativamente, o que reduz a frequência de uso e enfraquece o acompanhamento contínuo da jornada do aluno.",
+          "suggestion": "Criar uma experiência mobile-first, sem fricção, alinhada ao uso diário do celular, tornando o acompanhamento pedagógico mais frequente, intuitivo e integrado ao dia a dia."
+        },
+        {
+          "title": "Prontuário Unificado do Aluno (Acadêmico + Atividades + Uso)",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Plataforma / Integração",
+          "context": "As escolas não têm uma visão consolidada do aluno que una desempenho acadêmico, uso da plataforma e atividades realizadas. As informações estão fragmentadas, dificultando o acompanhamento real da evolução da aprendizagem.",
+          "suggestion": "Criar um perfil completo do aluno que centralize notas, histórico de atividades, uso da plataforma e evolução ao longo do tempo em um “prontuário do aluno”."
+        },
+        {
+          "title": "Do Diagnóstico à Ação Pedagógica Automática",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Gestão Administrativa",
+          "context": "As avaliações diagnósticas existem, mas a ação ainda depende do professor. Há um gap entre identificar dificuldades e agir sobre elas.",
+          "suggestion": "Criar fluxos automáticos pós-diagnóstico que identifiquem lacunas e gerem atividades de reforço e trilhas personalizadas sem intervenção manual."
+        },
+        {
+          "title": "Upload, Estruturação e Reuso de Provas Existentes",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "As escolas precisam subir provas prontas e convertê-las em avaliações estruturadas e editáveis dentro da plataforma. Hoje não existe um fluxo fluido para isso.",
+          "suggestion": "Permitir upload com estruturação automática, edição completa e integração ao fluxo padrão de aplicação e correção."
+        },
+        {
+          "title": "Relatórios Longitudinais e Exportáveis",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Os relatórios atuais são focados em avaliações isoladas e não mostram a evolução contínua do aluno.",
+          "suggestion": "Criar relatórios longitudinalmente estruturados e exportáveis que consolidem desempenho, evolução e atividades."
+        },
+        {
+          "title": "Avaliação de Leitura (Fluência e Compreensão)",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Falta uma forma estruturada de avaliar nível de leitura, incluindo fluência e compreensão.",
+          "suggestion": "Criar ferramentas de avaliação de leitura dentro da plataforma."
+        },
+        {
+          "title": "Agendamento de Reuniões com Famílias",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "O agendamento ainda é manual e descentralizado, gerando retrabalho e desorganização.",
+          "suggestion": "Criar um sistema onde famílias visualizam horários disponíveis e agendam diretamente."
+        },
+        {
+          "title": "Contexto Pré-Preenchido para Criação de Conteúdo (Aluno)",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "IA Pedagógica",
+          "context": "Alunos precisam preencher novamente matéria, série e tema ao gerar conteúdos, mesmo já estando dentro de um contexto.",
+          "suggestion": "Preencher automaticamente essas informações com base no contexto atual."
+        },
+        {
+          "title": "Registro Comportamental do Aluno",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "O acompanhamento comportamental é feito fora da plataforma e de forma fragmentada.",
+          "suggestion": "Criar registros diários de comportamento por aluno, com histórico e relatórios automáticos."
+        },
+        {
+          "title": "Engajamento para Fundamental I (Gamificação)",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Criação de Conteúdo",
+          "context": "A plataforma não é suficientemente engajante para alunos mais novos.",
+          "suggestion": "Adicionar elementos interativos e gamificados adaptados para essa faixa etária."
+        },
+        {
+          "title": "Comunicação Pedagógica Interna",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "A comunicação pedagógica acontece fora da plataforma, gerando fragmentação.",
+          "suggestion": "Permitir comunicação diretamente vinculada aos materiais e planejamentos."
+        },
+        {
+          "title": "Vídeos Curtos para Reforço de Aprendizagem",
+          "school": "Escola não identificada",
+          "priority": "Média-Alta",
+          "category": "IA Pedagógica",
+          "context": "Falta uma forma simples de compartilhar explicações rápidas dentro da plataforma.",
+          "suggestion": "Permitir upload e distribuição de vídeos curtos."
+        }
+      ]
+    },
+    {
+      "name": "Week 15 – 03/04",
+      "items": [
+        {
+          "title": "Upload e Estruturação Automática de Provas",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "As escolas querem subir suas próprias provas já existentes diretamente na plataforma, mas hoje os professores são obrigados a recriar as avaliações manualmente, adicionando questão por questão. Esse processo é demorado, gera fricção no fluxo de trabalho e desestimula o uso da plataforma para casos reais de avaliação.",
+          "suggestion": "Permitir o upload de provas completas (PDF ou Word), com conversão automática para um formato estruturado e editável dentro da Teachy, eliminando a necessidade de inserção manual e permitindo uso imediato no fluxo de avaliação."
+        },
+        {
+          "title": "Boletim Consolidado de Todas as Disciplinas",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Os gestores escolares não possuem uma visão unificada e clara do desempenho dos alunos em todas as disciplinas. Hoje, os dados estão fragmentados, dificultando o acompanhamento global e a tomada de decisão de forma eficiente.",
+          "suggestion": "Criar um boletim consolidado que reúna todas as disciplinas em uma única visualização, estruturada e de fácil leitura, permitindo que a gestão acompanhe e analise o desempenho dos alunos de forma rápida e integrada."
+        },
+        {
+          "title": "Criação em Massa de Planos de Desenvolvimento",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A criação dos Planos de Desenvolvimento Individual (PEIs) ainda é um processo altamente manual e individualizado, feito aluno por aluno por professores e coordenação. Isso torna a rotina lenta, pouco escalável e gera inconsistências entre os planos. Esse cenário evidencia uma necessidade maior de eficiência e padronização na construção dos planos de desenvolvimento.",
+          "suggestion": "Permitir a criação em massa de PEIs com base nos dados dos alunos dentro da Teachy, possibilitando a geração de planos estruturados e consistentes em escala, reduzindo o esforço manual."
+        }
+      ]
+    },
+    {
+      "name": "Week 16 – 10/04",
+      "items": [
+        {
+          "title": "Controle do Mural: Ativar/Desativar Respostas por Post",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "As escolas precisam de mais controle sobre a dinâmica de comunicação dentro do mural. Atualmente, todas as postagens seguem o mesmo padrão de interação, sem a opção de controlar se os usuários podem responder ou não. Isso limita a gestão de diferentes tipos de comunicação, como comunicados (via única) versus discussões (via dupla).",
+          "suggestion": "Permitir que administradores ou professores configurem se cada postagem pode receber respostas, possibilitando fluxos de comunicação mais estruturados e intencionais."
+        },
+        {
+          "title": "Rastreamento de Visualização de Mensagens (Confirmação de Leitura",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "As escolas não têm visibilidade sobre se as famílias realmente visualizaram comunicações importantes. Atualmente, muitas famílias alegam não ter recebido ou lido mensagens, e não há como a escola verificar o engajamento ou fazer follow-up de forma eficaz.",
+          "suggestion": "Disponibilizar uma visualização que mostre quais famílias visualizaram cada mensagem, permitindo acompanhar a efetividade da comunicação e garantir maior responsabilização."
+        },
+        {
+          "title": "Diário de Classe Integrado (Planejamento → Execução → Registro)",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Engajamento Familiar",
+          "context": "O diário de classe é uma exigência pedagógica e institucional central, mas atualmente é gerido em sistemas separados (ex: TOTVS) e preenchido manualmente. Isso gera fragmentação e retrabalho, pois planejamento, execução e registro não estão conectados.",
+          "suggestion": "Integrar o diário de classe ao fluxo pedagógico, permitindo que o registro das aulas esteja automaticamente conectado ao que foi planejado e executado, reduzindo duplicidade e garantindo consistência."
+        },
+        {
+          "title": "Geração de Documentos Acadêmicos Oficiais (Histórico Escolar)",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "As escolas precisam acessar documentos acadêmicos oficiais, como o histórico escolar, diretamente na plataforma. Atualmente, essa funcionalidade não está disponível, limitando o papel da Teachy como um sistema completo de gestão acadêmica.",
+          "suggestion": "Permitir a geração e download de documentos acadêmicos oficiais, centralizando processos formais dentro da plataforma."
+        },
+        {
+          "title": "Engajamento do Aluno por Meio de Interatividade e Gamificação",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Criação de Conteúdo",
+          "context": "A plataforma é percebida como muito manual, o que reduz a interação e o engajamento dos alunos, especialmente quando comparada a ferramentas mais dinâmicas já utilizadas pelas escolas.",
+          "suggestion": "Introduzir elementos interativos e gamificados, como jogos educativos, para criar uma experiência de aprendizagem mais dinâmica e envolvente."
+        },
+        {
+          "title": "Avaliações Colaborativas + Layouts Personalizados de Provas",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Avaliação / Simulados",
+          "context": "As escolas enfrentam limitações quando múltiplos professores precisam colaborar na criação de uma mesma prova. Além disso, desejam manter sua identidade visual nas avaliações, o que ainda não é totalmente suportado.",
+          "suggestion": "Permitir a criação colaborativa de avaliações entre professores e possibilitar layouts personalizados com identidade visual da escola."
+        },
+        {
+          "title": "Registro Socioemocional + Personalização do Perfil do Aluno",
+          "school": "Escola não identificada",
+          "priority": "Muito Alta",
+          "category": "Analytics / Personalização",
+          "context": "O acompanhamento socioemocional é atualmente fragmentado e não estruturado, dificultando a geração de relatórios e o apoio ao desenvolvimento dos alunos. Além disso, falta uma forma estruturada de registrar características individuais (ex: neurodivergência) nos perfis dos alunos.",
+          "suggestion": "Desenvolver um sistema de acompanhamento socioemocional integrado a perfis enriquecidos dos alunos, permitindo registros diários, geração de relatórios e personalização do ensino com base em características individuais."
+        },
+        {
+          "title": "Integração de Dados Administrativos (Fluxo da Secretaria)",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Os dados administrativos (acadêmicos e financeiros) estão fragmentados em diferentes sistemas, reduzindo a eficiência e impedindo que a Teachy seja o sistema central das operações escolares.",
+          "suggestion": "Expandir a plataforma para incluir funcionalidades administrativas, como registros acadêmicos e controle financeiro, centralizando os fluxos operacionais."
+        }
+      ]
+    },
+    {
+      "name": "Week 17 – 17/04",
+      "items": [
+        {
+          "title": "Motor de Formatação por Vestibular (UERJ, ENEM,",
+          "school": "Colégio Santo Agostinho — RJ",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Em escolas altamente conteudistas e focadas em vestibular, a principal dor operacional não é criar conteúdo, mas adaptá-lo ao formato exato de cada banca. Os professores dominam o conteúdo, mas têm dificuldade em replicar as especificidades exigidas por cada exame. Foram citados exemplos extremamente detalhados, como regras de pontuação (ex: UERJ usa dois-pontos após o enunciado e não utiliza ponto final nas alternativas, enquanto o ENEM usa ambo",
+          "suggestion": "Desenvolver um motor de formatação que adapte automaticamente questões e avaliações aos padrões exatos de cada vestibular, incluindo regras de pontuação, estrutura e convenções específicas."
+        },
+        {
+          "title": "Simulação Pixel-Perfect de Provas (Fidelidade Visual",
+          "school": "Colégio Santo Agostinho — RJ",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Para escolas focadas em vestibular, não basta que a prova tenha o conteúdo correto — ela precisa ser visualmente idêntica à prova original. Professores pedem simulados “na cara do ENEM” e “igualzinho à FUVEST”, incluindo layout, tipografia, espaçamento e estrutura visual. Qualquer diferença visual compromete a experiência de simulação e impacta negativamente a preparação dos alunos, especialmente no ensino médio. School Suggestion Permitir custom",
+          "suggestion": "Permitir customização completa do layout das avaliações para replicar fielmente o visual das principais bancas de vestibular, garantindo uma experiência realista de prova."
+        },
+        {
+          "title": "Criador de Simulados pelo Aluno (Filtro Granular por",
+          "school": "Colégio Santo Agostinho — RJ",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Os alunos precisam montar seus próprios simulados para trabalhar lacunas específicas ou treinar para provas-alvo. Hoje, essa demanda é atendida por plataformas externas como Superpró e Laplace. O principal problema é a falta de granularidade: classificações baseadas em BNCC são amplas demais e não refletem como alunos e professores realmente estudam — por tópicos específicos (ex: “função do 2º grau”, “fotossíntese”, “Era Vargas”). School Suggesti",
+          "suggestion": "Permitir que os alunos criem simulados personalizados com filtros altamente granulares por tópicos de vestibular, possibilitando um estudo mais direcionado e eficiente."
+        },
+        {
+          "title": "Templates Padronizados de Comunicação com",
+          "school": "Colégio Dom Pedro I",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "As escolas criam mensagens para famílias de forma manual, o que consome tempo e gera inconsistência na comunicação. Isso reduz a eficiência operacional e dificulta a padronização do contato com as famílias. School Suggestion Permitir a criação e reutilização de templates de mensagens (bilhetes), facilitando o envio de comunicações de forma mais rápida e padronizada.",
+          "suggestion": "Permitir a criação e reutilização de templates de mensagens (bilhetes), facilitando o envio de comunicações de forma mais rápida e padronizada."
+        }
+      ]
+    },
+    {
+      "name": "Week 18 – 24/04",
+      "items": [
+        {
+          "title": "Inputs Estruturados para Adaptação",
+          "school": "Usuário recorrente Teachy (Coordenação)",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Ao adaptar atividades para alunos, o fluxo atual não oferece inputs estruturados sobre necessidades específicas (ex: TDAH, dislexia, espectro autista). O professor precisa descrever manualmente sua percepção sobre o aluno, o que aumenta o esforço cognitivo e gera resultados inconsistentes. Como consequência, muitos professores recorrem a ferramentas externas como ChatGPT, onde conseguem estruturar melhor o contexto e obter adaptações mais precisa",
+          "suggestion": "Introduzir opções estruturadas de input para diferentes tipos de necessidade de aprendizagem, combinadas com o contexto do professor, permitindo adaptações mais precisas, consistentes e pedagogicamente intencionais."
+        },
+        {
+          "title": "Comunicação Rica (Áudio, Vídeo e Enquetes)",
+          "school": "Colégio Qi Tijuca",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "As escolas utilizam formatos de comunicação mais dinâmicos, como áudios, vídeos e enquetes, no dia a dia com famílias e comunidade escolar. Essas funcionalidades já fazem parte do fluxo padrão nas ferramentas que utilizam atualmente. Hoje, esses formatos não são plenamente suportados na Teachy, o que gera uma lacuna funcional e pode dificultar a adoção em comparação com as soluções já utilizadas pelas escolas. School Suggestion Expandir as capaci",
+          "suggestion": "Expandir as capacidades de comunicação para incluir envio de áudios, vídeos e criação de enquetes, permitindo uma experiência mais rica, engajadora e alinhada à rotina das escolas."
+        },
+        {
+          "title": "Criador de Campanhas de Matrículas Inteligente",
+          "school": "Colégio Israelita Brasileiro",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Diretores — especialmente em escolas com equipes enxutas — têm dificuldade em manter campanhas de matrículas consistentes e estratégicas. A criação de posts, ideias de vídeos e campanhas promocionais é feita de forma manual e pouco estruturada. Isso dificulta a construção de uma estratégia contínua de captação de alunos e comunicação institucional. School Suggestion Oferecer funcionalidades para apoiar campanhas de matrículas inteligentes, inclui",
+          "suggestion": "Oferecer funcionalidades para apoiar campanhas de matrículas inteligentes, incluindo geração de posts, ideias de vídeos e sugestões de campanhas promocionais, ajudando as escolas a estruturar e escalar suas estratégias de marketing."
+        }
+      ]
+    },
+    {
+      "name": "Week 19 – 01/05",
+      "items": [
+        {
+          "title": "Configuração de Rigor na Correção de Caligrafia em",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola destacou que avaliações manuscritas são corrigidas de forma intencionalmente rigorosa quando a caligrafia do aluno é ilegível. No entanto, durante os fluxos de correção na Teachy, a plataforma tenta inferir palavras pouco legíveis com base no contexto, o que pode acabar aumentando a nota do estudante de maneira indevida. Isso gera um desalinhamento entre a filosofia de avaliação da escola e o comportamento da plataforma, especialmente em",
+          "suggestion": "Introduzir configurações de rigor na correção, permitindo que escolas ou professores definam o nível de tolerância para respostas com caligrafia ilegível durante o processo de correção."
+        }
+      ]
+    },
+    {
+      "name": "Week 21 – 15/05",
+      "items": [
+        {
+          "title": "Atividades Visuais com Maior Intencionalidade",
+          "school": "Instituto da Criança & Teachy",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "As escolas relataram que a criação de atividades visuais para educação infantil ainda exige muito trabalho manual, especialmente na adaptação de imagens e exercícios de tracejado. Hoje, os professores gastam bastante tempo preparando esses materiais manualmente. Além disso, algumas escolas comentaram que atividades genéricas, como ligar os pontos, já não conversam com suas propostas pedagógicas, aumentando a demanda por formatos mais intencionais",
+          "suggestion": "Expandir o suporte para criação de atividades visuais na educação infantil, incluindo maior flexibilidade na adaptação de imagens e formatos de atividades com mais intencionalidade pedagógica, indo além de exercícios genéricos de tracejado."
+        },
+        {
+          "title": "Criação de Conteúdo de Educação Financeira dentro",
+          "school": "Colégio NESFA",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "As escolas demonstraram crescente interesse em construir seus próprios programas de educação financeira e materiais pedagógicos personalizados dentro do Teachy Studio. Elas buscam flexibilidade para estruturar conteúdos alinhados à própria metodologia, utilizando livros físicos apenas como complemento. Hoje, ainda falta mais suporte e estrutura para que escolas consigam desenvolver programas completos de educação financeira dentro da plataforma. ",
+          "suggestion": "Expandir o suporte para criação de conteúdos de educação financeira dentro do Teachy Studio, permitindo que as escolas construam, organizem e personalizem suas próprias jornadas pedagógicas."
+        },
+        {
+          "title": "Geração de Documentos Acadêmicos e",
+          "school": "Instituto da Criança",
+          "priority": "Muito Alta",
+          "category": "Gestão Administrativa",
+          "context": "As escolas ainda dependem de sistemas externos e processos manuais para gerar documentos oficiais, como declaração de frequência, declaração de transferência, histórico escolar e boletins imprimíveis. Isso limita a capacidade da Teachy de atuar como uma plataforma completa de gestão pedagógica e administrativa. School Suggestion Permitir a geração nativa de documentos acadêmicos e administrativos oficiais dentro da Teachy, centralizando esses flu",
+          "suggestion": "Permitir a geração nativa de documentos acadêmicos e administrativos oficiais dentro da Teachy, centralizando esses fluxos na plataforma."
+        },
+        {
+          "title": "Marketplace Integrado ao Ecossistema Escolar",
+          "school": "Colégio Apogeu",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola comentou que sua plataforma atual de comunicação possui um marketplace integrado utilizado para venda de materiais e outros produtos relacionados à escola. Segundo eles, essa funcionalidade se tornou uma parte importante da operação e do ecossistema escolar. Atualmente, a Teachy não possui um ambiente nativo de marketplace conectado à experiência de comunicação. School Suggestion Explorar a criação de um marketplace dentro da plataforma,",
+          "suggestion": "Explorar a criação de um marketplace dentro da plataforma, permitindo que as escolas ofereçam e gerenciem a venda de materiais e outros produtos diretamente no ecossistema da Teachy."
+        }
+      ]
+    },
+    {
+      "name": "Week 22 – 22/05",
+      "items": [
+        {
+          "title": "Visibilidade da Rotina Escolar para as Famílias",
+          "school": "School Administrator",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Muitas famílias acompanham a vida escolar apenas por comunicados pontuais ou reuniões, o que gera baixa visibilidade sobre a rotina diária dos estudantes. As escolas acabam centralizando a comunicação em canais desconectados, reduzindo o engajamento contínuo entre família e escola. School Suggestion Criar um ambiente para famílias conectado à rotina do estudante, incluindo calendário integrado, horários e visibilidade pedagógica do dia a dia esco",
+          "suggestion": "Criar um ambiente para famílias conectado à rotina do estudante, incluindo calendário integrado, horários e visibilidade pedagógica do dia a dia escolar."
+        },
+        {
+          "title": "Integração com TOTVS + Sincronização de Histórico",
+          "school": "Colégio Gabarito",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola ainda depende do TOTVS para gerenciar notas, presença e históricos acadêmicos, pois grande parte dos dados históricos dos alunos permanece armazenada lá. Sem sincronização ou migração dessas informações, a Teachy não consegue substituir totalmente o sistema de gestão atual da escola. School Suggestion Permitir integração com TOTVS para sincronização de notas, presença e histórico escolar, além da migração de dados acadêmicos históricos p",
+          "suggestion": "Permitir integração com TOTVS para sincronização de notas, presença e histórico escolar, além da migração de dados acadêmicos históricos para dentro da Teachy."
+        },
+        {
+          "title": "Relatórios Totalmente Personalizáveis para Berçário",
+          "school": "Colégio Navegantes",
+          "priority": "Muito Alta",
+          "category": "Analytics / Personalização",
+          "context": "A escola precisa de um fluxo altamente personalizável de acompanhamento diário para berçário e educação infantil. Os professores registram rotinas e observações relacionadas a alimentação, sono, higiene e comportamento dos alunos. Hoje, a Teachy não possui um modelo estruturado e flexível adaptado à realidade operacional desse segmento. School Suggestion Permitir relatórios totalmente personalizáveis de acompanhamento diário, possibilitando que c",
+          "suggestion": "Permitir relatórios totalmente personalizáveis de acompanhamento diário, possibilitando que cada escola organize rotinas, observações e registros conforme seu próprio fluxo de trabalho."
+        },
+        {
+          "title": "Tendências de Aptidão Universitária com Base em",
+          "school": "Colégio Elo",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "A escola demonstrou interesse em transformar dados pedagógicos em insights preditivos sobre possíveis caminhos acadêmicos futuros dos alunos. O objetivo é identificar afinidades com áreas universitárias e profissionais a partir de padrões de aprendizagem e desempenho escolar. Hoje, os dados pedagógicos ainda não são traduzidos em orientações futuras para os estudantes. School Suggestion Explorar análises de tendências de aptidão universitária uti",
+          "suggestion": "Explorar análises de tendências de aptidão universitária utilizando indicadores pedagógicos para ajudar escolas a identificar possíveis caminhos acadêmicos futuros dos alunos."
+        },
+        {
+          "title": "Ecossistema Integrado para Fluxos Pedagógicos e",
+          "school": "Colégio CEMI",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "A escola buscava uma experiência mais integrada entre processos pedagógicos, avaliações, acompanhamento de resultados e comunicação entre famílias, professores e alunos. As soluções anteriores ainda geravam fragmentação e pouca visibilidade sobre a rotina pedagógica dos estudantes, especialmente no acompanhamento de alunos neurodivergentes. School Suggestion Continuar fortalecendo o posicionamento da Teachy como ecossistema integrado, especialmen",
+          "suggestion": "Continuar fortalecendo o posicionamento da Teachy como ecossistema integrado, especialmente em torno do engajamento familiar e dos fluxos de PDI para alunos neurodivergentes."
+        },
+        {
+          "title": "Centralização da Produção de Conteúdo e Redução",
+          "school": "Colégio Desafio de Osasco",
+          "priority": "Muito Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola produz conteúdos próprios e utiliza múltiplas plataformas e fornecedores para diferentes segmentos de ensino, gerando alta complexidade operacional e custos elevados com LMS, gráficas e soluções complementares. School Suggestion Posicionar o Teachy Studio como um ecossistema centralizado para criação, gestão e distribuição de conteúdo pedagógico, reduzindo a fragmentação operacional.",
+          "suggestion": "Posicionar o Teachy Studio como um ecossistema centralizado para criação, gestão e distribuição de conteúdo pedagógico, reduzindo a fragmentação operacional."
+        },
+        {
+          "title": "Fluxo de Documentação Acadêmica e Centralização",
+          "school": "Colégio Gabarito de Itumbiara",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Documentos acadêmicos, como certificados e históricos escolares, ainda exigem processos manuais, revisões constantes e organização fragmentada das informações dos alunos. Isso aumenta a carga operacional e gera riscos de inconsistência documental. School Suggestion Estruturar fluxos de documentação acadêmica dentro da Teachy, conectados ao histórico pedagógico construído ao longo do ano letivo.",
+          "suggestion": "Estruturar fluxos de documentação acadêmica dentro da Teachy, conectados ao histórico pedagógico construído ao longo do ano letivo."
+        },
+        {
+          "title": "Layout Personalizável e Compartilhamento de",
+          "school": "PNR",
+          "priority": "Alta",
+          "category": "Analytics / Personalização",
+          "context": "A escola ainda realiza manualmente a geração e o compartilhamento de boletins por falta de flexibilidade nos layouts e nos fluxos de distribuição. Isso reduz a eficiência operacional e limita o valor percebido da funcionalidade. School Suggestion Permitir que as escolas personalizem, baixem e compartilhem boletins facilmente com alunos e famílias.",
+          "suggestion": "Permitir que as escolas personalizem, baixem e compartilhem boletins facilmente com alunos e famílias."
+        },
+        {
+          "title": "Visualização Organizada de Histórico Escolar",
+          "school": "PNR",
+          "priority": "Muito Alta",
+          "category": "Gestão Administrativa",
+          "context": "A plataforma atual da escola armazena históricos escolares, mas possui visualização confusa e difícil organização entre múltiplos anos e disciplinas, especialmente para alunos com longa trajetória escolar. School Suggestion Criar uma visualização mais clara e organizada do histórico escolar, permitindo gerar e baixar todo o histórico acadêmico do aluno em um único fluxo.",
+          "suggestion": "Criar uma visualização mais clara e organizada do histórico escolar, permitindo gerar e baixar todo o histórico acadêmico do aluno em um único fluxo."
+        },
+        {
+          "title": "Gestão Financeira Centralizada sem Dependência",
+          "school": "Jean Piaget Angra",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola gerencia internamente suas operações financeiras e não vê valor em utilizar garantidoras devido à baixa inadimplência. Porém, ainda precisa centralizar boletos, lembretes de pagamento, acompanhamento financeiro e comunicação com famílias. School Suggestion Criar uma solução financeira centralizada dentro da Teachy para gestão de boletos, cobranças, lembretes e acompanhamento de pagamentos.",
+          "suggestion": "Criar uma solução financeira centralizada dentro da Teachy para gestão de boletos, cobranças, lembretes e acompanhamento de pagamentos."
+        },
+        {
+          "title": "Diário de Classe Personalizável",
+          "school": "Colégio NESFA",
+          "priority": "Muito Alta",
+          "category": "Analytics / Personalização",
+          "context": "Os professores ainda utilizam planilhas e fluxos desconectados para gerenciar diários de classe. As escolas precisam registrar presença, resumo de aula, dificuldades de aprendizagem, ocorrências socioemocionais e status de conclusão das aulas. Além disso, cada escola possui uma estrutura diferente para esse processo, tornando a flexibilidade essencial. School Suggestion Criar um diário de classe personalizável que permita às escolas definirem sua",
+          "suggestion": "Criar um diário de classe personalizável que permita às escolas definirem sua própria estrutura e centralizarem registros pedagógicos, comportamentais e socioemocionais em um único ambiente."
+        },
+        {
+          "title": "Ferramenta de Criação de Grade Horária +",
+          "school": "Colégio Conexão Campo Mourão Paraná",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola enxerga a criação de grade horária como um grande gargalo operacional e acredita que a automação reduziria significativamente o trabalho administrativo. Além disso, operar em múltiplas unidades aumenta a necessidade de integrações com sistemas externos para centralização da operação. School Suggestion",
+          "suggestion": "Priorizar a comunicação e evolução do roadmap de criação de grade horária e avaliar integrações para escolas multiunidades."
+        },
+        {
+          "title": "Materiais Flexíveis para Escolas Confessionais",
+          "school": "Colégio Ágape João Pessoa-PB",
+          "priority": "Muito Alta",
+          "category": "Conteúdo Didático / Autoria",
+          "context": "A escola enfrenta dificuldades para encontrar materiais didáticos que conciliem alto desempenho acadêmico com identidade cristã confessional. Atualmente, utiliza múltiplas soluções externas, aumentando custos e complexidade operacional. School Suggestion Posicionar a Teachy como uma plataforma flexível de criação de materiais personalizados para escolas confessionais, consolidando diferentes programas educacionais em um único ecossistema.",
+          "suggestion": "Posicionar a Teachy como uma plataforma flexível de criação de materiais personalizados para escolas confessionais, consolidando diferentes programas educacionais em um único ecossistema."
+        },
+        {
+          "title": "Controle de Acesso por Segmento + Implementação",
+          "school": "Colégio Saber Viver de Recife",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola demonstrou preocupação com a possibilidade de professores utilizarem o Teachy Studio em segmentos não contratados, percebendo fragilidade no modelo comercial atual. Também houve preocupação com o prazo de implementação, especialmente em estruturas grandes que precisam organizar produção de materiais, logística gráfica e planejamento acadêmico. School Suggestion Avaliar mecanismos de controle de acesso por segmento e fortalecer processos ",
+          "suggestion": "Avaliar mecanismos de controle de acesso por segmento e fortalecer processos de onboarding e implementação para escolas de grande porte."
+        },
+        {
+          "title": "Flexibilidade na Criação de Materiais Didáticos",
+          "school": "Colégio Polis",
+          "priority": "Alta",
+          "category": "Conteúdo Didático / Autoria",
+          "context": "A escola relatou que a maior parte dos materiais didáticos disponíveis no Brasil é rígida e difícil de adaptar à sua abordagem pedagógica e confessional. Por isso, enfrenta desafios operacionais para manter materiais próprios personalizados. School Suggestion Oferecer uma plataforma unificada que permita criar, adaptar e gerenciar materiais didáticos com maior flexibilidade para diferentes abordagens pedagógicas.",
+          "suggestion": "Oferecer uma plataforma unificada que permita criar, adaptar e gerenciar materiais didáticos com maior flexibilidade para diferentes abordagens pedagógicas."
+        }
+      ]
+    },
+    {
+      "name": "Week 23 – 29/05",
+      "items": [
+        {
+          "title": "Plataforma Unificada + Visão de Responsável no",
+          "school": "Colégio Antônio Cruz, Paramirim-BA",
+          "priority": "Alta",
+          "category": "Engajamento Familiar",
+          "context": "A direção demonstrou preocupação em evitar múltiplas ferramentas desconectadas e busca uma solução centralizada que também contemple gestão financeira dentro da mesma plataforma. Outro ponto importante foi a dificuldade das escolas visualizarem, durante demonstrações, como as famílias recebem comunicados, atualizações e informações dos estudantes. School Suggestion Fortalecer o posicionamento da Teachy como solução all-in-one e disponibilizar uma",
+          "suggestion": "Fortalecer o posicionamento da Teachy como solução all-in-one e disponibilizar uma visão simulada de responsável no ambiente demo, permitindo que escolas entendam a experiência da família em tempo real."
+        },
+        {
+          "title": "Templates de Ocorrências com Notificação para",
+          "school": "Escola Menino Jesus",
+          "priority": "Alta",
+          "category": "Comunicação",
+          "context": "A escola deseja simplificar o envio de ocorrências para famílias através de modelos prontos de comunicação. Atualmente, esse processo exige escrita manual e reduz agilidade operacional. Além disso, a escola considera essencial que os responsáveis recebam notificações quando uma ocorrência for enviada. School Suggestion Criar templates prontos de ocorrências com envio direto para famílias e notificação automática de recebimento.",
+          "suggestion": "Criar templates prontos de ocorrências com envio direto para famílias e notificação automática de recebimento."
+        },
+        {
+          "title": "Diário de Classe para Famílias",
+          "school": "Escola Menino Jesus",
+          "priority": "Muito Alta",
+          "category": "Engajamento Familiar",
+          "context": "A escola realiza diariamente o envio de resumos sobre atividades realizadas em aula e tarefas dos estudantes para manter as famílias próximas da rotina escolar. Hoje, esse fluxo acontece fora de um ambiente estruturado. School Suggestion Criar um diário de classe para famílias, permitindo compartilhar atividades, resumos e tarefas do dia diretamente pela plataforma.",
+          "suggestion": "Criar um diário de classe para famílias, permitindo compartilhar atividades, resumos e tarefas do dia diretamente pela plataforma."
+        },
+        {
+          "title": "Controle de Permissões de Dados para Famílias",
+          "school": "Colégio Gerar",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola demonstrou preocupação com a disponibilização excessiva de informações no ambiente digital das famílias. Existe receio de que pais deixem de frequentar presencialmente a escola caso todos os dados estejam disponíveis online. School Suggestion Criar controles de permissão para o perfil da família, permitindo que a escola escolha quais dados podem ser exibidos ou ocultados.",
+          "suggestion": "Criar controles de permissão para o perfil da família, permitindo que a escola escolha quais dados podem ser exibidos ou ocultados."
+        },
+        {
+          "title": "Materiais Paradidáticos, Socioemocionais e",
+          "school": "Rede Genoma",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A rede demonstrou forte interesse em materiais paradidáticos, socioemocionais e de educação financeira, solicitando exemplos concretos antes de avançar no processo comercial. Foi identificado que essa demanda é recorrente em diferentes escolas. School Suggestion",
+          "suggestion": "Priorizar a criação de materiais demonstrativos nessas categorias para apoiar processos comerciais e acelerar avaliações pedagógicas das escolas."
+        },
+        {
+          "title": "Assistente Pedagógico com IA e Transparência de",
+          "school": "Recurring Need Observed in Schools",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Professores ainda constroem planejamentos, avaliações e materiais de forma manual, utilizando documentos separados e pesquisas fragmentadas. Isso gera retrabalho, baixa padronização e dificuldades de adaptação contínua. Outro ponto relevante é a preocupação das escolas sobre transparência no uso de IA e preservação da autoria pedagógica dos professores. School Suggestion Estruturar um fluxo de assistente pedagógico com IA que permita criação, ada",
+          "suggestion": "Estruturar um fluxo de assistente pedagógico com IA que permita criação, adaptação e refinamento iterativo de materiais, mantendo clareza sobre o que foi gerado ou apenas assistido pela inteligência artificial."
+        },
+        {
+          "title": "Materiais Confessionais Cristãos Personalizados",
+          "school": "Colégio Batista Rio Pretense",
+          "priority": "Alta",
+          "category": "Analytics / Personalização",
+          "context": "A escola utiliza soluções de grandes grupos educacionais, mas não encontra materiais alinhados a uma proposta cristã e batista mais específica. Existe demanda por conteúdos mais personalizados e aderentes à identidade religiosa da instituição. School Suggestion Fortalecer funcionalidades de criação de materiais personalizados alinhados a identidades pedagógicas e religiosas específicas.",
+          "suggestion": "Fortalecer funcionalidades de criação de materiais personalizados alinhados a identidades pedagógicas e religiosas específicas."
+        },
+        {
+          "title": "Replace de Sistemas Tradicionais com Teachy Studio",
+          "school": "Colégio Bora Passar",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola avalia substituir sistemas tradicionais como Bernoulli em múltiplos segmentos utilizando Teachy Studio. As principais preocupações envolvem curadoria pedagógica, alinhamento curricular, flexibilidade de edição e confiança na qualidade do conteúdo gerado. Também surgiram demandas relacionadas a edição em massa, upload de mídias próprias, modularização de conteúdos e personalização avançada dos fluxos de criação. School Suggestion Continua",
+          "suggestion": "Continuar reforçando curadoria pedagógica, robustez acadêmica e capacidades avançadas de edição e personalização dentro do Teachy Studio."
+        },
+        {
+          "title": "Escalabilidade de Avaliações e Adaptações para",
+          "school": "Positivo School Network",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A rede demonstrou necessidade de maior flexibilidade em avaliações, incluindo formatos além de múltipla escolha, padronização visual entre escolas e redução de trabalho manual no processo de montagem de provas. Outro ponto crítico foi a repetição operacional na adaptação de avaliações para alunos neurodivergentes, já que professores precisam reexplicar necessidades específicas em cada nova atividade. School Suggestion Criar fluxos mais escaláveis",
+          "suggestion": "Criar fluxos mais escaláveis para avaliações em grandes redes escolares, incluindo padronização visual, formatos flexíveis de prova e reaproveitamento contínuo de adaptações pedagógicas para alunos neurodivergentes."
+        },
+        {
+          "title": "Posicionamento Acadêmico Forte para Ensino",
+          "school": "Colégio Ágape - CE",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola demonstrou interesse na flexibilidade do Teachy Studio, mas levantou dúvidas sobre competitividade acadêmica no Ensino Médio frente a sistemas altamente focados em performance, como SAS, Anglo e Bernoulli. Também houve interesse em diferentes abordagens pedagógicas e maior visibilidade sobre matriz curricular e estrutura acadêmica dos materiais. School Suggestion Fortalecer o posicionamento acadêmico do Ensino Médio dentro da Teachy, ref",
+          "suggestion": "Fortalecer o posicionamento acadêmico do Ensino Médio dentro da Teachy, reforçando pilares pedagógicos, estrutura curricular e robustez de conteúdo orientado à performance acadêmica."
+        },
+        {
+          "title": "Programa de Embaixadores e Escolas Referência",
+          "school": "Colégio Bora Passar",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A mantenedora demonstrou interesse em atuar como parceira estratégica da Teachy, compartilhando cases, feedbacks, oportunidades de melhoria e representando a marca em eventos e conversas com outras escolas. Hoje, não existe uma estrutura clara para transformar escolas altamente engajadas em contas referência da plataforma. School Suggestion Estruturar um programa de embaixadores ou parceiros estratégicos para escolas altamente engajadas, utilizan",
+          "suggestion": "Estruturar um programa de embaixadores ou parceiros estratégicos para escolas altamente engajadas, utilizando essas instituições como referência comercial, validação de produto e influência peer-to-peer no processo de vendas."
+        }
+      ]
+    },
+    {
+      "name": "Week 24 – 05/06",
+      "items": [
+        {
+          "title": "Adaptação de PDFs para Alunos Neurodivergentes",
+          "school": "Coeducar",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola gostaria de subir PDFs específicos, como capítulos dos materiais didáticos adotados, e adaptá-los diretamente dentro da Teachy. As adaptações atuais não atendem alunos com perfis neurodivergentes mais específicos, fazendo com que muitos deixem de utilizar o material adotado pela escola. School Suggestion Permitir o upload de PDFs e a geração de adaptações pedagógicas e de acessibilidade personalizadas para diferentes perfis neurodivergen",
+          "suggestion": "Permitir o upload de PDFs e a geração de adaptações pedagógicas e de acessibilidade personalizadas para diferentes perfis neurodivergentes."
+        },
+        {
+          "title": "Plataforma Acadêmica e Administrativa Unificada",
+          "school": "Colégio Éden Gabriele – Salvador/BA",
+          "priority": "Muito Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola deseja centralizar processos acadêmicos e administrativos em uma única plataforma. As famílias reclamam frequentemente da necessidade de utilizar vários sistemas e aplicativos diferentes para acessar informações escolares. School Suggestion Expandir a Teachy para contemplar secretaria escolar, documentos acadêmicos, certificados, diplomas, boletins, acompanhamento escolar e comunicação com famílias em um único ambiente.",
+          "suggestion": "Expandir a Teachy para contemplar secretaria escolar, documentos acadêmicos, certificados, diplomas, boletins, acompanhamento escolar e comunicação com famílias em um único ambiente."
+        },
+        {
+          "title": "Rastreamento de Referências dos Livros Didáticos",
+          "school": "School Leadership Team",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Coordenadores possuem pouca visibilidade sobre quais páginas e conteúdos dos livros didáticos estão sendo efetivamente utilizados em sala de aula. As famílias também não sabem quais conteúdos devem revisar em casa para apoiar os estudantes. School Suggestion Permitir que professores associem páginas e referências dos livros didáticos às aulas, atividades e avaliações, tornando essas informações visíveis para coordenação e famílias.",
+          "suggestion": "Permitir que professores associem páginas e referências dos livros didáticos às aulas, atividades e avaliações, tornando essas informações visíveis para coordenação e famílias."
+        },
+        {
+          "title": "Vídeos de Recuperação Gerados por IA para",
+          "school": "School",
+          "priority": "Muito Alta",
+          "category": "IA Pedagógica",
+          "context": "Planos de recuperação baseados apenas em leitura e exercícios nem sempre são suficientes. Muitos alunos precisam de explicações guiadas para compreender conceitos específicos e superar dificuldades de aprendizagem. School Suggestion Gerar vídeos personalizados de recuperação focados nas lacunas específicas de cada estudante, utilizando IA, avatares ou personagens alinhados à identidade da escola.",
+          "suggestion": "Gerar vídeos personalizados de recuperação focados nas lacunas específicas de cada estudante, utilizando IA, avatares ou personagens alinhados à identidade da escola."
+        },
+        {
+          "title": "Criação de Projetos Interdisciplinares com IA",
+          "school": "Escola Americana",
+          "priority": "Alta",
+          "category": "IA Pedagógica",
+          "context": "A escola deseja criar projetos interdisciplinares com mais facilidade, conectando diferentes disciplinas e professores em experiências de aprendizagem integradas. School Suggestion Utilizar IA para apoiar a construção colaborativa de projetos interdisciplinares, incluindo planejamento, geração de atividades e estruturas compartilhadas entre professores.",
+          "suggestion": "Utilizar IA para apoiar a construção colaborativa de projetos interdisciplinares, incluindo planejamento, geração de atividades e estruturas compartilhadas entre professores."
+        },
+        {
+          "title": "Análise Automática de Planejamentos entre",
+          "school": "Escola Americana",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Os professores trabalham de forma isolada e possuem pouca visibilidade sobre os conteúdos trabalhados por colegas de outras disciplinas, dificultando a colaboração interdisciplinar. School Suggestion Permitir que a IA da Teachy analise planejamentos de diferentes disciplinas, identifique temas e habilidades em comum e sugira automaticamente oportunidades de integração.",
+          "suggestion": "Permitir que a IA da Teachy analise planejamentos de diferentes disciplinas, identifique temas e habilidades em comum e sugira automaticamente oportunidades de integração."
+        },
+        {
+          "title": "Geração de Questões Estilo ENEM a partir de",
+          "school": "Fernando Beltrão",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Os professores precisam de uma forma mais rápida de criar questões no estilo ENEM alinhadas aos materiais e conteúdos já utilizados em sala de aula. School Suggestion Permitir que a IA da Teachy gere automaticamente questões no formato ENEM a partir de materiais enviados pelos professores.",
+          "suggestion": "Permitir que a IA da Teachy gere automaticamente questões no formato ENEM a partir de materiais enviados pelos professores."
+        },
+        {
+          "title": "Infraestrutura Digital para Expansão de Sistemas de",
+          "school": "Colégio e Sistema de Ensino Kelvin",
+          "priority": "Muito Alta",
+          "category": "Plataforma / Integração",
+          "context": "O Kelvin possui materiais próprios para Ensino Fundamental Anos Finais e Ensino Médio, mas não possui uma plataforma digital para apoiar a expansão do sistema de ensino. Além disso, não possui conteúdo nem equipe para atuar no Fundamental Anos Iniciais. School Suggestion Posicionar a Teachy como a infraestrutura digital do sistema de ensino, utilizando a plataforma para distribuição dos materiais existentes e o Teachy Studio para criação de conte",
+          "suggestion": "Posicionar a Teachy como a infraestrutura digital do sistema de ensino, utilizando a plataforma para distribuição dos materiais existentes e o Teachy Studio para criação de conteúdo do Fundamental Anos Iniciais."
+        },
+        {
+          "title": "Posicionamento para Escolas que Utilizam Bernoulli",
+          "school": "Colégio Garriga",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola inicialmente acreditava que a Teachy fazia parte do Bernoulli e desconhecia a amplitude do ecossistema da plataforma. Isso revela um desafio de posicionamento e percepção de mercado entre escolas que já utilizam sistemas de ensino tradicionais. School Suggestion Criar materiais e narrativas específicas para escolas do ecossistema Bernoulli, destacando a Teachy como uma plataforma independente com IA, Studio, gestão acadêmica, conteúdos p",
+          "suggestion": "Criar materiais e narrativas específicas para escolas do ecossistema Bernoulli, destacando a Teachy como uma plataforma independente com IA, Studio, gestão acadêmica, conteúdos próprios e experiência para famílias."
+        }
+      ]
+    },
+    {
+      "name": "Week 25 – 12/06",
+      "items": [
+        {
+          "title": "Rubricas Institucionais Integradas ao Currículo",
+          "school": "Mopi School",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "As rubricas de avaliação ficam espalhadas em documentos e planilhas, obrigando os professores a consultá-las manualmente. Isso gera interpretações diferentes dos critérios e dificulta o alinhamento pedagógico entre turmas e docentes. School Suggestion Permitir que as escolas criem rubricas institucionais vinculadas às competências e objetivos de aprendizagem, disponibilizando-as para uso compartilhado por todos os professores.",
+          "suggestion": "Permitir que as escolas criem rubricas institucionais vinculadas às competências e objetivos de aprendizagem, disponibilizando-as para uso compartilhado por todos os professores."
+        },
+        {
+          "title": "Criação de Material Didático Próprio",
+          "school": "Colégio Maria José",
+          "priority": "Muito Alta",
+          "category": "Conteúdo Didático / Autoria",
+          "context": "A escola deseja reduzir sua dependência de editoras e construir uma identidade pedagógica própria nos materiais utilizados pelos alunos. Atualmente, o conteúdo é predominantemente produzido por terceiros. School Suggestion Apoiar uma transição gradual para materiais autorais, permitindo que a escola desenvolva, organize e gerencie seus próprios conteúdos didáticos.",
+          "suggestion": "Apoiar uma transição gradual para materiais autorais, permitindo que a escola desenvolva, organize e gerencie seus próprios conteúdos didáticos."
+        },
+        {
+          "title": "Adaptações Avançadas para Alunos",
+          "school": "Escola Presbiteriana Erasmo Braga",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola é referência regional no atendimento a alunos neurodivergentes e enxerga a adaptação de materiais como uma necessidade central da operação pedagógica. Os fluxos atuais ainda exigem mais estrutura e profundidade nas adaptações. School Suggestion Continuar expandindo as funcionalidades de adaptação e acessibilidade, consolidando esse tema como um dos principais diferenciais da plataforma.",
+          "suggestion": "Continuar expandindo as funcionalidades de adaptação e acessibilidade, consolidando esse tema como um dos principais diferenciais da plataforma."
+        },
+        {
+          "title": "Analytics de Aprendizagem e Trilhas Personalizadas",
+          "school": "Instituto Germinare",
+          "priority": "Alta",
+          "category": "Conteúdo Didático / Autoria",
+          "context": "A escola já produz todo o seu conteúdo e não busca ferramentas de autoria. Seu principal interesse é medir aprendizagem, identificar padrões e personalizar jornadas educacionais de acordo com o perfil de cada aluno. School Suggestion Fortalecer recursos de analytics e inteligência de aprendizagem para apoiar decisões pedagógicas e personalização do ensino.",
+          "suggestion": "Fortalecer recursos de analytics e inteligência de aprendizagem para apoiar decisões pedagógicas e personalização do ensino."
+        },
+        {
+          "title": "Geração Automatizada de Certificados",
+          "school": "Escola Nana",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A emissão de certificados é feita manualmente por meio de modelos editáveis, exigindo preenchimento individual de dados e revisões constantes. Isso gera retrabalho e risco de erros. School Suggestion Criar um fluxo estruturado para emissão automática de certificados, preenchendo dados dos alunos e organizando os documentos de forma centralizada.",
+          "suggestion": "Criar um fluxo estruturado para emissão automática de certificados, preenchendo dados dos alunos e organizando os documentos de forma centralizada."
+        },
+        {
+          "title": "PEI Compartilhado entre Múltiplas Disciplinas",
+          "school": "Seal",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Atualmente, adaptações precisam ser configuradas disciplina por disciplina, mesmo quando as necessidades do estudante são as mesmas em todas elas. School Suggestion Permitir que um único PEI seja aplicado simultaneamente a múltiplas disciplinas, centralizando adaptações e reduzindo esforço operacional.",
+          "suggestion": "Permitir que um único PEI seja aplicado simultaneamente a múltiplas disciplinas, centralizando adaptações e reduzindo esforço operacional."
+        },
+        {
+          "title": "Enquetes e Exportação de Relatórios",
+          "school": "Seal",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola deseja criar enquetes e exportar relatórios de eventos e pesquisas para organizar, analisar e utilizar melhor os dados coletados. School Suggestion Disponibilizar ferramentas de criação de enquetes e exportação de relatórios para pesquisas e eventos.",
+          "suggestion": "Disponibilizar ferramentas de criação de enquetes e exportação de relatórios para pesquisas e eventos."
+        },
+        {
+          "title": "Transferência de Comunicações entre Usuários",
+          "school": "Seal",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola precisa transferir conversas e responsabilidades de comunicação entre usuários sem perder histórico ou contexto das interações. School Suggestion Permitir a transferência de comunicações entre usuários mantendo todo o histórico da conversa.",
+          "suggestion": "Permitir a transferência de comunicações entre usuários mantendo todo o histórico da conversa."
+        },
+        {
+          "title": "Histórico Escolar Completo e Centralizado",
+          "school": "Educandário Edith Dos Santos",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola precisa acessar o histórico escolar completo dos estudantes, incluindo informações de anos anteriores, em uma única visualização. School Suggestion Disponibilizar uma visão consolidada do histórico escolar abrangendo todos os anos letivos do aluno.",
+          "suggestion": "Disponibilizar uma visão consolidada do histórico escolar abrangendo todos os anos letivos do aluno."
+        },
+        {
+          "title": "Álbum de Fotos para Famílias",
+          "school": "Dom Ensino",
+          "priority": "Alta",
+          "category": "Engajamento Familiar",
+          "context": "A escola produz grande quantidade de fotos de atividades e eventos, especialmente na Educação Infantil, mas não possui um ambiente estruturado para organizá-las e compartilhá-las com as famílias. School Suggestion Criar uma funcionalidade de álbuns de fotos para upload, organização e compartilhamento de registros escolares com os responsáveis.",
+          "suggestion": "Criar uma funcionalidade de álbuns de fotos para upload, organização e compartilhamento de registros escolares com os responsáveis."
+        },
+        {
+          "title": "Redesign de Slides com IA Preservando o",
+          "school": "Luiz de Queiroz Colégio",
+          "priority": "Alta",
+          "category": "Criação de Conteúdo",
+          "context": "A escola deseja que a IA utilize o texto original como fonte de conteúdo, alterando apenas o design da apresentação. Também existe interesse em redesenhar slides já existentes sem modificar o conteúdo. School Suggestion Permitir que a IA faça redesign de apresentações e melhore o aspecto visual mantendo integralmente o conteúdo original.",
+          "suggestion": "Permitir que a IA faça redesign de apresentações e melhore o aspecto visual mantendo integralmente o conteúdo original."
+        },
+        {
+          "title": "Modelos Padronizados para Entrega de Trabalhos",
+          "school": "Escola Sagrado Coração de Jesus",
+          "priority": "Média-Alta",
+          "category": "Analytics / Personalização",
+          "context": "A escola não possui modelos padronizados para entrega de trabalhos, gerando inconsistências na apresentação e organização das atividades dos estudantes. School Suggestion Disponibilizar modelos personalizáveis de entrega de trabalhos para serem utilizados como padrão pelos alunos.",
+          "suggestion": "Disponibilizar modelos personalizáveis de entrega de trabalhos para serem utilizados como padrão pelos alunos."
+        }
+      ]
+    }
+  ],
+  "pdfs_processados": [],
+  "updated_at": "2026-06-16T19:40:10.652412"
+}
