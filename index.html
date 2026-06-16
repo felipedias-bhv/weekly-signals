@@ -55,8 +55,8 @@ body {
 .top3-bar-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
 .top3-bar-title { font-size: 17px; font-weight: 700; letter-spacing: -.2px; font-family: 'Quicksand', sans-serif; }
 .top3-bar-week { font-size: 12px; font-weight: 500; opacity: .45; margin-left: auto; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; }
-.top3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.top3-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; transition: background .15s; }
+.top3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: start; }
+.top3-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; transition: background .15s; height: 100%; }
 .top3-card:hover { background: rgba(255,255,255,0.12); }
 .top3-rank-row { display: flex; align-items: center; gap: 8px; }
 .top3-medal { font-size: 15px; }
@@ -374,7 +374,7 @@ function render(data){
     const MEDALS=["🥇","🥈","🥉"];
     document.getElementById("top3-grid").innerHTML=scored.map((item,i)=>{
       const pc=item.priority==="Muito Alta"?"top3-chip-red":item.priority==="Alta"?"top3-chip-amber":"";
-      const why=item.context?item.context.slice(0,155)+(item.context.length>155?"…":""):item.suggestion?item.suggestion.slice(0,155)+"…":"";
+      const why=item.context||item.suggestion||"";
       const school=isUnknownSchool(item.school)?"":item.school;
       return `<div class="top3-card">
         <div class="top3-rank-row"><span class="top3-medal">${MEDALS[i]}</span><span class="top3-cat">#${i+1} · ${item.category}</span></div>
