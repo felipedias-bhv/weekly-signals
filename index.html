@@ -169,7 +169,7 @@ body {
 .pain-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border2); }
 .pain-row.hidden { display: none; }
 .pain-row-de { padding: 14px 20px; border-right: 1px solid var(--border2); font-size: 13px; color: var(--text2); line-height: 1.55; }
-.pain-row-para { padding: 14px 20px; font-size: 13px; color: var(--text2); line-height: 1.55; }
+.pain-row-para { padding: 14px 20px; font-size: 13px; color: var(--text2); line-height: 1.55; overflow: hidden; }
 .pain-ver-mais { padding: 10px 22px; border-top: 1px solid var(--border2); cursor: pointer; font-size: 12px; font-weight: 600; color: var(--accent); text-align: center; background: rgba(79,106,245,0.02); user-select: none; transition: background .12s; }
 .pain-ver-mais:hover { background: rgba(79,106,245,0.06); }
 .pain-footer { display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-top: 1px solid var(--border2); flex-wrap: wrap; background: rgba(79,106,245,0.02); }
@@ -524,12 +524,25 @@ function render(data){
     const prioChips=Object.entries(prioCount).sort((a,b)=>b[1]-a[1]).map(([p,n])=>{const cls=p==="Muito Alta"?"chip-red":p==="Alta"?"chip-amber":"chip-blue";return `<span class="chip ${cls}" style="font-size:10px;">${p} ×${n}</span>`;}).join("");
     const cardId='pain-card-'+rank;
 
+    function trimSentence(text, max){
+      if(!text) return '';
+      text = text.trim();
+      if(text.length <= max) return text;
+      // Try to cut at last sentence-ending punctuation before max
+      const sub = text.slice(0, max);
+      const lastDot = Math.max(sub.lastIndexOf('. '), sub.lastIndexOf('! '), sub.lastIndexOf('? '), sub.lastIndexOf('.
+'));
+      if(lastDot > max*0.4) return text.slice(0, lastDot+1);
+      // Fall back to last space before max
+      const lastSpace = sub.lastIndexOf(' ');
+      return lastSpace > 0 ? text.slice(0, lastSpace) + '…' : sub + '…';
+    }
     function rowHtml(item, hide){
-      const deText=(item.context||'').trim().slice(0,220)||(item.title);
-      const sug=(item.suggestion||item.title||'').trim();
+      const deText=trimSentence(item.context||item.title||'', 240);
+      const sug=trimSentence(item.suggestion||item.title||'', 280);
       return `<div class="pain-row${hide?' hidden':''}">
         <div class="pain-row-de">${deText}</div>
-        <div class="pain-row-para" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">${sug}</div>
+        <div class="pain-row-para">${sug}</div>
       </div>`;
     }
 
