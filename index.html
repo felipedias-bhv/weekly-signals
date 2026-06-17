@@ -39,6 +39,9 @@ body {
 .nav-btn { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; font-family: 'Inter', sans-serif; transition: all .15s; }
 .nav-btn:hover { background: var(--bg); }
 .nav-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 2px 8px rgba(79,106,245,0.3); }
+.nav-btn.future { opacity: 0.45; border-style: dashed; font-weight: 500; }
+.nav-btn.future:hover { opacity: 0.7; background: var(--bg); }
+.nav-btn.future.active { opacity: 1; background: var(--accent); color: #fff; border-style: solid; }
 
 .page { max-width: 1100px; margin: 0 auto; padding: 28px 24px 80px; }
 
@@ -316,9 +319,10 @@ body {
   <button class="nav-btn active" onclick="setFilter('all',this)">Todos</button>
   <button class="nav-btn" onclick="setFilter('Q1',this)">Q1</button>
   <button class="nav-btn" onclick="setFilter('Q2',this)">Q2</button>
-  <button class="nav-btn" onclick="setFilter('Q3',this)">Q3</button>
-  <button class="nav-btn" onclick="setFilter('Q4',this)">Q4</button>
-  <button class="nav-btn" onclick="setFilter('consolidado',this)" style="margin-left:8px;border-style:dashed;">Consolidado</button>
+  <button class="nav-btn future" onclick="setFilter('Q3',this)">Q3</button>
+  <button class="nav-btn future" onclick="setFilter('Q4',this)">Q4</button>
+  <button class="nav-btn future" onclick="setFilter('roadmap',this)" style="margin-left:8px;">Roadmap</button>
+  <button class="nav-btn" onclick="setFilter('consolidado',this)" style="margin-left:4px;border-style:dashed;">Consolidado</button>
 </div>
 
 <div class="page">
@@ -515,13 +519,13 @@ function trimSentence(text, max){
 function setFilter(f,btn){
   currentFilter=f;
   _currentSchool=null;
-  if(f!=="consolidado" && f!=="escola" && window._pageTemplate && !document.getElementById('kpi-grid')){
+  if(f!=="consolidado" && f!=="escola" && f!=="roadmap" && window._pageTemplate && !document.getElementById('kpi-grid')){
     document.querySelector('.page').innerHTML=window._pageTemplate;
   }
   document.querySelectorAll(".nav-btn").forEach(b=>{
     b.classList.remove("active");
     const lbl=b.textContent.trim();
-    if((f==="all"&&lbl==="Todos")||(f===lbl)) b.classList.add("active");
+    if((f==="all"&&lbl==="Todos")||(f===lbl)||(f==="roadmap"&&lbl==="Roadmap")) b.classList.add("active");
   });
   if(allData) render(allData);
 }
@@ -834,6 +838,15 @@ function exportCSV(){
 function render(data){
   if(currentFilter==="consolidado"){renderConsolidado(data);return;}
   if(currentFilter==="escola"&&_currentSchool){renderSchool(data,_currentSchool);return;}
+  if(currentFilter==="roadmap"){
+    document.querySelector('.page').innerHTML=`
+      <div class="empty-state">
+        <img src="lara_futuro.png" alt="Lara">
+        <div class="empty-state-title">A Lara partiu em expedição pelo Jira.</div>
+        <div class="empty-state-sub">Ela volta com um mapa de quais dores das escolas já viraram ticket —<br>e quais ainda são terra incógnita.</div>
+      </div>`;
+    return;
+  }
   const _pg=document.querySelector('.page');
   _pg.classList.remove('page-fade');void _pg.offsetWidth;_pg.classList.add('page-fade');
   const semanas=filterSemanas(data.semanas||[]);
