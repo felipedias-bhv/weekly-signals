@@ -251,4 +251,109 @@ def extrair_itens(texto):
             "context":            context,
             "suggestion":         suggestion,
             "summary":            summary,
-            "summary_suggestion": summary_su
+            "summary_suggestion": summary_suggestion,
+            "impacto":            impacto,
+            "cluster_id":         "",
+            "recorrencias":       1,
+        })
+
+    return items
+
+# ---------------------------------------------------------------
+#  divide PDF multi-semana em seções por "Week XX – DD.MM"
+# ---------------------------------------------------------------
+def split_semanas(texto, nome_arquivo):
+    pattern = re.compile(r'Week\s+(\d+)\s*[–\-]\s*([\d.\/]+)', re.IGNORECASE)
+    matches = list(pattern.finditer(texto))
+    if not matches:
+        base = os.path.splitext(nome_arquivo)[0]
+        nome = base.replace("_", " ").replace("-", " – ")
+        return [(nome, texto)]
+    semanas = []
+    for i, m in enumerate(matches):
+        week_num = m.group(1).zfill(2)
+        week_date = m.group(2)
+        nome = f"Week {week_num} – {week_date}"
+        start = m.start()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(texto)
+        semanas.append((nome, texto[start:end]))
+    return semanas
+
+def carregar_dados():
+    if os.path.exists(ARQUIVO_DADOS):
+        with open(ARQUIVO_DADOS, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"semanas": [], "pdfs_processados": [], "updated_at": ""}
+
+def salvar_dados(dados):
+    os.makedirs(os.path.dirname(ARQUIVO_DADOS), exist_ok=True)
+    dados["updated_at"] = datetime.now().isoformat()
+    with open(ARQUIVO_DADOS, "w", encoding="utf-8") as f:
+        json.dump(dados, f, ensure_ascii=False, indent=2)
+
+def hash_arquivo(caminho):
+    h = hashlib.md5()
+    with open(caminho, "rb") as f:
+        h.update(f.read())
+    return h.hexdigest()
+
+def processar_pdf(caminho, nome_arquivo, dados):
+    log(f"Processando: {nome_arquivo}")
+    try:
+        texto = extrair_texto_pdf(caminho)
+        if not texto.strip():
+            log(f"  PDF sem texto legível.")
+            dados["pdfs_processados"].append(hash_arquivo(caminho))
+            salvar_dados(dados)
+            return
+        semanas_extraidas = split_semanas(texto, nome_arquivo)
+        total_itens = 0
+        for nome_semana, texto_semana in semanas_extraidas:
+            itens = extrair_itens(texto_semana)
+            if not itens:
+                log(f"  '{nome_semana}' — nenhum item encontrado, pulando.")
+                continue
+            semanas = dados["semanas"]
+            existente = next((s for s in semanas if s["name"] == nome_semana), None)
+            if existente:
+                existente["items"] = itens
+                log(f"  '{nome_semana}' atualizada — {len(itens)} itens")
+            else:
+                semanas.append({"name": nome_semana, "items": itens})
+                log(f"  '{nome_semana}' adicionada — {len(itens)} itens")
+            total_itens += len(itens)
+        dados["pdfs_processados"].append(hash_arquivo(caminho))
+        salvar_dados(dados)
+        log(f"  Total: {len(semanas_extraidas)} semanas, {total_itens} itens — salvo em {ARQUIVO_DADOS}")
+    except Exception as e:
+        log(f"  ERRO: {e}")
+        import traceback; traceback.print_exc()
+
+def monitorar():
+    os.makedirs(PASTA_PDFS, exist_ok=True)
+    log("=" * 56)
+    log("Weekly Signals Watcher iniciado")
+    log(f"Pasta PDFs : {PASTA_PDFS}")
+    log(f"Dados JSON : {ARQUIVO_DADOS}")
+    log(f"Intervalo  : {INTERVALO_SEGUNDOS}s  —  Ctrl+C para parar")
+    log("=" * 56)
+    dados = carregar_dados()
+    dados["pdfs_processados"] = []
+    while True:
+        try:
+            arquivos = sorted(f for f in os.listdir(PASTA_PDFS) if f.lower().endswith(".pdf"))
+            for nome in arquivos:
+                caminho = os.path.join(PASTA_PDFS, nome)
+                h = hash_arquivo(caminho)
+                if h not in dados["pdfs_processados"]:
+                    processar_pdf(caminho, nome, dados)
+                    dados = carregar_dados()
+        except KeyboardInterrupt:
+            log("Encerrado.")
+            break
+        except Exception as e:
+            log(f"Erro no loop: {e}")
+        time.sleep(INTERVALO_SEGUNDOS)
+
+if __name__ == "__main__":
+    monitorar()
