@@ -248,6 +248,61 @@ body {
 .trend-btn { font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text2); cursor: pointer; font-family: 'Inter', sans-serif; transition: all .15s; white-space: nowrap; }
 .trend-btn:hover { background: var(--bg); }
 .trend-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* ESCOLA RANKING */
+.escola-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.escola-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; box-shadow: var(--shadow); cursor: pointer; transition: box-shadow .15s, transform .15s; display: flex; align-items: center; gap: 14px; }
+.escola-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.escola-rank { font-size: 13px; font-weight: 800; color: var(--text3); width: 20px; flex-shrink: 0; text-align: center; font-family: 'Quicksand', sans-serif; }
+.escola-rank.gold   { color: #F59E0B; }
+.escola-rank.silver { color: #94A3B8; }
+.escola-rank.bronze { color: #B45309; }
+.escola-info { flex: 1; min-width: 0; }
+.escola-name { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.escola-meta { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.escola-bar-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.escola-count { font-size: 20px; font-weight: 700; color: var(--accent); font-family: 'Quicksand', sans-serif; line-height: 1; }
+.escola-bar-bg { width: 60px; height: 4px; background: var(--bg); border-radius: 3px; }
+.escola-bar-fill { height: 4px; border-radius: 3px; background: var(--accent); }
+.escola-cta { font-size: 10px; color: var(--accent); font-weight: 600; opacity: 0; transition: opacity .15s; white-space: nowrap; }
+.escola-card:hover .escola-cta { opacity: 1; }
+@media (max-width: 680px) {
+  .escola-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* STATUS BADGES */
+.status-badge { font-size: 10px; font-weight: 700; border-radius: 20px; padding: 3px 10px; cursor: pointer; user-select: none; transition: all .12s; border: 1px solid transparent; flex-shrink: 0; white-space: nowrap; }
+.status-novo        { background: var(--bg); color: var(--text3); border-color: var(--border2); }
+.status-roadmap     { background: #DBEAFE; color: #1D4ED8; border-color: #BFDBFE; }
+.status-dev         { background: #FEF3C7; color: #92400E; border-color: #FDE68A; }
+.status-descartado  { background: #F3F4F6; color: #9CA3AF; border-color: #E5E7EB; text-decoration: line-through; }
+.status-badge:hover { filter: brightness(.93); }
+
+/* ESCOLA VIEW */
+.escola-view-header { background: linear-gradient(135deg,#1A2240 0%,#2D3A6B 100%); border-radius: var(--radius); padding: 22px 26px; margin-bottom: 24px; color:#fff; box-shadow: var(--shadow-lg); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.escola-back { font-size:12px; font-weight:600; color:rgba(255,255,255,0.6); cursor:pointer; padding:5px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.08); transition:background .15s; }
+.escola-back:hover { background:rgba(255,255,255,0.14); }
+.escola-view-name { font-size:22px; font-weight:700; font-family:'Quicksand',sans-serif; flex:1; }
+.escola-view-meta  { font-size:13px; opacity:.55; }
+.escola-tema-block { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden; }
+.escola-tema-hd    { display:flex; align-items:center; gap:10px; padding:14px 20px; border-bottom:1px solid var(--border2); }
+.escola-tema-dot   { width:9px; height:9px; border-radius:3px; flex-shrink:0; }
+.escola-tema-name  { font-size:14px; font-weight:700; font-family:'Quicksand',sans-serif; flex:1; }
+.escola-tema-cnt   { font-size:12px; font-weight:600; color:var(--text3); background:var(--bg); border-radius:20px; padding:3px 10px; }
+.escola-signal-row { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--border2); }
+.escola-signal-row:first-child { border-top:none; }
+.escola-sig-de  { padding:12px 18px; font-size:12px; color:var(--text2); line-height:1.55; border-right:1px solid var(--border2); }
+.escola-sig-para{ padding:12px 18px; font-size:12px; color:var(--text2); line-height:1.55; }
+.escola-sig-foot{ display:flex; align-items:center; gap:8px; padding:8px 18px; border-top:1px solid var(--border2); background:rgba(79,106,245,0.015); flex-wrap:wrap; }
+.escola-sig-week{ font-size:10px; color:var(--text3); background:var(--bg); border-radius:20px; padding:2px 8px; border:1px solid var(--border2); }
+
+/* CSV BUTTON */
+.csv-btn { font-size:11px; font-weight:600; padding:5px 12px; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text2); cursor:pointer; font-family:'Inter',sans-serif; transition:all .15s; white-space:nowrap; }
+.csv-btn:hover { background:var(--bg); color:var(--accent); border-color:var(--accent); }
+
+@media (max-width:680px){
+  .escola-signal-row { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
@@ -306,17 +361,18 @@ body {
   <div class="theme-grid" id="theme-grid"></div>
 
   <!-- TREND CHART -->
-  <div class="section-hd" style="margin-top:36px;">
+  <div class="section-hd" id="trend-hd" style="margin-top:36px;">
     <div class="section-num" style="background:rgba(16,185,129,0.12);color:#10B981;">↗</div>
     <div>
       <div class="section-title">Tendência dos temas</div>
       <div class="section-sub">Top 5 temas — sinais por semana</div>
     </div>
-    <div style="margin-left:auto;display:flex;gap:4px;align-items:center;">
-      <button class="trend-btn" onclick="setTrendWeeks(1,this)">1 sem</button>
-      <button class="trend-btn" onclick="setTrendWeeks(2,this)">2 sem</button>
-      <button class="trend-btn" onclick="setTrendWeeks(3,this)">3 sem</button>
-      <button class="trend-btn active" onclick="setTrendWeeks(4,this)">4 sem</button>
+    <div style="margin-left:auto;display:flex;gap:4px;align-items:center;flex-wrap:wrap;">
+      <button class="trend-btn" onclick="setTrendWeeks(4,this)">4 sem</button>
+      <button class="trend-btn active" onclick="setTrendWeeks(8,this)">8 sem</button>
+      <button class="trend-btn" onclick="setTrendWeeks(12,this)">12 sem</button>
+      <button class="trend-btn" onclick="setTrendWeeks(20,this)">20 sem</button>
+      <button class="trend-btn" onclick="setTrendWeeks(999,this)">Todas</button>
     </div>
   </div>
   <div class="chart-card" id="trend-card">
@@ -377,6 +433,17 @@ body {
     </div>
   </div>
 
+
+  <!-- ESCOLA RANKING -->
+  <div class="section-hd" style="margin-top:40px;">
+    <div class="section-num" style="background:rgba(236,72,153,0.1);color:#EC4899;">★</div>
+    <div>
+      <div class="section-title">Escolas em destaque</div>
+      <div class="section-sub">Clique para ver todos os sinais da escola</div>
+    </div>
+  </div>
+  <div class="escola-grid" id="escola-grid"></div>
+
   <!-- SECTION 4 -->
   <div class="section-hd">
     <div class="section-num">4</div>
@@ -390,6 +457,7 @@ body {
 </div>
 
 <script>
+
 function goToTheme(tema){
   currentFilter='consolidado';
   document.querySelectorAll('.nav-btn').forEach(b=>{
@@ -420,12 +488,13 @@ const CATS = {
   "Plataforma / Integracao":"#14B8A6","Plataforma / Integração":"#14B8A6",
   "Analytics / Personalizacao":"#F97316","Analytics / Personalização":"#F97316",
   "Conteudo Didatico / Autoria":"#8B5CF6","Conteúdo Didático / Autoria":"#8B5CF6",
+  "Outros":"#CBD5E1",
 };
-const PRIO_COLORS={"Muito Alta":"#EF4444","Alta":"#F59E0B","Média-Alta":"#6366F1","Media-Alta":"#6366F1","Média":"#94A3B8","Media":"#94A3B8"};
+const PRIO_COLORS={"Muito Alta":"#EF4444","Alta":"#F59E0B","Média-Alta":"#6366F1","Media-Alta":"#6366F1","Média":"#94A3B8","Media":"#94A3B8","Baixa":"#CBD5E1"};
 function catColor(cat){return CATS[cat]||"#94A3B8";}
 function isUnknownSchool(s){return !s||s.toLowerCase().includes("nao identificad")||s.toLowerCase().includes("não identificad");}
 
-let allData=null,weekCI=null,qCI=null,pdCI=null,trendCI=null,currentFilter="all",trendWeeks=4,_lastSemanas=null;
+let allData=null,weekCI=null,qCI=null,pdCI=null,trendCI=null,currentFilter="all",trendWeeks=8,_lastSemanas=null;
 
 function filterSemanas(semanas){
   if(currentFilter==="Q1") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
@@ -436,7 +505,8 @@ function filterSemanas(semanas){
 }
 function setFilter(f,btn){
   currentFilter=f;
-  if(f!=="consolidado" && window._pageTemplate && !document.getElementById('kpi-grid')){
+  _currentSchool=null;
+  if(f!=="consolidado" && f!=="escola" && window._pageTemplate && !document.getElementById('kpi-grid')){
     document.querySelector('.page').innerHTML=window._pageTemplate;
   }
   document.querySelectorAll(".nav-btn").forEach(b=>{
@@ -499,6 +569,7 @@ function renderConsolidado(data) {
       </select>
       <input class="consol-search" id="cf-search" type="text" placeholder="Buscar..." oninput="filterConsol()">
       <div class="consol-count" id="cf-n">${items.length} insights</div>
+      <button class="csv-btn" onclick="exportCSV()" title="Exportar CSV">↓ CSV</button>
     </div>
     <div id="consol-list" class="consol-list"></div>`;
   filterConsol();
@@ -524,8 +595,9 @@ function filterConsol() {
           <span class="consol-semana">${item.semana}</span>
         </div>
         <div class="consol-tema" style="background:${cc}20;color:${cc};">${item.tema_central}</div>
-        ${item.escola?`<div class="consol-escola">${item.escola}</div>`:'<div class="consol-escola"></div>'}
+        ${item.escola?`<div class="consol-escola" style="cursor:pointer;color:var(--accent);" onclick="event.stopPropagation();goToSchool(this.dataset.e)" data-e="${item.escola}">${item.escola}</div>`:'<div class="consol-escola"></div>'}
         ${item.priority?`<span class="chip ${pc}" style="font-size:10px;flex-shrink:0;">${item.priority}</span>`:''}
+        ${statusBadgeHtml(item.id)}
         <div class="consol-chevron">›</div>
       </div>
       <div class="consol-dores">
@@ -553,29 +625,38 @@ function renderTrendChart(semanas){
   _lastSemanas=semanas;
   const ctx=document.getElementById('trendChart');
   if(!ctx) return;
-  const recent=semanas.slice(-trendWeeks);
+  const n=trendWeeks>=999?semanas.length:Math.min(trendWeeks,semanas.length);
+  const recent=semanas.slice(-n);
   if(!recent.length){if(trendCI){trendCI.destroy();trendCI=null;}return;}
 
-  // top 5 themes by total across recent weeks
+  // top 5 themes by total
   const totals={};
   recent.forEach(s=>(s.items||[]).forEach(i=>{const c=i.category||'Outros';totals[c]=(totals[c]||0)+1;}));
   const top5=Object.entries(totals).sort((a,b)=>b[1]-a[1]).slice(0,5).map(e=>e[0]);
 
-  const labels=recent.map(s=>s.name.replace(/Week\s+/i,'W').replace(/\s*[–-]\s*.*/,''));
+  // Short labels — just week number
+  const labels=recent.map(s=>{const m=s.name.match(/\d+/);return m?'S'+m[0]:s.name.slice(0,5);});
+  const lastIdx=recent.length-1;
+
   const datasets=top5.map(cat=>{
     const color=catColor(cat);
+    const data=recent.map(s=>(s.items||[]).filter(i=>i.category===cat).length);
     return {
       label: cat,
-      data: recent.map(s=>(s.items||[]).filter(i=>i.category===cat).length),
+      data,
       borderColor: color,
       backgroundColor: color+'18',
-      tension: 0.35,
-      pointRadius: recent.length===1?6:4,
-      pointHoverRadius: 7,
-      borderWidth: 2.5,
+      tension: 0.3,
+      pointRadius: data.map((_,i)=>i===lastIdx?6:recent.length>10?2:4),
+      pointHoverRadius: data.map((_,i)=>i===lastIdx?8:6),
+      borderWidth: 2,
       fill: false
     };
   });
+
+  // Dynamic height
+  const wrap=document.querySelector('#trend-card > div');
+  if(wrap) wrap.style.height=(recent.length<=6?220:recent.length<=14?270:310)+'px';
 
   if(trendCI) trendCI.destroy();
   trendCI=new Chart(ctx.getContext('2d'),{
@@ -585,20 +666,160 @@ function renderTrendChart(semanas){
       responsive:true,
       maintainAspectRatio:false,
       plugins:{
-        legend:{position:'bottom',labels:{font:{size:11},padding:14,boxWidth:12,usePointStyle:true}},
-        tooltip:{callbacks:{label:i=>` ${i.dataset.label}: ${i.raw} sinais`}}
+        legend:{position:'bottom',labels:{font:{size:11},padding:12,boxWidth:10,usePointStyle:true}},
+        tooltip:{
+          callbacks:{
+            title:its=>{const s=recent[its[0].dataIndex];return s?s.name:'';},
+            label:i=>` ${i.dataset.label}: ${i.raw} signal${i.raw!==1?'s':''}`
+          }
+        }
       },
       scales:{
-        y:{beginAtZero:true,ticks:{font:{size:11},color:'#9AA0B8',stepSize:1},grid:{color:'rgba(79,106,245,0.06)'}},
-        x:{ticks:{font:{size:10},color:'#9AA0B8',maxRotation:30},grid:{display:false}}
+        y:{
+          beginAtZero:true,
+          ticks:{font:{size:11},color:'#9AA0B8',stepSize:1,maxTicksLimit:6},
+          grid:{color:'rgba(79,106,245,0.06)'}
+        },
+        x:{
+          ticks:{
+            font:{size:recent.length>14?9:10},
+            color:'#9AA0B8',
+            maxRotation:recent.length>8?45:0,
+            maxTicksLimit:recent.length>16?14:recent.length
+          },
+          grid:{display:false}
+        }
       }
     }
   });
+
+  // Update subtitle with freshness info
+  const sub=document.querySelector('#trend-hd .section-sub');
+  if(sub){
+    const last=recent[lastIdx];
+    sub.textContent='Dados até '+last.name+' · atualizado às segundas-feiras';
+  }
+}
+
+
+/* ---- STATUS ---- */
+const STATUS_LABELS={'novo':'Novo','roadmap':'No roadmap','dev':'Em desenvolvimento','descartado':'Descartado'};
+const STATUS_CSS={'novo':'status-novo','roadmap':'status-roadmap','dev':'status-dev','descartado':'status-descartado'};
+const STATUS_CYCLE=['novo','roadmap','dev','descartado'];
+function getStatus(id){ return localStorage.getItem('ws_st_'+id)||'novo'; }
+function cycleStatus(id,e){
+  e.stopPropagation();
+  const cur=getStatus(id);
+  const next=STATUS_CYCLE[(STATUS_CYCLE.indexOf(cur)+1)%STATUS_CYCLE.length];
+  localStorage.setItem('ws_st_'+id,next);
+  document.querySelectorAll('.status-badge[data-sid="'+id+'"]').forEach(el=>{
+    el.className='status-badge '+STATUS_CSS[next];
+    el.textContent=STATUS_LABELS[next];
+  });
+}
+function statusBadgeHtml(id){
+  const s=getStatus(id);
+  return `<span class="status-badge ${STATUS_CSS[s]}" data-sid="${id}" onclick="cycleStatus('${id}',event)">${STATUS_LABELS[s]}</span>`;
+}
+
+/* ---- ESCOLA VIEW ---- */
+let _currentSchool=null;
+function goToSchool(escola){
+  _currentSchool=escola;
+  currentFilter='escola';
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  if(allData) renderSchool(allData,escola);
+}
+function renderSchool(data,escola){
+  const allSemanas=data.semanas||[];
+  // collect all items from this school across all semanas
+  const byTema={};
+  allSemanas.forEach(sem=>{
+    (sem.items||[]).forEach((item,idx)=>{
+      if(isUnknownSchool(item.school)||item.school!==escola) return;
+      const cat=item.category||'Outros';
+      if(!byTema[cat]) byTema[cat]=[];
+      const gid=allSemanas.slice(0,allSemanas.indexOf(sem)).reduce((a,s)=>a+(s.items||[]).length,0)+idx+1;
+      byTema[cat].push({...item, semana:sem.name, gid:String(gid).padStart(5,'0')});
+    });
+  });
+  const total=Object.values(byTema).reduce((a,v)=>a+v.length,0);
+  const semNames=[...new Set(allSemanas.flatMap(s=>(s.items||[]).filter(i=>i.school===escola).length?[s.name]:[])).values()];
+  const span=semNames.length?semNames[0]+(semNames.length>1?' → '+semNames[semNames.length-1]:''):'';
+  const sortedTemas=Object.entries(byTema).sort((a,b)=>b[1].length-a[1].length);
+
+  const temaBlocks=sortedTemas.map(([cat,items])=>{
+    const color=catColor(cat);
+    const rows=items.map(item=>{
+      const pc=item.priority==='Muito Alta'?'chip-red':item.priority==='Alta'?'chip-amber':'chip-blue';
+      const sid=item.gid;
+      return `<div>
+        <div class="escola-signal-row">
+          <div class="escola-sig-de">${item.context||item.title||'—'}</div>
+          <div class="escola-sig-para">${item.suggestion||item.title||'—'}</div>
+        </div>
+        <div class="escola-sig-foot">
+          <span class="escola-sig-week">${item.semana}</span>
+          ${item.priority?`<span class="chip ${pc}" style="font-size:10px;">${item.priority}</span>`:''}
+          ${statusBadgeHtml(sid)}
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="escola-tema-block">
+      <div class="escola-tema-hd">
+        <div class="escola-tema-dot" style="background:${color};"></div>
+        <div class="escola-tema-name">${cat}</div>
+        <div class="escola-tema-cnt">${items.length} sinal${items.length!==1?'is':''}</div>
+      </div>
+      ${rows}
+    </div>`;
+  }).join('');
+
+  const page=document.querySelector('.page');
+  page.classList.remove('page-fade');void page.offsetWidth;page.classList.add('page-fade');
+  page.innerHTML=`
+    <div class="escola-view-header">
+      <button class="escola-back" onclick="backFromSchool()">← Voltar</button>
+      <div class="escola-view-name">${escola}</div>
+      <div class="escola-view-meta">${total} sinais · ${span}</div>
+    </div>
+    <div id="escola-signals">${temaBlocks||'<div class="empty" style="padding:40px;">Nenhum sinal encontrado.</div>'}</div>`;
+}
+function backFromSchool(){
+  _currentSchool=null;
+  currentFilter='all';
+  if(window._pageTemplate && !document.getElementById('kpi-grid')){
+    document.querySelector('.page').innerHTML=window._pageTemplate;
+  }
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    b.classList.remove('active');
+    if(b.textContent.trim()==='Todos') b.classList.add('active');
+  });
+  if(allData) render(allData);
+}
+
+/* ---- CSV EXPORT ---- */
+function exportCSV(){
+  const items=window._cItems||[];
+  const qf=(document.getElementById('cf-q')||{}).value||'';
+  const tf=(document.getElementById('cf-t')||{}).value||'';
+  const sf=(document.getElementById('cf-s')||{}).value||'';
+  const sq=((document.getElementById('cf-search')||{}).value||'').toLowerCase();
+  const f=items.filter(i=>(!qf||i.quarter===qf)&&(!tf||i.tema_central===tf)&&(!sf||i.semana===sf)&&(!sq||[i.dor_curta,i.resolve_curto,i.dor_detalhada,i.resolve_detalhado].join(' ').toLowerCase().includes(sq)));
+  const esc=v=>'"'+(v||'').replace(/"/g,'""')+'"';
+  const header='ID,Quarter,Semana,Tema,Escola,Prioridade,Status,Dor Curta,Resolve Curto,Dor Detalhada,Resolve Detalhado';
+  const rows=f.map(i=>[i.id,i.quarter,i.semana,i.tema_central,i.escola,i.priority,STATUS_LABELS[getStatus(i.id)]||'',i.dor_curta,i.resolve_curto,i.dor_detalhada,i.resolve_detalhado].map(esc).join(','));
+  const csv=[header,...rows].join('\n');
+  const a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download='weekly-signals-'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click();
 }
 
 
 function render(data){
   if(currentFilter==="consolidado"){renderConsolidado(data);return;}
+  if(currentFilter==="escola"&&_currentSchool){renderSchool(data,_currentSchool);return;}
   const _pg=document.querySelector('.page');
   _pg.classList.remove('page-fade');void _pg.offsetWidth;_pg.classList.add('page-fade');
   const semanas=filterSemanas(data.semanas||[]);
@@ -819,6 +1040,48 @@ function render(data){
       <div class="pain-footer">${prioChips}<div style="flex:1;"></div>${schoolChips}</div>
     </div>`;
   }).join("");
+
+  // ESCOLA RANKING
+  (function(){
+    const escolaMap={};
+    for(const item of all){
+      const s=item.school;
+      if(isUnknownSchool(s)) continue;
+      if(!escolaMap[s]) escolaMap[s]={count:0,cats:new Set(),lastWeek:''};
+      escolaMap[s].count++;
+      if(item.category) escolaMap[s].cats.add(item.category);
+    }
+    // tag last week per school
+    semanas.slice().reverse().forEach(sem=>{
+      (sem.items||[]).forEach(i=>{
+        if(!isUnknownSchool(i.school)&&escolaMap[i.school]&&!escolaMap[i.school].lastWeek)
+          escolaMap[i.school].lastWeek=sem.name;
+      });
+    });
+    const sorted=Object.entries(escolaMap).sort((a,b)=>b[1].count-a[1].count);
+    const maxC=sorted[0]?.[1].count||1;
+    const RANK_CLS=['gold','silver','bronze'];
+    const el=document.getElementById('escola-grid');
+    if(!el) return;
+    el.innerHTML=sorted.slice(0,9).map(([name,d],i)=>{
+      const pct=Math.round(d.count/maxC*100);
+      const rankCls=i<3?RANK_CLS[i]:'';
+      const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':`#${i+1}`;
+      const topCat=[...d.cats][0]||'';
+      return `<div class="escola-card" onclick="goToSchool('${name.replace(/'/g,"\'")}')">
+        <div class="escola-rank ${rankCls}">${medal}</div>
+        <div class="escola-info">
+          <div class="escola-name">${name}</div>
+          <div class="escola-meta">${topCat}${d.lastWeek?' · '+d.lastWeek:''}</div>
+          <div class="escola-cta">Ver no Consolidado →</div>
+        </div>
+        <div class="escola-bar-wrap">
+          <div class="escola-count">${d.count}</div>
+          <div class="escola-bar-bg"><div class="escola-bar-fill" style="width:${pct}%"></div></div>
+        </div>
+      </div>`;
+    }).join('');
+  })();
 
   if(data.updated_at) document.getElementById("updated-tag").textContent="Atualizado em "+new Date(data.updated_at).toLocaleString("pt-BR");
 }
