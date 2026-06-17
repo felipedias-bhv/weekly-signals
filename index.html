@@ -472,10 +472,10 @@ function goToTheme(tema){
 }
 function togglePainRows(btn, cardId, extra){
   const card=document.getElementById(cardId);
-  const rows=card.querySelectorAll('.pain-row.hidden');
-  const isHidden=rows.length>0;
+  const rows=card.querySelectorAll('.pain-row-extra');
+  const isHidden=rows.length>0&&rows[0].classList.contains('hidden');
   rows.forEach(r=>r.classList.toggle('hidden',!isHidden));
-  btn.textContent=isHidden?'▲ Recolher':('▼ Ver mais +'+extra);
+  btn.textContent=isHidden?'▲ Recolher':'▼ Ver mais +'+extra;
 }
 const CATS = {
   "Avaliacao / Simulados":"#6366F1","Avaliação / Simulados":"#6366F1",
@@ -1015,7 +1015,7 @@ function render(data){
     function rowHtml(item, hide){
       const deText=trimSentence(item.context||item.title||'', 240);
       const sug=trimSentence(item.suggestion||item.title||'', 280);
-      return `<div class="pain-row${hide?' hidden':''}">
+      return `<div class="pain-row${hide?' hidden pain-row-extra':''}">
         <div class="pain-row-de">${deText}</div>
         <div class="pain-row-para">${sug}</div>
       </div>`;
