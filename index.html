@@ -86,7 +86,8 @@ body {
 
 /* EMPTY STATE */
 .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 24px; text-align: center; }
-.empty-state img { width: 360px; opacity: .92; margin-bottom: 28px; }
+.empty-state img { width: 200px; opacity: .92; margin-bottom: 28px; }
+.empty-state img.large { width: 360px; }
 .empty-state-title { font-size: 20px; font-weight: 700; font-family: 'Quicksand', sans-serif; color: var(--text); margin-bottom: 8px; }
 .empty-state-sub { font-size: 14px; color: var(--text2); }
 
@@ -845,9 +846,9 @@ function render(data){
   if(currentFilter==="roadmap"){
     document.querySelector('.page').innerHTML=`
       <div class="empty-state">
-        <img src="lara_futuro.png" alt="Lara">
+        <img src="lara_futuro.png" alt="Lara" class="large">
         <div class="empty-state-title">A Lara partiu em expedição pelo Jira.</div>
-        <div class="empty-state-sub">Ela volta com um mapa de quais dores das escolas já viraram ticket —<br>e quais ainda são terra incógnita.</div>
+        <div class="empty-state-sub">Ela foi ao Jira e não voltou.<br>Dizem que encontrou 8.631 tickets e está tentando decifrar qual é qual.</div>
       </div>`;
     return;
   }
