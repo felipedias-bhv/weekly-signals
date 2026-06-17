@@ -157,12 +157,58 @@ def extrair_texto_pdf(caminho):
     doc.close()
     return texto
 
+CATEGORIAS_VALIDAS = [
+    "Avaliação / Simulados",
+    "Conteúdo Didático / Autoria",
+    "Analytics / Personalização",
+    "Gestão Administrativa",
+    "Engajamento Familiar",
+    "Comunicação",
+    "Criação de Conteúdo",
+    "IA Pedagógica",
+    "Plataforma / Integração",
+    "Inclusão / Acessibilidade",
+]
+_cats_str = "\n".join(f"- {c}" for c in CATEGORIAS_VALIDAS)
+
+def classify_com_claude(title, context):
+    try:
+        client = get_anthropic()
+        prompt = (
+            f"Você é analista de produto educacional.\n\n"
+            f"Classifique o pedido abaixo em UMA das categorias listadas.\n"
+            f"Escolha a que melhor representa a dor central.\n\n"
+            f"Categorias disponíveis:\n{_cats_str}\n\n"
+            f"Título: {title}\n"
+            f"Contexto: {context[:400]}\n\n"
+            f"Responda APENAS com o nome exato da categoria, sem explicação."
+        )
+        msg = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=40,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = msg.content[0].text.strip()
+        for cat in CATEGORIAS_VALIDAS:
+            if cat.lower() in raw.lower():
+                return cat
+        # Se não bateu exato mas retornou algo, tenta match parcial
+        for cat in CATEGORIAS_VALIDAS:
+            first_word = cat.split()[0].lower()
+            if first_word in raw.lower():
+                return cat
+        return "Plataforma / Integração"  # fallback absoluto
+    except Exception as e:
+        log(f"  classify_com_claude erro: {e}")
+        return "Plataforma / Integração"
+
 def classify(title, context=""):
     text = (title + " " + context).lower()
     for keywords, cat in CATEGORY_RULES:
         if any(k in text for k in keywords):
             return cat
-    return "Outros"
+    # Não encontrou por keywords → usa Claude
+    return classify_com_claude(title, context)
 
 def parse_priority(raw):
     raw = raw.lower().strip()

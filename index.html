@@ -488,7 +488,6 @@ const CATS = {
   "Plataforma / Integracao":"#14B8A6","Plataforma / Integração":"#14B8A6",
   "Analytics / Personalizacao":"#F97316","Analytics / Personalização":"#F97316",
   "Conteudo Didatico / Autoria":"#8B5CF6","Conteúdo Didático / Autoria":"#8B5CF6",
-  "Outros":"#CBD5E1",
 };
 const PRIO_COLORS={"Muito Alta":"#EF4444","Alta":"#F59E0B","Média-Alta":"#6366F1","Media-Alta":"#6366F1","Média":"#94A3B8","Media":"#94A3B8","Baixa":"#CBD5E1"};
 function catColor(cat){return CATS[cat]||"#94A3B8";}
@@ -646,7 +645,7 @@ function renderTrendChart(semanas){
 
   // top 5 themes by total
   const totals={};
-  recent.forEach(s=>(s.items||[]).forEach(i=>{const c=i.category||'Outros';totals[c]=(totals[c]||0)+1;}));
+  recent.forEach(s=>(s.items||[]).forEach(i=>{const c=i.category||'Sem categoria';totals[c]=(totals[c]||0)+1;}));
   const top5=Object.entries(totals).sort((a,b)=>b[1]-a[1]).slice(0,5).map(e=>e[0]);
 
   // Short labels — just week number
@@ -752,7 +751,7 @@ function renderSchool(data,escola){
   allSemanas.forEach(sem=>{
     (sem.items||[]).forEach((item,idx)=>{
       if(isUnknownSchool(item.school)||item.school!==escola) return;
-      const cat=item.category||'Outros';
+      const cat=item.category||'Sem categoria';
       if(!byTema[cat]) byTema[cat]=[];
       const gid=allSemanas.slice(0,allSemanas.indexOf(sem)).reduce((a,s)=>a+(s.items||[]).length,0)+idx+1;
       byTema[cat].push({...item, semana:sem.name, gid:String(gid).padStart(5,'0')});
@@ -907,7 +906,7 @@ function render(data){
   // THEME CARDS
   const catMap={};
   for(const item of all){
-    const cat=item.category||"Outros";
+    const cat=item.category||"Sem categoria";
     if(!catMap[cat]) catMap[cat]={count:0,schools:new Set(),prios:{},contexts:[]};
     catMap[cat].count++;
     if(!isUnknownSchool(item.school)) catMap[cat].schools.add(item.school);
@@ -1012,7 +1011,7 @@ function render(data){
     return s.length>10?s:text.slice(0,120);
   }
   const catGroups={};
-  for(const item of all){const cat=item.category||"Outros";if(!catGroups[cat]) catGroups[cat]=[];catGroups[cat].push(item);}
+  for(const item of all){const cat=item.category||"Sem categoria";if(!catGroups[cat]) catGroups[cat]=[];catGroups[cat].push(item);}
   // Sort items within each category by priority
   const PW2={"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
   const top5=Object.entries(catGroups).sort((a,b)=>b[1].length-a[1].length).slice(0,5);

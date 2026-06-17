@@ -13,7 +13,7 @@
           "summary": "Administradores perdem tempo navegando turma por turma para distribuir material didático em vez de acessar todas de uma vez por ano",
           "summary_suggestion": "Permitir que o administrador visualize todas as turmas de um ano ao clicar nele, eliminando navegações extras",
           "impacto": 4,
-          "cluster_id": "distribuicao-material-ineficiente",
+          "cluster_id": "distribuicao-material-em-massa",
           "recorrencias": 1
         },
         {
@@ -26,7 +26,7 @@
           "summary": "Coordenadores não conseguem visualizar e acompanhar em um só lugar o que os professores estão entregando",
           "summary_suggestion": "Calendário compartilhado na admin para visualizar ações de coordenação e acompanhar entregas dos professores",
           "impacto": 3,
-          "cluster_id": "acompanhamento-entrega-professores",
+          "cluster_id": "visualizacao-centralizada-entregas",
           "recorrencias": 1
         }
       ]
@@ -44,7 +44,7 @@
           "summary": "Falta visibilidade sobre quantas aulas o mesmo professor ministra por dia na mesma turma, causando distribuição incorreta na grade",
           "summary_suggestion": "Permitir definição do limite de aulas diárias por professor por turma para evitar sobrecarga e conflitos na grade horária",
           "impacto": 4,
-          "cluster_id": "distribuicao-aulas-professor",
+          "cluster_id": "distribuicao-carga-horaria",
           "recorrencias": 1
         },
         {
@@ -57,7 +57,7 @@
           "summary": "Simulados criados manualmente não garantem alinhamento com a estrutura oficial do SAEB",
           "summary_suggestion": "Criar simulados no formato SAEB na plataforma com estrutura oficial para preparação de alunos em escolas públicas",
           "impacto": 4,
-          "cluster_id": "simulados-desalinhados-saeb",
+          "cluster_id": "alinhamento-saeb-simulados",
           "recorrencias": 1
         },
         {
@@ -70,7 +70,7 @@
           "summary": "Materiais gerados por IA desalinham da metodologia pedagógica quando professores escolhem livremente as abordagens",
           "summary_suggestion": "Restringir as metodologias de IA disponíveis conforme a proposta pedagógica da escola",
           "impacto": 4,
-          "cluster_id": "desalinhamento-metodologia-pedagogica",
+          "cluster_id": "alinhamento-metodologia-pedagogica",
           "recorrencias": 1
         },
         {
@@ -83,21 +83,21 @@
           "summary": "Materiais educacionais ficam limitados a uma única disciplina, impossibilitando refletir projetos que integram conhecimentos de várias áreas",
           "summary_suggestion": "Permitir seleção de múltiplas disciplinas ao criar materiais para alinhar a ferramenta com currículos interdisciplinares",
           "impacto": 3,
-          "cluster_id": "integracao-multidisciplinar",
+          "cluster_id": "integracao-interdisciplinar",
           "recorrencias": 1
         },
         {
           "title": "Restrição da Visibilidade de Materiais por Disciplina",
           "school": "Escola não identificada",
           "priority": "Média",
-          "category": "Outros",
+          "category": "Plataforma / Integração",
           "context": "Os professores precisam acessar materiais de forma organizada, mas o excesso de conteúdos gera ruído e confusão.",
           "suggestion": "Permitir restringir a visibilidade dos materiais por disciplina (ex.: professor de Português vê apenas materiais de Português), com configuração opcional. Por que isso importa ●​ Reduz sobrecarga cognitiva ●​ Melhora a usabilidade no dia a dia ●​ Apoia modelos de organização por área do conhecimento",
           "summary": "Materiais de múltiplas disciplinas se misturam, dificultando que professores encontrem rapidamente o conteúdo que precisam",
           "summary_suggestion": "Implementar filtro opcional para exibir apenas materiais da disciplina do professor logado",
           "impacto": 3,
-          "cluster_id": "descoberta-conteudo-disciplinas",
-          "recorrencias": 3
+          "cluster_id": "organizacao-conteudo-disciplinas",
+          "recorrencias": 1
         },
         {
           "title": "Análise de Distratores por Questão nos Resultados",
@@ -109,7 +109,7 @@
           "summary": "Hoje falta visibilidade sobre quais respostas erradas os alunos escolhem, perdendo diagnósticos valiosos de aprendizado",
           "summary_suggestion": "Mostrar quais alternativas incorretas os alunos selecionaram em cada questão para identificar lacunas conceituais",
           "impacto": 4,
-          "cluster_id": "visibilidade-erros-alunos",
+          "cluster_id": "diagnostico-erros-alunos",
           "recorrencias": 1
         }
       ]
@@ -140,7 +140,7 @@
           "summary": "Dashboards genéricos não refletem as diferentes lógicas de gestão entre segmentos, impossibilitando decisões pedagógicas precisas",
           "summary_suggestion": "Criar dashboards que se reorganizam automaticamente conforme o segmento, priorizando turma/aluno na Infantil e Fundamental I, e professor/disciplina no Fundamental II e Médio",
           "impacto": 4,
-          "cluster_id": "dashboards-inadequados-gestao",
+          "cluster_id": "dashboards-nao-contextualizados",
           "recorrencias": 1
         },
         {
@@ -153,7 +153,7 @@
           "summary": "Professores não conseguem começar uma avaliação do zero sem disparar automações de IA, limitando o controle criativo",
           "summary_suggestion": "Permitir que professores criem provas manualmente adicionando questões com filtros por habilidade, série, turma e vestibular",
           "impacto": 3,
-          "cluster_id": "controle-criativo-prova",
+          "cluster_id": "criacao-prova-sem-automacao",
           "recorrencias": 1
         },
         {
@@ -186,14 +186,14 @@
           "title": "Controle de Acesso a Materiais por Disciplina",
           "school": "Escola não identificada",
           "priority": "Média",
-          "category": "Outros",
+          "category": "Gestão Administrativa",
           "context": "Professores têm acesso a materiais de disciplinas que não lecionam, o que gera ruído e dificulta a navegação.",
           "suggestion": "Restringir o acesso aos materiais didáticos com base nas disciplinas que o professor leciona, especialmente na biblioteca de conteúdos.",
           "summary": "Professores navegam entre materiais de disciplinas que não ensinam, perdendo tempo para encontrar seu conteúdo",
           "summary_suggestion": "Implementar filtros de acesso à biblioteca de conteúdos para que professores visualizem apenas materiais das disciplinas que lecionam",
           "impacto": 3,
-          "cluster_id": "descoberta-conteudo-disciplinas",
-          "recorrencias": 3
+          "cluster_id": "navegacao-conteudo-disciplinas",
+          "recorrencias": 1
         },
         {
           "title": "Perfil de Administrador para Redes de Ensino",
@@ -223,7 +223,7 @@
           "summary": "Calendários precisam ser recriados manualmente em imagem para compartilhar com famílias e alunos",
           "summary_suggestion": "Permitir exportar o calendário escolar como imagem para compartilhamento direto com alunos e famílias",
           "impacto": 3,
-          "cluster_id": "calendarios-manual-imagem",
+          "cluster_id": "compartilhamento-calendario-familias",
           "recorrencias": 1
         },
         {
@@ -249,7 +249,7 @@
           "summary": "Corrigir e registrar notas de milhares de redações manualmente consome tempo e impede análise consolidada por turma",
           "summary_suggestion": "Sistema automatizado para escanear, identificar alunos e registrar notas de redações em massa",
           "impacto": 4,
-          "cluster_id": "correcao-redacoes-escala",
+          "cluster_id": "correcao-redacoes-em-massa",
           "recorrencias": 1
         },
         {
@@ -262,7 +262,7 @@
           "summary": "Hoje é impossível montar um simulado único com questões de diferentes disciplinas sem usar templates pré-definidos",
           "summary_suggestion": "Criar ferramenta para montar simulados personalizados por disciplina com controle manual da quantidade de questões",
           "impacto": 4,
-          "cluster_id": "prova-multidisciplinar",
+          "cluster_id": "simulado-multiplas-disciplinas",
           "recorrencias": 1
         },
         {
@@ -288,7 +288,7 @@
           "summary": "Gerar provas personalizadas para centenas de alunos simultaneamente sem aumentar a carga manual de trabalho",
           "summary_suggestion": "Automatizar a geração de provas personalizadas com base no desempenho individual dos alunos",
           "impacto": 4,
-          "cluster_id": "personalizacao-provas-escala",
+          "cluster_id": "personalizacao-provas-em-massa",
           "recorrencias": 1
         },
         {
@@ -301,7 +301,7 @@
           "summary": "Estudantes não se engajam com conteúdo estático enquanto consomem vídeos curtos e desafios interativos em redes sociais",
           "summary_suggestion": "Implementar vídeos curtos, desafios interativos e stories educacionais para aumentar o engajamento dos estudantes",
           "impacto": 4,
-          "cluster_id": "engajamento-conteudo-dinamico",
+          "cluster_id": "engajamento-conteudo-estatico",
           "recorrencias": 3
         },
         {
@@ -321,14 +321,14 @@
           "title": "Teclados Específicos por Disciplina em Avaliações",
           "school": "Escola não identificada",
           "priority": "Alta",
-          "category": "Outros",
+          "category": "Avaliação / Simulados",
           "context": "Teclados comuns não atendem bem respostas discursivas em Matemática, Física e Química.",
           "suggestion": "Implementar teclados contextuais por disciplina, com símbolos, fórmulas e notações científicas.",
           "summary": "Respostas em Matemática, Física e Química perdem qualidade sem acesso a símbolos e fórmulas específicas durante avaliações",
           "summary_suggestion": "Criar teclados personalizados com símbolos, fórmulas e notações científicas para avaliações de Matemática, Física e Química",
           "impacto": 3,
-          "cluster_id": "ferramentas-especializadas-disciplinas",
-          "recorrencias": 2
+          "cluster_id": "simbolos-formulas-avaliacoes",
+          "recorrencias": 1
         },
         {
           "title": "Orquestração de Simulados Gerais da Escola",
@@ -366,7 +366,7 @@
           "summary": "Fotos e vídeos dos eventos escolares ficam espalhados em grupos de WhatsApp e e-mails, sem um histórico organizado para as famílias",
           "summary_suggestion": "Plataforma centralizada para upload de fotos e vídeos dos eventos escolares acessível às famílias",
           "impacto": 3,
-          "cluster_id": "organização-midia-eventos",
+          "cluster_id": "organizacao-midia-eventos",
           "recorrencias": 1
         },
         {
@@ -379,7 +379,7 @@
           "summary": "Materiais escolares não podem ser adaptados com pictogramas para alunos neurodivergentes",
           "summary_suggestion": "Implementar ferramenta nativa de criação de pictogramas com ícones e imagens para apoiar alunos neurodivergentes",
           "impacto": 4,
-          "cluster_id": "materiais-adaptacao-pictogramas",
+          "cluster_id": "adaptacao-materiais-neurodivergentes",
           "recorrencias": 1
         }
       ]
@@ -397,7 +397,7 @@
           "summary": "Redações em papel ficam desvinculadas da avaliação formal, forçando vinculações manuais que não escalam",
           "summary_suggestion": "Implementar objeto dedicado para redações avaliativas com upload em lote, geração de QR codes e vinculação automática com alunos",
           "impacto": 4,
-          "cluster_id": "vinculacao-redacoes-digitais",
+          "cluster_id": "redacoes-papel-desvinculadas",
           "recorrencias": 1
         },
         {
@@ -410,7 +410,7 @@
           "summary": "Professores precisam sair da plataforma, baixar e reenviar provas para adaptá-las, perdendo tempo e continuidade",
           "summary_suggestion": "Criar botão de adaptação de provas integrado ao fluxo de criação para eliminar downloads e reenvios",
           "impacto": 4,
-          "cluster_id": "adaptacao-provas-offline",
+          "cluster_id": "adaptacao-provas-fluxo-plataforma",
           "recorrencias": 1
         },
         {
@@ -423,7 +423,7 @@
           "summary": "Alunos e professores veem a mesma plataforma, dificultando justificar o valor cobrado por licença estudantil",
           "summary_suggestion": "Implementar sistema de gamificação com XP, níveis, missões e badges para criar experiência visual diferenciada do aluno",
           "impacto": 4,
-          "cluster_id": "diferenciacao-valor-plataforma",
+          "cluster_id": "diferenciacao-valor-licenca",
           "recorrencias": 1
         },
         {
@@ -436,7 +436,7 @@
           "summary": "Notas de avaliações externas não se integram aos cálculos de média e boletim automaticamente",
           "summary_suggestion": "Integrar notas externas ao cálculo automático de médias, pesos e boletins",
           "impacto": 4,
-          "cluster_id": "notas-externas-integracao",
+          "cluster_id": "integracao-avaliacoes-externas",
           "recorrencias": 1
         },
         {
@@ -475,7 +475,7 @@
           "summary": "Dashboards não conseguem analisar tendências históricas, limitando diagnósticos e previsões sobre desempenho acadêmico",
           "summary_suggestion": "Importar dados acadêmicos históricos para ampliar análises longitudinais e preditivas nos dashboards",
           "impacto": 4,
-          "cluster_id": "análise-tendências-desempenho",
+          "cluster_id": "analise-tendencias-desempenho",
           "recorrencias": 1
         },
         {
@@ -488,7 +488,7 @@
           "summary": "Termos técnicos como \"Directory\" confundem alunos e professores que esperam linguagem educacional",
           "summary_suggestion": "Simplificar a nomenclatura técnica da plataforma para linguagem educacional clara e intuitiva",
           "impacto": 3,
-          "cluster_id": "linguagem-confusa-plataforma",
+          "cluster_id": "linguagem-confusa-usuarios",
           "recorrencias": 1
         },
         {
@@ -501,7 +501,7 @@
           "summary": "Avaliações com layouts e formatos únicos para cada tipo de neurodivergência exigem retrabalho manual demorado",
           "summary_suggestion": "Criar ferramenta que gera automaticamente versões adaptadas de avaliações para alunos com necessidades especiais",
           "impacto": 4,
-          "cluster_id": "avaliacoes-multiplos-formatos",
+          "cluster_id": "adaptacao-provas-neurodivergentes",
           "recorrencias": 1
         },
         {
@@ -514,7 +514,7 @@
           "summary": "Não é possível controlar a distribuição de dificuldade das questões ao criar uma prova",
           "summary_suggestion": "Permitir que professores definam a distribuição percentual de dificuldade ao criar provas",
           "impacto": 4,
-          "cluster_id": "controle-dificuldade-questoes",
+          "cluster_id": "distribuicao-dificuldade-questoes",
           "recorrencias": 2
         },
         {
@@ -527,7 +527,7 @@
           "summary": "Disciplinas com critério de presença ficam presas à exigência de nota mínima do sistema",
           "summary_suggestion": "Criar configuração que aprove alunos em disciplinas apenas pela frequência, sem exigir nota mínima",
           "impacto": 4,
-          "cluster_id": "presenca-vs-nota",
+          "cluster_id": "criterios-presenca-nota-minima",
           "recorrencias": 1
         },
         {
@@ -558,8 +558,8 @@
           "summary": "Responsáveis não conseguem visualizar de forma centralizada o desempenho, tarefas e comunicações dos filhos",
           "summary_suggestion": "Implementar portal dedicado para responsáveis com acesso a boletins, tarefas, avaliações e comunicação direta com a escola",
           "impacto": 4,
-          "cluster_id": "visualizacao-centralizada-aluno",
-          "recorrencias": 1
+          "cluster_id": "visualizacao-centralizada-familia",
+          "recorrencias": 3
         },
         {
           "title": "Fluxo Estruturado de Comunicação e Ativação Diária",
@@ -571,8 +571,8 @@
           "summary": "Informações críticas sobre aulas, provas e correções se perdem entre professores e coordenação",
           "summary_suggestion": "Implementar notificações automáticas por WhatsApp/e-mail com resumo diário de aulas, provas, atividades e alertas da coordenação",
           "impacto": 4,
-          "cluster_id": "fragmentacao-informacoes",
-          "recorrencias": 1
+          "cluster_id": "fragmentacao-informacoes-academicas",
+          "recorrencias": 3
         },
         {
           "title": "Definição Estruturada da Distribuição de Questões",
@@ -584,14 +584,14 @@
           "summary": "Tipos de questões são definidos depois de pronta a prova, exigindo refação completa",
           "summary_suggestion": "Permitir pré-definir a quantidade de questões objetivas e discursivas antes de gerar a prova",
           "impacto": 4,
-          "cluster_id": "tipos-questoes-tardio",
+          "cluster_id": "tipos-questoes-apos-pronta",
           "recorrencias": 1
         },
         {
           "title": "Visão Global da Carga de Tarefas do Aluno",
           "school": "Escola não identificada",
           "priority": "Alta",
-          "category": "Outros",
+          "category": "Gestão Administrativa",
           "context": "Professores não conseguem visualizar a carga total de tarefas do aluno em todas as disciplinas, gerando risco de sobrecarga e falta de coordenação.",
           "suggestion": "Criar uma visão consolidada da carga semanal do aluno e alertas de sobrecarga quando limites forem excedidos.",
           "summary": "Não há visibilidade da carga total de tarefas entre disciplinas, causando sobrecarga e descoordinação",
@@ -610,7 +610,7 @@
           "summary": "Alunos não conseguem identificar rapidamente qual atividade foi atribuída pelo professor, gerada pela plataforma ou criada por eles mesmos",
           "summary_suggestion": "Implementar código de cores no calendário para diferenciar tarefas de professores, planos do aluno e recomendações da plataforma",
           "impacto": 2,
-          "cluster_id": "diferenciação-tipos-atividade",
+          "cluster_id": "identificacao-origem-atividades",
           "recorrencias": 1
         },
         {
@@ -623,7 +623,7 @@
           "summary": "Questões reordenadas na mesma prova não evitam cola organizada nem garantem equivalência entre versões",
           "summary_suggestion": "Sistema de geração automática de provas customizadas com controle de tópicos, dificuldade e múltiplas versões equivalentes",
           "impacto": 4,
-          "cluster_id": "equivalencia-versoes-prova",
+          "cluster_id": "prevencao-fraude-provas",
           "recorrencias": 1
         },
         {
@@ -636,7 +636,7 @@
           "summary": "Alunos saem da plataforma durante provas, invalidando resultados de avaliações digitais",
           "summary_suggestion": "Integrar com navegadores seguros e bloquear saída da plataforma durante provas, com suporte robusto para iOS",
           "impacto": 5,
-          "cluster_id": "desconexao-alunos-prova",
+          "cluster_id": "alunos-saem-plataforma-prova",
           "recorrencias": 1
         },
         {
@@ -649,8 +649,8 @@
           "summary": "Documentos e registros acadêmicos espalhados em múltiplos sistemas impedem fluxos administrativos eficientes",
           "summary_suggestion": "Unificar a emissão de declarações, gestão de documentos acadêmicos e configuração de regras em uma única plataforma",
           "impacto": 4,
-          "cluster_id": "fragmentação-registros-acadêmicos",
-          "recorrencias": 2
+          "cluster_id": "documentos-dispersos-sistemas",
+          "recorrencias": 1
         }
       ]
     },
@@ -680,7 +680,7 @@
           "summary": "Não consegue anexar histórico do aluno ao criar tarefas adaptadas, comprometendo a personalização pedagógica",
           "summary_suggestion": "Permitir anexação de histórico e documentos do aluno ao criar tarefas adaptadas para personalização mais precisa",
           "impacto": 4,
-          "cluster_id": "historico-aluno-tarefas",
+          "cluster_id": "contexto-historico-tarefas-adaptadas",
           "recorrencias": 1
         },
         {
@@ -693,7 +693,7 @@
           "summary": "Professores precisam reconstruir manualmente provas ao digitalizá-las, perdendo horas em reformatação",
           "summary_suggestion": "Permitir upload de provas físicas com conversão em documento totalmente editável preservando estrutura e formatação original",
           "impacto": 4,
-          "cluster_id": "digitalizacao-provas-manuais",
+          "cluster_id": "digitalizacao-reformatacao-provas",
           "recorrencias": 1
         },
         {
@@ -706,7 +706,7 @@
           "summary": "Materiais criados ficam inacessíveis quando não há internet, interrompendo atividades em sala de aula",
           "summary_suggestion": "Implementar funcionalidade de acesso offline a materiais previamente sincronizados com segurança e controles de uso",
           "impacto": 3,
-          "cluster_id": "acesso-offline-materiais",
+          "cluster_id": "offline-acesso-materiais",
           "recorrencias": 1
         },
         {
@@ -719,7 +719,7 @@
           "summary": "Simulados com questões apenas de instituições específicas não podem ser gerados automaticamente hoje",
           "summary_suggestion": "Implementar filtro que permita gerar provas selecionando apenas questões de instituições específicas como IME e ITA",
           "impacto": 4,
-          "cluster_id": "geracao-automata-questoes",
+          "cluster_id": "simulados-instituicoes-especificas",
           "recorrencias": 1
         },
         {
@@ -745,7 +745,7 @@
           "summary": "Dados de presença existem, mas faltam ferramentas para análise e acompanhamento institucional centralizado",
           "summary_suggestion": "Dashboard de presença para gestores acompanharem frequência e identificar padrões institucionais",
           "impacto": 4,
-          "cluster_id": "análise-presença-centralizada",
+          "cluster_id": "analise-dados-presenca",
           "recorrencias": 1
         },
         {
@@ -758,20 +758,20 @@
           "summary": "Provas precisam ser montadas manualmente do zero a cada trimestre, sem um padrão consistente",
           "summary_suggestion": "Criar templates reutilizáveis de provas com configuração de quantidade e tipo de questões",
           "impacto": 4,
-          "cluster_id": "padronizacao-construcao-provas",
+          "cluster_id": "padronizacao-provas-trimestrais",
           "recorrencias": 1
         },
         {
           "title": "Relatórios de Atividade do Professor",
           "school": "Escola não identificada",
           "priority": "Alta",
-          "category": "Outros",
+          "category": "Analytics / Personalização",
           "context": "A liderança quer maior visibilidade sobre engajamento docente, criação de aulas e produção de materiais, mas os relatórios atuais não oferecem profundidade suficiente.",
           "suggestion": "Expandir relatórios com métricas robustas de uso da plataforma e produção pedagógica.",
           "summary": "Não há visibilidade sobre quais professores estão realmente engajados, criando aulas e produzindo materiais",
           "summary_suggestion": "Implementar métricas detalhadas de engajamento docente, criação de aulas e produção de materiais nos relatórios de atividade",
           "impacto": 3,
-          "cluster_id": "visibilidade-engajamento-professores",
+          "cluster_id": "visibilidade-engajamento-docente",
           "recorrencias": 1
         },
         {
@@ -791,14 +791,14 @@
           "title": "Monitoramento Socioemocional Diário com",
           "school": "Escola não identificada",
           "priority": "Muito Alta",
-          "category": "Outros",
+          "category": "Analytics / Personalização",
           "context": "Três escolas solicitaram ferramenta estruturada para registrar comportamento socioemocional diário e consolidar essas informações em relatório formal ao final do período. Hoje, o processo é manual ou fragmentado.",
           "suggestion": "Desenvolver funcionalidade de registro socioemocional diário com consolidação automática em relatório periódico e visibilidade para famílias.",
           "summary": "Registros de comportamento socioemocional permanecem dispersos em documentos isolados, impedindo análise consolidada e comunicação estruturada com famílias",
           "summary_suggestion": "Criar ferramenta de registro diário de comportamento socioemocional com geração automática de relatórios periódicos compartilháveis com famílias",
           "impacto": 4,
-          "cluster_id": "dados-comportamento-dispersos",
-          "recorrencias": 2
+          "cluster_id": "registros-dispersos-socioemocional",
+          "recorrencias": 4
         }
       ]
     },
@@ -809,14 +809,14 @@
           "title": "Monitoramento Socioemocional com Visibilidade para as Famílias",
           "school": "Escola não identificada",
           "priority": "Muito Alta",
-          "category": "Outros",
+          "category": "Analytics / Personalização",
           "context": "As escolas destacaram a necessidade de acompanhar de forma sistemática o desenvolvimento socioemocional dos estudantes, incluindo comportamentos como participação, colaboração, disciplina e desafios comportamentais. Atualmente, essas observações costumam ser registradas de maneira informal ou em ferramentas fragmentadas, o que dificulta a consistência, o acompanhamento ao longo do tempo e a comunicação estruturada com as famílias.",
           "suggestion": "Desenvolver uma funcionalidade de monitoramento socioemocional que permita aos professores registrar observações comportamentais diárias de cada aluno, compartilhar essas informações com as famílias de forma estruturada e consolidar automaticamente os registros em um relatório ao final de cada período letivo.",
           "summary": "Observações de comportamento dos alunos se perdem em anotações dispersas, impedindo acompanhamento consistente e diálogo estruturado com as famílias",
           "summary_suggestion": "Criar sistema de registro diário de comportamento e desenvolvimento socioemocional dos alunos com relatórios automáticos e acesso para famílias",
           "impacto": 4,
-          "cluster_id": "dados-comportamento-dispersos",
-          "recorrencias": 2
+          "cluster_id": "registros-dispersos-socioemocional",
+          "recorrencias": 4
         },
         {
           "title": "Automação de Disponibilidade Docente e Montagem de Horários",
@@ -841,14 +841,14 @@
           "summary": "Materiais para alunos neurodivergentes ficam restritos a simplificação textual, sem transformações visuais e estruturais que facilitam o processamento cognitivo",
           "summary_suggestion": "Expandir ferramentas de adaptação para transformações estruturais, visuais e instrucionais de conteúdos para necessidades cognitivas diversas",
           "impacto": 4,
-          "cluster_id": "materiais-neurodivergentes-visuais",
+          "cluster_id": "adaptacao-visual-cognitiva",
           "recorrencias": 1
         },
         {
           "title": "Espaço de Trabalho Dedicado para Orientadores Pedagógicos",
           "school": "Escola não identificada",
           "priority": "Média-Alta",
-          "category": "Outros",
+          "category": "Gestão Administrativa",
           "context": "Os orientadores pedagógicos possuem um fluxo de trabalho diferente do de professores e coordenadores, com foco no acompanhamento dos estudantes, reuniões com famílias e registro de intervenções pedagógicas. Atualmente, muitas dessas atividades ainda são realizadas manualmente, incluindo elaboração de atas, preparação de apresentações para reuniões e organização de relatórios diagnósticos.",
           "suggestion": "Criar um ambiente dedicado para orientadores pedagógicos, com ferramentas como acesso a relatórios diagnósticos dos alunos, geração automática de atas de reunião e criação assistida por IA de apresentações para reuniões com famílias, a partir do tema discutido.",
           "summary": "Orientadores pedagógicos perdem tempo em tarefas administrativas manuais em vez de focar no acompanhamento efetivo dos estudantes",
@@ -867,7 +867,7 @@
           "summary": "Professores criam provas sem controlar previamente a distribuição entre níveis cognitivos e dificuldades",
           "summary_suggestion": "Permitir que professores definam previamente a distribuição cognitiva e de dificuldade nas avaliações, com visualização em mapa de calor",
           "impacto": 4,
-          "cluster_id": "controle-dificuldade-questoes",
+          "cluster_id": "distribuicao-dificuldade-questoes",
           "recorrencias": 2
         }
       ]
@@ -885,7 +885,7 @@
           "summary": "Provas ocupam mais páginas que o necessário, elevando custos de impressão e complicando a logística para centenas de alunos",
           "summary_suggestion": "Implementar modo de impressão econômica com espaçamentos reduzidos e melhor aproveitamento de páginas nas provas",
           "impacto": 4,
-          "cluster_id": "otimizacao-impressao",
+          "cluster_id": "otimizacao-impressao-paginas",
           "recorrencias": 1
         },
         {
@@ -898,8 +898,8 @@
           "summary": "Dados de avaliação ficam fragmentados em múltiplos sistemas, impedindo visão centralizada do desempenho acadêmico",
           "summary_suggestion": "Funcionalidade para upload de provas em PDF/imagem com registro automático de notas e geração de dashboards de desempenho por turma",
           "impacto": 4,
-          "cluster_id": "centralizacao-dados-desempenho",
-          "recorrencias": 1
+          "cluster_id": "fragmentacao-informacoes-academicas",
+          "recorrencias": 3
         },
         {
           "title": "Geração de Questões com Prompts",
@@ -911,7 +911,7 @@
           "summary": "Professores perdem tempo navegando múltiplos passos para criar questões quando poderiam digitar um comando simples",
           "summary_suggestion": "Implementar geração automática de questões por prompts em linguagem natural para agilizar a criação pelo professor",
           "impacto": 4,
-          "cluster_id": "criacao-conteudo-ineficiente",
+          "cluster_id": "eficiencia-criacao-conteudo",
           "recorrencias": 1
         },
         {
@@ -924,7 +924,7 @@
           "summary": "Professores não conseguem destacar visualmente partes do texto para guiar a atenção dos alunos durante a leitura",
           "summary_suggestion": "Implementar marcação colorida de textos nas ferramentas de adaptação de materiais para melhorar a acessibilidade visual",
           "impacto": 3,
-          "cluster_id": "destaque-visual-texto",
+          "cluster_id": "destaque-visual-leitura",
           "recorrencias": 1
         },
         {
@@ -950,7 +950,7 @@
           "summary": "Provas sem data limite deixam alunos entregando trabalhos fora do calendário acadêmico",
           "summary_suggestion": "Implementar campo de prazo de entrega nas provas para alinhar com o calendário acadêmico",
           "impacto": 4,
-          "cluster_id": "prazos-entrega-provas",
+          "cluster_id": "data-limite-entrega-trabalhos",
           "recorrencias": 1
         },
         {
@@ -963,7 +963,7 @@
           "summary": "Reuniões pedagógicas espalhadas em diferentes ferramentas impedem visão única do fluxo de acompanhamento estudantil",
           "summary_suggestion": "Implementar calendário interno para agendamento centralizado de reuniões pedagógicas entre professores e coordenação",
           "impacto": 4,
-          "cluster_id": "visao-unica-acompanhamento",
+          "cluster_id": "dispersao-informacoes-multiplos-canais",
           "recorrencias": 2
         },
         {
@@ -976,21 +976,21 @@
           "summary": "A IA responde sobre temas genéricos, ignorando projetos e eventos únicos da instituição",
           "summary_suggestion": "Permitir que escolas insiram contextos personalizados para a IA considerar projetos, eventos e temas institucionais nas interações com alunos",
           "impacto": 3,
-          "cluster_id": "ia-desconectada-contexto-institucional",
-          "recorrencias": 1
+          "cluster_id": "personalizacao-conteudo-institucional",
+          "recorrencias": 2
         },
         {
           "title": "Micro Vídeo Aulas para Apoio ao",
           "school": "Escola não identificada",
           "priority": "Média",
-          "category": "Outros",
+          "category": "Conteúdo Didático / Autoria",
           "context": "Escolas buscam maneiras simples de reforçar conteúdos fora da sala de aula, mas atualmente os professores não possuem um espaço centralizado na plataforma para compartilhar vídeos curtos explicativos.",
           "suggestion": "Permitir que professores façam upload de micro vídeo aulas diretamente na plataforma para compartilhar com suas turmas.",
           "summary": "Professores perdem tempo procurando onde compartilhar vídeos curtos de reforço com alunos",
           "summary_suggestion": "Criar espaço centralizado na plataforma para upload e compartilhamento de micro vídeo aulas entre professores e turmas",
           "impacto": 3,
-          "cluster_id": "descoberta-conteudo-disciplinas",
-          "recorrencias": 3
+          "cluster_id": "compartilhamento-conteudo-rapido",
+          "recorrencias": 1
         },
         {
           "title": "Agendamento de Reuniões entre Pais",
@@ -1002,7 +1002,7 @@
           "summary": "Reuniões com coordenação ficam espalhadas em ligações e mensagens, criando atrasos e trabalho manual excessivo",
           "summary_suggestion": "Implementar sistema de agendamento online para que famílias marquem reuniões com a coordenação em horários disponíveis",
           "impacto": 4,
-          "cluster_id": "gestao-reuniões-coordenação",
+          "cluster_id": "organizacao-reunioes-coordenacao",
           "recorrencias": 1
         },
         {
@@ -1015,7 +1015,7 @@
           "summary": "Simulados com layout diferente do ENEM não treinam os alunos para o formato real da prova",
           "summary_suggestion": "Criar templates de layout de provas baseados no padrão ENEM e vestibulares para simulados mais realistas",
           "impacto": 4,
-          "cluster_id": "fidelidade-layout-enem",
+          "cluster_id": "layout-prova-enem-realista",
           "recorrencias": 2
         },
         {
@@ -1028,21 +1028,21 @@
           "summary": "Professores geram provas sem poder filtrar por tipo de questão ou universidade, perdendo tempo ajustando manualmente depois",
           "summary_suggestion": "Implementar filtros (tipo de questão, universidade) antes da geração automática de provas",
           "impacto": 4,
-          "cluster_id": "filtros-construcao-provas",
+          "cluster_id": "filtro-tipo-questao-universidade",
           "recorrencias": 2
         },
         {
           "title": "Suporte ao Currículo IB (International",
           "school": "Escola não identificada",
           "priority": "Média",
-          "category": "Outros",
+          "category": "Plataforma / Integração",
           "context": "Escolas que seguem o currículo IB possuem estruturas pedagógicas específicas para planejamento, avaliações e materiais, que não estão totalmente contempladas pela estrutura atual da plataforma.",
           "suggestion": "Desenvolver suporte para o framework International Baccalaureate, incluindo: ●​ estrutura curricular ●​ formatos de planejamento ●​ formatos de avaliação ●​ organização de materiais",
           "summary": "Planejar aulas, avaliar alunos e organizar materiais conforme as exigências do currículo IB fica limitado na plataforma atual",
           "summary_suggestion": "Integrar estrutura curricular, formatos de planejamento, avaliação e organização de materiais específicos do International Baccalaureate",
           "impacto": 4,
-          "cluster_id": "ferramentas-especializadas-disciplinas",
-          "recorrencias": 2
+          "cluster_id": "curriculo-ib-plataforma",
+          "recorrencias": 1
         },
         {
           "title": "Benchmark de Desempenho com",
@@ -1054,7 +1054,7 @@
           "summary": "Desempenho dos alunos fica invisível sem comparação com médias nacionais de ENEM e vestibulares",
           "summary_suggestion": "Comparar desempenho dos alunos com médias nacionais de exames para análises pedagógicas estratégicas",
           "impacto": 3,
-          "cluster_id": "comparacao-desempenho-nacional",
+          "cluster_id": "comparacao-desempenho-enem",
           "recorrencias": 1
         },
         {
@@ -1085,7 +1085,7 @@
           "summary": "Cabeçalhos de avaliação fixos impedem alinhar a plataforma aos padrões internos, gerando retrabalho manual",
           "summary_suggestion": "Permitir que a escola customize completamente os campos e labels dos cabeçalhos de avaliação",
           "impacto": 4,
-          "cluster_id": "personalizacao-cabecalho",
+          "cluster_id": "customizacao-cabecalho-avaliacoes",
           "recorrencias": 1
         },
         {
@@ -1105,13 +1105,13 @@
           "title": "Análise de Lacunas por Múltiplas Habilidades e",
           "school": "Escola não identificada",
           "priority": "Alta",
-          "category": "Outros",
+          "category": "Analytics / Personalização",
           "context": "As escolas querem ir além da análise individual e ter uma visão pedagógica mais ampla das lacunas de aprendizagem por turma e subgrupos. Hoje, a plataforma destaca apenas uma",
           "suggestion": "Permitir análise de múltiplas habilidades por turma e subgrupos, destacando as principais lacunas e possibilitando a criação de diferentes grupos de intervenção com base nas diversas necessidades de aprendizagem.",
           "summary": "Não conseguem visualizar simultaneamente as lacunas de múltiplas habilidades por turma para formar grupos de intervenção direcionados",
           "summary_suggestion": "Permitir análise simultânea de múltiplas habilidades por turma e subgrupos para identificar lacunas e formar grupos de intervenção",
           "impacto": 3,
-          "cluster_id": "visibilidade-lacunas-aprendizado",
+          "cluster_id": "visualizar-lacunas-habilidades",
           "recorrencias": 1
         },
         {
@@ -1124,7 +1124,7 @@
           "summary": "Alunos enfrentam acesso disperso aos materiais, perdendo o fluxo natural de leitura e o engajamento com o conteúdo",
           "summary_suggestion": "Plataforma centralizada de leitura digital com experiência similar aos livros físicos",
           "impacto": 4,
-          "cluster_id": "organizacao-acesso-materiais",
+          "cluster_id": "acesso-organizado-materiais",
           "recorrencias": 1
         }
       ]
@@ -1142,7 +1142,7 @@
           "summary": "Famílias não acompanham ativamente a jornada do aluno porque exige navegação ativa em navegador, reduzindo o engajamento contínuo",
           "summary_suggestion": "Desenvolver aplicativo mobile intuitivo para facilitar acompanhamento pedagógico integrado à rotina diária das famílias",
           "impacto": 4,
-          "cluster_id": "engajamento-familia-ativo",
+          "cluster_id": "engajamento-familia-passivo",
           "recorrencias": 1
         },
         {
@@ -1155,20 +1155,20 @@
           "summary": "Informações sobre desempenho, atividades e uso da plataforma estão espalhadas, impossibilitando uma visão integrada da evolução do aluno",
           "summary_suggestion": "Consolidar notas, histórico de atividades e uso da plataforma em um perfil unificado do aluno",
           "impacto": 5,
-          "cluster_id": "visao-integrada-desempenho-aluno",
+          "cluster_id": "visao-integrada-aluno",
           "recorrencias": 1
         },
         {
           "title": "Do Diagnóstico à Ação Pedagógica Automática",
           "school": "Escola não identificada",
           "priority": "Muito Alta",
-          "category": "Outros",
+          "category": "IA Pedagógica",
           "context": "As avaliações diagnósticas existem, mas a ação ainda depende do professor. Há um gap entre identificar dificuldades e agir sobre elas.",
           "suggestion": "Criar fluxos automáticos pós-diagnóstico que identifiquem lacunas e gerem atividades de reforço e trilhas personalizadas sem intervenção manual.",
           "summary": "Diagnósticos identificam problemas, mas atividades de reforço seguem dependendo do trabalho manual do professor",
           "summary_suggestion": "Automatizar a geração de atividades de reforço e trilhas personalizadas após diagnóstico de lacunas",
           "impacto": 4,
-          "cluster_id": "automacao-intervencoes-direcionadas",
+          "cluster_id": "reforco-automatizado-diagnostico",
           "recorrencias": 1
         },
         {
@@ -1182,19 +1182,19 @@
           "summary_suggestion": "Permitir que escolas façam upload de provas prontas com estruturação automática e edição completa integrada ao fluxo de aplicação e correção",
           "impacto": 4,
           "cluster_id": "reutilizacao-provas-existentes",
-          "recorrencias": 2
+          "recorrencias": 1
         },
         {
           "title": "Relatórios Longitudinais e Exportáveis",
           "school": "Escola não identificada",
           "priority": "Alta",
-          "category": "Outros",
+          "category": "Analytics / Personalização",
           "context": "Os relatórios atuais são focados em avaliações isoladas e não mostram a evolução contínua do aluno.",
           "suggestion": "Criar relatórios longitudinalmente estruturados e exportáveis que consolidem desempenho, evolução e atividades.",
           "summary": "Relatórios atuais capturam snapshots isolados, impossibilitando visualizar trajetória e progresso contínuo do aluno",
           "summary_suggestion": "Consolidar desempenho, evolução e atividades dos alunos em relatórios exportáveis que mostrem histórico contínuo",
           "impacto": 3,
-          "cluster_id": "visibilidade-progresso-continuo",
+          "cluster_id": "trajetoria-progresso-continuo",
           "recorrencias": 1
         },
         {
@@ -1207,7 +1207,7 @@
           "summary": "Hoje não há como medir sistematicamente a fluência e compreensão leitora dos alunos",
           "summary_suggestion": "Implementar ferramentas de avaliação estruturada de leitura que meçam fluência e compreensão dos alunos",
           "impacto": 4,
-          "cluster_id": "medicao-fluencia-leitura",
+          "cluster_id": "medicao-fluencia-compreensao",
           "recorrencias": 1
         },
         {
@@ -1220,7 +1220,7 @@
           "summary": "Famílias e coordenação perdem tempo em múltiplos agendamentos manuais, causando conflitos e falta de controle centralizado",
           "summary_suggestion": "Sistema online para que famílias visualizem e agendem reuniões com professores em horários disponíveis",
           "impacto": 4,
-          "cluster_id": "agendamentos-manuais-famílias",
+          "cluster_id": "agendamentos-manuais-conflitos",
           "recorrencias": 1
         },
         {
@@ -1233,7 +1233,7 @@
           "summary": "Informações de matéria, série e tema são solicitadas repetidamente ao gerar conteúdo, causando retrabalho",
           "summary_suggestion": "Pré-preencher automaticamente matéria, série e tema ao gerar conteúdo baseado no contexto atual do aluno",
           "impacto": 3,
-          "cluster_id": "retrabalho-dados-conteudo",
+          "cluster_id": "retrabalho-entrada-dados",
           "recorrencias": 1
         },
         {
@@ -1259,7 +1259,7 @@
           "summary": "Alunos do Fundamental I abandonam a plataforma por falta de elementos interativos que os motivem",
           "summary_suggestion": "Implementar mecânicas de gamificação (pontos, badges, desafios) para aumentar o engajamento de alunos do Fundamental I",
           "impacto": 4,
-          "cluster_id": "engajamento-conteudo-dinamico",
+          "cluster_id": "engajamento-conteudo-estatico",
           "recorrencias": 3
         },
         {
@@ -1272,8 +1272,8 @@
           "summary": "Informações sobre aulas e materiais ficam espalhadas em múltiplos canais, dificultando acesso e acompanhamento",
           "summary_suggestion": "Integrar um canal de comunicação pedagógica na plataforma vinculado aos materiais e planejamentos",
           "impacto": 4,
-          "cluster_id": "informacoes-espalhadas-multiplos-canais",
-          "recorrencias": 1
+          "cluster_id": "dispersao-informacoes-multiplos-canais",
+          "recorrencias": 2
         },
         {
           "title": "Vídeos Curtos para Reforço de Aprendizagem",
@@ -1285,7 +1285,7 @@
           "summary": "Professores perdem tempo buscando ferramentas externas para compartilhar explicações em vídeo com alunos",
           "summary_suggestion": "Implementar funcionalidade de upload e distribuição de vídeos curtos para compartilhamento de explicações na plataforma",
           "impacto": 3,
-          "cluster_id": "ferramentas-video-compartilhamento",
+          "cluster_id": "ferramentas-video-explicacao",
           "recorrencias": 1
         }
       ]
@@ -1303,8 +1303,8 @@
           "summary": "Professores precisam recriar manualmente cada questão em vez de importar provas existentes prontas",
           "summary_suggestion": "Converter automaticamente provas em PDF ou Word para formato editável na plataforma, eliminando recriação manual",
           "impacto": 5,
-          "cluster_id": "reutilizacao-provas-existentes",
-          "recorrencias": 2
+          "cluster_id": "importacao-questoes-existentes",
+          "recorrencias": 1
         },
         {
           "title": "Boletim Consolidado de Todas as Disciplinas",
@@ -1316,7 +1316,7 @@
           "summary": "Dados de desempenho fragmentados impedem visão integrada do progresso dos alunos em todas as disciplinas",
           "summary_suggestion": "Visualização única e integrada do desempenho de alunos em todas as disciplinas para análise rápida da gestão",
           "impacto": 4,
-          "cluster_id": "fragmentação-desempenho-alunos",
+          "cluster_id": "desempenho-fragmentado-disciplinas",
           "recorrencias": 1
         },
         {
@@ -1329,7 +1329,7 @@
           "summary": "Criar planos de desenvolvimento para múltiplos alunos simultaneamente sem perder consistência e qualidade",
           "summary_suggestion": "Gerar PEIs automaticamente em lote usando dados dos alunos da plataforma para padronizar e acelerar o processo",
           "impacto": 4,
-          "cluster_id": "planos-desenvolvimento-multiplos",
+          "cluster_id": "planos-desenvolvimento-em-massa",
           "recorrencias": 1
         }
       ]
@@ -1347,7 +1347,7 @@
           "summary": "Todas as postagens do mural permitem respostas, impedindo comunicados unidirecionais sem interação",
           "summary_suggestion": "Permitir que professores ativem ou desativem respostas em cada postagem do mural",
           "impacto": 3,
-          "cluster_id": "controle-comunicados-murais",
+          "cluster_id": "comunicados-unidirecionais-mural",
           "recorrencias": 1
         },
         {
@@ -1360,7 +1360,7 @@
           "summary": "Famílias alegam não ter recebido mensagens e escolas não conseguem comprovar quem realmente leu cada comunicação",
           "summary_suggestion": "Implementar indicador de leitura que mostre quais famílias visualizaram cada mensagem",
           "impacto": 4,
-          "cluster_id": "rastreamento-leitura-mensagens",
+          "cluster_id": "comprovacao-leitura-mensagens",
           "recorrencias": 1
         },
         {
@@ -1386,7 +1386,7 @@
           "summary": "Históricos escolares precisam ser gerados e baixados na plataforma, hoje isso não é possível",
           "summary_suggestion": "Sistema de geração e download de históricos escolares e documentos acadêmicos oficiais na plataforma",
           "impacto": 5,
-          "cluster_id": "historicos-escolares-download",
+          "cluster_id": "geracao-historicos-escolares",
           "recorrencias": 1
         },
         {
@@ -1399,7 +1399,7 @@
           "summary": "Hoje faltam elementos interativos e dinâmicos que mantenham os alunos engajados na plataforma",
           "summary_suggestion": "Implementar jogos educativos e elementos de gamificação para tornar a plataforma mais interativa e aumentar o engajamento dos alunos",
           "impacto": 4,
-          "cluster_id": "engajamento-conteudo-dinamico",
+          "cluster_id": "engajamento-conteudo-estatico",
           "recorrencias": 3
         },
         {
@@ -1425,8 +1425,8 @@
           "summary": "Dados sobre desenvolvimento emocional e características individuais dos alunos estão dispersos e desorganizados, impedindo relatórios consistentes e ensino personalizado",
           "summary_suggestion": "Sistema integrado de registros socioemocionais diários com perfis personalizados para adaptação do ensino",
           "impacto": 5,
-          "cluster_id": "dados-dispersos-personalização",
-          "recorrencias": 2
+          "cluster_id": "registros-dispersos-socioemocional",
+          "recorrencias": 4
         },
         {
           "title": "Integração de Dados Administrativos (Fluxo da Secretaria)",
@@ -1438,7 +1438,7 @@
           "summary": "Dados acadêmicos e financeiros espalhados em sistemas diferentes impedem visão única das operações escolares",
           "summary_suggestion": "Centralizar registros acadêmicos e controle financeiro em uma única plataforma para eliminar fragmentação de dados",
           "impacto": 5,
-          "cluster_id": "integracao-dados-academico-financeiro",
+          "cluster_id": "integracao-dados-academicos-financeiros",
           "recorrencias": 1
         }
       ]
@@ -1456,7 +1456,7 @@
           "summary": "Questões e avaliações não são reformatadas automaticamente conforme regras específicas de cada vestibular",
           "summary_suggestion": "Criar um motor que reformate automaticamente questões conforme os padrões específicos de cada vestibular",
           "impacto": 5,
-          "cluster_id": "reformatacao-automatica-vestibular",
+          "cluster_id": "reformatacao-regras-vestibular",
           "recorrencias": 1
         },
         {
@@ -1469,7 +1469,7 @@
           "summary": "Simulados não replicam fielmente o visual das provas originais, comprometendo a preparação realista dos alunos para vestibulares",
           "summary_suggestion": "Customizar completamente o layout das provas para replicar visualmente o design das principais bancas de vestibular",
           "impacto": 4,
-          "cluster_id": "fidelidade-layout-enem",
+          "cluster_id": "layout-prova-enem-realista",
           "recorrencias": 2
         },
         {
@@ -1482,7 +1482,7 @@
           "summary": "Alunos não conseguem criar simulados com filtros específicos por tópico, ficando reféns de categorias genéricas demais",
           "summary_suggestion": "Implementar ferramenta que permita alunos criar simulados com filtros detalhados por tópicos específicos de vestibular",
           "impacto": 4,
-          "cluster_id": "filtros-construcao-provas",
+          "cluster_id": "filtro-tipo-questao-universidade",
           "recorrencias": 2
         },
         {
@@ -1495,7 +1495,7 @@
           "summary": "Comunicações manuais com famílias consomem tempo e geram mensagens inconsistentes",
           "summary_suggestion": "Criar biblioteca de templates de mensagens reutilizáveis para comunicação padronizada com famílias",
           "impacto": 3,
-          "cluster_id": "comunicação-manual-famílias",
+          "cluster_id": "comunicacao-manual-familias",
           "recorrencias": 1
         }
       ]
@@ -1513,7 +1513,7 @@
           "summary": "Professores descrevem manualmente percepções sobre alunos em vez de selecionar necessidades específicas estruturadas",
           "summary_suggestion": "Criar campos estruturados para identificar necessidades de aprendizagem (TDAH, dislexia, autismo) que gerem adaptações pedagógicas precisas e consistentes",
           "impacto": 4,
-          "cluster_id": "descricao-manual-necessidades",
+          "cluster_id": "estruturacao-percepcoes-alunos",
           "recorrencias": 1
         },
         {
@@ -1526,7 +1526,7 @@
           "summary": "Famílias e educadores não conseguem se comunicar via áudio, vídeo e enquetes dentro da plataforma",
           "summary_suggestion": "Implementar suporte a áudios, vídeos e enquetes nos canais de comunicação da plataforma",
           "impacto": 4,
-          "cluster_id": "canais-comunicação-multimidia",
+          "cluster_id": "canais-comunicacao-limitados",
           "recorrencias": 1
         },
         {
@@ -1539,7 +1539,7 @@
           "summary": "Campanhas de matrícula são criadas manualmente sem estratégia, prejudicando a captação consistente de alunos",
           "summary_suggestion": "Gerar automaticamente posts, ideias de vídeos e campanhas promocionais para estruturar estratégias de matrículas",
           "impacto": 4,
-          "cluster_id": "campanha-matrícula-automatizada",
+          "cluster_id": "campanhas-matricula-manual",
           "recorrencias": 1
         }
       ]
@@ -1557,7 +1557,7 @@
           "summary": "A plataforma infere palavras ilegíveis pelo contexto, inflacionando notas contra a política de rigor em caligrafia da escola",
           "summary_suggestion": "Permitir que professores definam o nível de tolerância para aceitar respostas com caligrafia ilegível na correção",
           "impacto": 4,
-          "cluster_id": "calculo-notas-caligrafia",
+          "cluster_id": "calibracao-caligrafia-ia",
           "recorrencias": 1
         }
       ]
@@ -1588,7 +1588,7 @@
           "summary": "Faltam ferramentas para montar programas completos de educação financeira personalizados na plataforma",
           "summary_suggestion": "Desenvolver ferramentas no Teachy Studio para que escolas criem e personalizem programas completos de educação financeira",
           "impacto": 4,
-          "cluster_id": "programa-educacao-financeira",
+          "cluster_id": "programas-educacao-financeira",
           "recorrencias": 1
         },
         {
@@ -1601,8 +1601,8 @@
           "summary": "Documentos oficiais como histórico e declarações são gerados fora da plataforma, fragmentando o fluxo administrativo",
           "summary_suggestion": "Integrar geração nativa de documentos acadêmicos e administrativos oficiais na plataforma",
           "impacto": 5,
-          "cluster_id": "fragmentação-registros-acadêmicos",
-          "recorrencias": 2
+          "cluster_id": "documentos-oficiais-dispersos",
+          "recorrencias": 1
         },
         {
           "title": "Marketplace Integrado ao Ecossistema Escolar",
@@ -1614,7 +1614,7 @@
           "summary": "Vender materiais e produtos escolares sem sair da plataforma de comunicação",
           "summary_suggestion": "Criar um marketplace nativo integrado à plataforma para que escolas vendam materiais e produtos",
           "impacto": 3,
-          "cluster_id": "vendas-produtos-plataforma",
+          "cluster_id": "vendas-produtos-escola",
           "recorrencias": 1
         }
       ]
@@ -1632,7 +1632,7 @@
           "summary": "Famílias não conseguem acompanhar a rotina diária dos estudantes além de comunicados esporádicos",
           "summary_suggestion": "Desenvolver portal integrado que mostre calendário, horários e atividades pedagógicas diárias do estudante para as famílias",
           "impacto": 4,
-          "cluster_id": "acompanhamento-rotina-diária",
+          "cluster_id": "acompanhamento-rotina-aluno",
           "recorrencias": 1
         },
         {
@@ -1658,7 +1658,7 @@
           "summary": "Relatórios de acompanhamento diário do berçário seguem um padrão único que não se adapta aos processos específicos de cada escola",
           "summary_suggestion": "Criar relatórios personalizáveis para rastreamento diário no berçário, adaptando rotinas e observações ao fluxo de trabalho de cada escola",
           "impacto": 4,
-          "cluster_id": "processos-não-customizáveis",
+          "cluster_id": "adaptacao-processos-especificos",
           "recorrencias": 1
         },
         {
@@ -1684,14 +1684,14 @@
           "summary": "Sistemas desconectados impedem visibilidade clara sobre o progresso pedagógico e dificultam o acompanhamento de alunos neurodivergentes",
           "summary_suggestion": "Integrar engajamento familiar e fluxos de PDI para alunos neurodivergentes em um ecossistema único",
           "impacto": 4,
-          "cluster_id": "visao-unica-acompanhamento",
-          "recorrencias": 2
+          "cluster_id": "visibilidade-progresso-pedagogico",
+          "recorrencias": 1
         },
         {
           "title": "Centralização da Produção de Conteúdo e Redução",
           "school": "Colégio Desafio de Osasco",
           "priority": "Muito Alta",
-          "category": "Outros",
+          "category": "Criação de Conteúdo",
           "context": "A escola produz conteúdos próprios e utiliza múltiplas plataformas e fornecedores para diferentes segmentos de ensino, gerando alta complexidade operacional e custos elevados com LMS, gráficas e soluções complementares. School Suggestion Posicionar o Teachy Studio como um ecossistema centralizado para criação, gestão e distribuição de conteúdo pedagógico, reduzindo a fragmentação operacional.",
           "suggestion": "Posicionar o Teachy Studio como um ecossistema centralizado para criação, gestão e distribuição de conteúdo pedagógico, reduzindo a fragmentação operacional.",
           "summary": "Conteúdos espalhados em múltiplas plataformas geram custos altos e complexidade operacional incontrolável",
@@ -1710,8 +1710,8 @@
           "summary": "Documentos acadêmicos são gerados manualmente, criando inconsistências e sobrecarga operacional",
           "summary_suggestion": "Centralizar a documentação acadêmica integrada ao histórico pedagógico para automatizar certificados e históricos escolares",
           "impacto": 5,
-          "cluster_id": "automacao-documentos-academicos",
-          "recorrencias": 1
+          "cluster_id": "fragmentacao-informacoes-academicas",
+          "recorrencias": 3
         },
         {
           "title": "Layout Personalizável e Compartilhamento de",
@@ -1723,7 +1723,7 @@
           "summary": "Boletins são gerados e compartilhados manualmente por falta de flexibilidade nos layouts e fluxos de distribuição",
           "summary_suggestion": "Criar boletins customizáveis com opções de download e compartilhamento direto com alunos e responsáveis",
           "impacto": 4,
-          "cluster_id": "automação-boletins",
+          "cluster_id": "automacao-boletins-distribuicao",
           "recorrencias": 1
         },
         {
@@ -1736,8 +1736,8 @@
           "summary": "Históricos escolares com múltiplos anos ficam confusos e impossíveis de organizar na plataforma atual",
           "summary_suggestion": "Implementar visualização clara do histórico escolar com download completo em um único fluxo",
           "impacto": 4,
-          "cluster_id": "organização-históricos-múltiplos-anos",
-          "recorrencias": 2
+          "cluster_id": "historicos-multiplos-anos",
+          "recorrencias": 1
         },
         {
           "title": "Gestão Financeira Centralizada sem Dependência",
@@ -1749,7 +1749,7 @@
           "summary": "Dados financeiros, boletos e comunicações com famílias estão espalhados em múltiplas plataformas, criando ineficiência operacional",
           "summary_suggestion": "Implementar módulo de gestão financeira integrado para centralizar boletos, cobranças, lembretes e acompanhamento de pagamentos",
           "impacto": 4,
-          "cluster_id": "fragmentação-dados-financeiros",
+          "cluster_id": "financeiro-disperso-plataformas",
           "recorrencias": 1
         },
         {
@@ -1762,8 +1762,8 @@
           "summary": "Registros pedagógicos, comportamentais e socioemocionais ficam dispersos em planilhas desconectadas",
           "summary_suggestion": "Consolidar presença, desempenho, comportamento e aspectos socioemocionais em um diário de classe adaptável à estrutura de cada escola",
           "impacto": 4,
-          "cluster_id": "dados-dispersos-personalização",
-          "recorrencias": 2
+          "cluster_id": "registros-dispersos-socioemocional",
+          "recorrencias": 4
         },
         {
           "title": "Ferramenta de Criação de Grade Horária +",
@@ -1788,7 +1788,7 @@
           "summary": "Múltiplos fornecedores fragmentam custos e operações ao buscar materiais que alinhem excelência acadêmica com valores cristãos",
           "summary_suggestion": "Criar recursos educacionais personalizáveis que integrem valores confessionais e programas acadêmicos em uma única plataforma",
           "impacto": 4,
-          "cluster_id": "fragmentacao-fornecedores",
+          "cluster_id": "consolidacao-fornecedores",
           "recorrencias": 1
         },
         {
@@ -1801,7 +1801,7 @@
           "summary": "Professores acessam o Teachy Studio em segmentos não contratados, comprometendo o modelo de receita",
           "summary_suggestion": "Implementar controle de acesso por segmento e melhorar o processo de onboarding para escolas grandes",
           "impacto": 4,
-          "cluster_id": "acesso-studio-segmentos",
+          "cluster_id": "controle-acesso-studio",
           "recorrencias": 1
         },
         {
@@ -1814,7 +1814,7 @@
           "summary": "Criar e manter materiais didáticos personalizados demanda tempo e recursos que a escola não dispõe hoje",
           "summary_suggestion": "Criar uma plataforma que permita personalizar e gerenciar materiais didáticos conforme a abordagem pedagógica da instituição",
           "impacto": 4,
-          "cluster_id": "criacao-material-personalizado",
+          "cluster_id": "criacao-materiais-personalizados",
           "recorrencias": 1
         }
       ]
@@ -1833,7 +1833,7 @@
           "summary_suggestion": "Criar visão simulada de responsável na demo para escolas visualizarem experiência das famílias em tempo real",
           "impacto": 4,
           "cluster_id": "visualizacao-centralizada-familia",
-          "recorrencias": 2
+          "recorrencias": 3
         },
         {
           "title": "Templates de Ocorrências com Notificação para",
@@ -1845,7 +1845,7 @@
           "summary": "Ocorrências são redigidas manualmente, atrasando o contato com famílias e deixando incerto se receberam a mensagem",
           "summary_suggestion": "Desenvolver modelos prontos de ocorrências com envio automático para famílias e confirmação de recebimento",
           "impacto": 4,
-          "cluster_id": "comunicacao-familia-atraso",
+          "cluster_id": "comunicacao-familias-ineficiente",
           "recorrencias": 1
         },
         {
@@ -1859,7 +1859,7 @@
           "summary_suggestion": "Centralizar o compartilhamento de atividades, resumos e tarefas diárias com as famílias em um espaço único na plataforma",
           "impacto": 4,
           "cluster_id": "visualizacao-centralizada-familia",
-          "recorrencias": 2
+          "recorrencias": 3
         },
         {
           "title": "Controle de Permissões de Dados para Famílias",
@@ -1871,20 +1871,20 @@
           "summary": "Famílias têm acesso a informações demais online, reduzindo visitas presenciais à escola",
           "summary_suggestion": "Permitir que a escola escolha quais dados são visíveis ou ocultos para as famílias no portal",
           "impacto": 4,
-          "cluster_id": "excesso-informação-online",
+          "cluster_id": "informacao-excessiva-online",
           "recorrencias": 1
         },
         {
           "title": "Materiais Paradidáticos, Socioemocionais e",
           "school": "Rede Genoma",
           "priority": "Alta",
-          "category": "Outros",
+          "category": "Conteúdo Didático / Autoria",
           "context": "A rede demonstrou forte interesse em materiais paradidáticos, socioemocionais e de educação financeira, solicitando exemplos concretos antes de avançar no processo comercial. Foi identificado que essa demanda é recorrente em diferentes escolas. School Suggestion",
           "suggestion": "Priorizar a criação de materiais demonstrativos nessas categorias para apoiar processos comerciais e acelerar avaliações pedagógicas das escolas.",
           "summary": "Faltam exemplos concretos de materiais paradidáticos, socioemocionais e de educação financeira para as escolas avaliarem antes de decidir",
           "summary_suggestion": "Desenvolver materiais demonstrativos de educação paradidática, socioemocional e financeira para acelerar decisões comerciais das escolas",
           "impacto": 3,
-          "cluster_id": "falta-exemplos-concretos-materiais",
+          "cluster_id": "avaliacao-materiais-antes-compra",
           "recorrencias": 1
         },
         {
@@ -1897,7 +1897,7 @@
           "summary": "Professores perdem tempo recriando materiais em documentos separados sem saber o que a IA realmente criou",
           "summary_suggestion": "Desenvolver assistente de IA que gera e adapta materiais pedagógicos com rastreamento claro da autoria humana vs automática",
           "impacto": 4,
-          "cluster_id": "rastreamento-criacao-ia",
+          "cluster_id": "rastreabilidade-criacao-ia",
           "recorrencias": 1
         },
         {
@@ -1910,8 +1910,8 @@
           "summary": "Os materiais educacionais disponíveis não refletem a identidade cristã e batista específica da instituição",
           "summary_suggestion": "Desenvolver funcionalidades para criação de materiais pedagógicos personalizados conforme identidade cristã batista",
           "impacto": 3,
-          "cluster_id": "conteúdo-não-alinhado-identidade",
-          "recorrencias": 1
+          "cluster_id": "personalizacao-conteudo-institucional",
+          "recorrencias": 2
         },
         {
           "title": "Replace de Sistemas Tradicionais com Teachy Studio",
@@ -1936,7 +1936,7 @@
           "summary": "Professores refazem adaptações manualmente para cada aluno neurodivergente e criam provas em formatos diferentes entre escolas",
           "summary_suggestion": "Implementar sistema de avaliações escalável com padronização visual, formatos flexíveis e banco de adaptações reutilizáveis para alunos neurodivergentes",
           "impacto": 4,
-          "cluster_id": "adaptacao-neurodivergencia",
+          "cluster_id": "adaptacao-alunos-neurodivergentes",
           "recorrencias": 1
         },
         {
@@ -1962,7 +1962,7 @@
           "summary": "Falta uma estrutura para converter escolas engajadas em referências comerciais e amplificar vendas via influência peer-to-peer",
           "summary_suggestion": "Criar programa de embaixadores com escolas engajadas para validação de produto e influência em vendas",
           "impacto": 4,
-          "cluster_id": "programa-referencias-comerciais",
+          "cluster_id": "programa-escolas-referencia",
           "recorrencias": 1
         }
       ]
@@ -1980,7 +1980,7 @@
           "summary": "Materiais didáticos em PDF não se adaptam aos perfis neurodivergentes específicos, afastando alunos do conteúdo",
           "summary_suggestion": "Gerar adaptações automáticas de PDFs para diferentes perfis neurodivergentes dentro da plataforma",
           "impacto": 4,
-          "cluster_id": "materiais-pdf-neurodivergentes",
+          "cluster_id": "adaptacao-pdf-neurodivergentes",
           "recorrencias": 1
         },
         {
@@ -1993,7 +1993,7 @@
           "summary": "Famílias navegam múltiplos sistemas para acessar informações escolares espalhadas em diferentes plataformas",
           "summary_suggestion": "Integrar secretaria, documentos, certificados, boletins e comunicação com famílias em uma plataforma única",
           "impacto": 5,
-          "cluster_id": "fragmentação-informações-famílias",
+          "cluster_id": "informacoes-dispersas-plataformas",
           "recorrencias": 1
         },
         {
@@ -2006,7 +2006,7 @@
           "summary": "Coordenadores e famílias não sabem quais conteúdos dos livros didáticos estão sendo usados nas aulas",
           "summary_suggestion": "Vincular páginas e referências de livros didáticos às aulas, atividades e avaliações para visibilidade da coordenação e famílias",
           "impacto": 4,
-          "cluster_id": "visibilidade-conteudos-livros",
+          "cluster_id": "visibilidade-livros-didaticos",
           "recorrencias": 1
         },
         {
@@ -2019,7 +2019,7 @@
           "summary": "Alunos em recuperação não conseguem aprender apenas com leitura e exercícios, precisando de explicações guiadas para superar dificuldades",
           "summary_suggestion": "Criar vídeos personalizados de recuperação com IA e avatares para suprir lacunas específicas de aprendizado de cada aluno",
           "impacto": 4,
-          "cluster_id": "aprendizado-alunos-recuperacao",
+          "cluster_id": "explicacao-guiada-recuperacao",
           "recorrencias": 1
         },
         {
@@ -2032,7 +2032,7 @@
           "summary": "Professores gastam tempo demais coordenando disciplinas diferentes sem ferramentas que integrem planejamento e atividades",
           "summary_suggestion": "Plataforma de IA para planejamento e geração colaborativa de projetos interdisciplinares entre professores",
           "impacto": 4,
-          "cluster_id": "integracao-planejamento-disciplinas",
+          "cluster_id": "integracao-planejamento-interdisciplinar",
           "recorrencias": 1
         },
         {
@@ -2045,7 +2045,7 @@
           "summary": "Professores não conseguem identificar automaticamente conexões entre conteúdos de diferentes disciplinas para trabalhos colaborativos",
           "summary_suggestion": "IA que analisa planejamentos de todas as disciplinas e sugere automaticamente conexões para integração curricular",
           "impacto": 4,
-          "cluster_id": "conexoes-interdisciplinares-automaticas",
+          "cluster_id": "conexoes-interdisciplinares",
           "recorrencias": 1
         },
         {
@@ -2058,7 +2058,7 @@
           "summary": "Criar questões estilo ENEM alinhadas aos conteúdos da sala leva muito tempo manualmente",
           "summary_suggestion": "Criar funcionalidade de IA para gerar automaticamente questões estilo ENEM a partir de materiais enviados pelos professores",
           "impacto": 4,
-          "cluster_id": "questoes-enem-alinhadas",
+          "cluster_id": "geracao-questoes-enem",
           "recorrencias": 1
         },
         {
@@ -2071,7 +2071,7 @@
           "summary": "Faltam plataforma digital e conteúdo para expandir o ensino aos anos iniciais do fundamental",
           "summary_suggestion": "Utilizar a Teachy como infraestrutura digital para distribuir materiais existentes e criar conteúdo para Anos Iniciais",
           "impacto": 5,
-          "cluster_id": "plataforma-conteudo-anos-iniciais",
+          "cluster_id": "expansao-anos-iniciais",
           "recorrencias": 1
         },
         {
@@ -2084,7 +2084,7 @@
           "summary": "Escolas com Bernoulli desconhecem que a Teachy oferece IA, Studio e gestão acadêmica além dos conteúdos do sistema tradicional",
           "summary_suggestion": "Desenvolver materiais de posicionamento que esclareçam a Teachy como plataforma independente com IA, Studio e gestão acadêmica para escolas Bernoulli",
           "impacto": 3,
-          "cluster_id": "awareness-features-bernoulli",
+          "cluster_id": "comunicacao-recursos-bernoulli",
           "recorrencias": 1
         }
       ]
@@ -2102,7 +2102,7 @@
           "summary": "Rubricas espalhadas em documentos impedem alinhamento de critérios entre professores",
           "summary_suggestion": "Criar um repositório centralizado de rubricas institucionais alinhadas ao currículo para padronizar avaliações entre docentes",
           "impacto": 4,
-          "cluster_id": "alinhamento-rubricas",
+          "cluster_id": "alinhamento-rubricas-criterios",
           "recorrencias": 1
         },
         {
@@ -2115,7 +2115,7 @@
           "summary": "Materiais didáticos refletem identidade de terceiros, não da instituição",
           "summary_suggestion": "Desenvolver plataforma para que a escola crie, organize e gerencie seus próprios materiais didáticos",
           "impacto": 5,
-          "cluster_id": "identidade-institucional",
+          "cluster_id": "identidade-institucional-conteudo",
           "recorrencias": 1
         },
         {
@@ -2128,7 +2128,7 @@
           "summary": "Adaptar materiais pedagógicos com profundidade e escala para neurodivergentes consome recursos manuais excessivos",
           "summary_suggestion": "Expandir funcionalidades de adaptação e acessibilidade para consolidar como diferencial estratégico da plataforma",
           "impacto": 5,
-          "cluster_id": "adaptacao-escala-neurodivergentes",
+          "cluster_id": "escalabilidade-adaptacoes-neurodivergentes",
           "recorrencias": 1
         },
         {
@@ -2141,7 +2141,7 @@
           "summary": "Hoje falta visibilidade sobre como cada aluno aprende e qual caminho educacional funciona melhor para ele",
           "summary_suggestion": "Implementar analytics avançados para medir aprendizagem, identificar padrões e personalizar trilhas educacionais por aluno",
           "impacto": 4,
-          "cluster_id": "visibilidade-aprendizado-aluno",
+          "cluster_id": "visibilidade-aprendizado-individual",
           "recorrencias": 1
         },
         {
@@ -2154,7 +2154,7 @@
           "summary": "Certificados são preenchidos manualmente um a um, causando erros e retrabalho constante",
           "summary_suggestion": "Automatizar a emissão de certificados com preenchimento de dados dos alunos e armazenamento centralizado",
           "impacto": 4,
-          "cluster_id": "geração-certificados-manual",
+          "cluster_id": "certificados-preenchimento-manual",
           "recorrencias": 1
         },
         {
@@ -2167,7 +2167,7 @@
           "summary": "Adaptações idênticas precisam ser configuradas repetidamente em cada disciplina, duplicando trabalho administrativo",
           "summary_suggestion": "Aplicar um único PEI a múltiplas disciplinas simultaneamente, centralizando adaptações",
           "impacto": 4,
-          "cluster_id": "duplicacao-adaptacoes-disciplinas",
+          "cluster_id": "reutilizacao-adaptacoes-disciplinas",
           "recorrencias": 1
         },
         {
@@ -2180,7 +2180,7 @@
           "summary": "Dados de pesquisas e eventos ficam dispersos, impossibilitando análise centralizada e tomadas de decisão baseadas em informações consolidadas",
           "summary_suggestion": "Criar ferramentas para elaborar enquetes e exportar relatórios de pesquisas e eventos",
           "impacto": 3,
-          "cluster_id": "análise-dados-centralizada",
+          "cluster_id": "dados-dispersos-pesquisas-eventos",
           "recorrencias": 1
         },
         {
@@ -2193,7 +2193,7 @@
           "summary": "Conversas importantes se perdem quando um usuário sai ou muda de responsabilidade",
           "summary_suggestion": "Criar funcionalidade de transferência de conversas entre usuários preservando todo o histórico",
           "impacto": 4,
-          "cluster_id": "perda-histórico-conversas",
+          "cluster_id": "historico-conversas-perdido",
           "recorrencias": 1
         },
         {
@@ -2206,8 +2206,8 @@
           "summary": "Informações escolares de anos anteriores estão dispersas e inacessíveis em uma única consulta",
           "summary_suggestion": "Centralizar o histórico escolar completo do aluno em uma única visualização abrangendo todos os anos letivos",
           "impacto": 4,
-          "cluster_id": "organização-históricos-múltiplos-anos",
-          "recorrencias": 2
+          "cluster_id": "historicos-anos-anteriores",
+          "recorrencias": 1
         },
         {
           "title": "Álbum de Fotos para Famílias",
@@ -2219,7 +2219,7 @@
           "summary": "Fotos de atividades e eventos se perdem sem organização e as famílias não conseguem acessá-las de forma estruturada",
           "summary_suggestion": "Implementar álbuns de fotos organizados para que famílias acessem registros de atividades e eventos escolares",
           "impacto": 4,
-          "cluster_id": "organizacao-midia-acesso-familia",
+          "cluster_id": "organizacao-acervo-digital",
           "recorrencias": 1
         },
         {
@@ -2245,7 +2245,7 @@
           "summary": "Trabalhos chegam desorganizados e inconsistentes porque faltam modelos padronizados de entrega",
           "summary_suggestion": "Criar templates personalizáveis para padronizar a entrega de trabalhos dos alunos",
           "impacto": 3,
-          "cluster_id": "falta-padronização-entregas",
+          "cluster_id": "padronizacao-entrega-trabalhos",
           "recorrencias": 1
         }
       ]
