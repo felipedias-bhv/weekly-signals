@@ -544,10 +544,13 @@ function renderConsolidado(data) {
         tema_central: item.category||'',
         escola: isUnknownSchool(item.school)?'':(item.school||''),
         dor_curta: item.summary||fs(item.context)||item.title||'',
-        resolve_curto: item.title||'',
+        resolve_curto: item.summary_suggestion||item.suggestion||item.title||'',
         dor_detalhada: item.context||'',
         resolve_detalhado: item.suggestion||'',
-        priority: item.priority||''
+        priority: item.priority||'',
+        impacto: item.impacto||0,
+        recorrencias: item.recorrencias||1,
+        cluster_id: item.cluster_id||''
       });
     });
   });
@@ -602,6 +605,8 @@ function filterConsol() {
         <div class="consol-id">#${item.id}</div>
         <div class="consol-meta">
           <span class="consol-quarter">${item.quarter}</span>
+          ${item.recorrencias>1?`<span style="font-size:10px;font-weight:700;background:rgba(79,106,245,0.12);color:var(--accent);border-radius:20px;padding:2px 8px;margin-left:4px;">↻ ${item.recorrencias}×</span>`:''}
+          ${item.impacto>=4?`<span style="font-size:10px;font-weight:700;background:rgba(239,68,68,0.1);color:#EF4444;border-radius:20px;padding:2px 8px;margin-left:4px;">impacto ${'★'.repeat(item.impacto)}</span>`:''}
           <span class="consol-semana">${item.semana}</span>
         </div>
         <div class="consol-tema" style="background:${cc}20;color:${cc};">${item.tema_central}</div>
@@ -867,7 +872,7 @@ function render(data){
     }
     document.querySelector(".top3-bar-title").textContent=titleText;
     document.getElementById("top3-week-label").textContent=labelText;
-    const scored=pool.map(i=>({...i,score:(PW[i.priority]||1)*2+(CAT_B2B[i.category]||1)})).sort((a,b)=>b.score-a.score).slice(0,3);
+    const scored=pool.map(i=>({...i,score:(i.impacto||0)*3+(PW[i.priority]||1)*2+(CAT_B2B[i.category]||1)})).sort((a,b)=>b.score-a.score).slice(0,3);
     document.getElementById("top3-grid").innerHTML=scored.map((item,i)=>{
       const pc=item.priority==="Muito Alta"?"top3-chip-red":item.priority==="Alta"?"top3-chip-amber":"";
       const why=item.summary||trimSentence(item.context||item.suggestion||"",160);

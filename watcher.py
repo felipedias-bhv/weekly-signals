@@ -17,7 +17,97 @@ from datetime import datetime
 PASTA_PDFS    = r"C:\WeeklySignals\pdfs"
 ARQUIVO_DADOS = r"C:\WeeklySignals\dados.json"
 INTERVALO_SEGUNDOS = 30
+from config import ANTHROPIC_API_KEY
 # ============================================================
+
+_anthropic_client = None
+
+def get_anthropic():
+    global _anthropic_client
+    if _anthropic_client:
+        return _anthropic_client
+    try:
+        import anthropic
+    except ImportError:
+        log("Instalando anthropic...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "anthropic", "-q"])
+        import anthropic
+    _anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    return _anthropic_client
+
+def gerar_impacto(title, context, suggestion, category, priority):
+    try:
+        client = get_anthropic()
+        prompt = (
+            f"Avalie o impacto de negócio deste pedido de escola (1-5):\n"
+            f"5=bloqueia operação central | 4=fricção recorrente | 3=relevante | 2=nice-to-have | 1=marginal\n"
+            f"Categoria: {category} | Prioridade: {priority}\n"
+            f"Título: {title}\nContexto: {context[:400]}\n"
+            f"Responda APENAS com um número de 1 a 5."
+        )
+        msg = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=5,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = msg.content[0].text.strip()
+        score = int(''.join(c for c in raw if c.isdigit())[:1] or "3")
+        return max(1, min(5, score))
+    except Exception as e:
+        log(f"  impacto API erro: {e}")
+        return 3
+
+def gerar_summary_suggestion(title, suggestion, context=""):
+    try:
+        client = get_anthropic()
+        prompt = (
+            f"Você é um analista de produto que escreve para um painel executivo.\n\n"
+            f"Leia a sugestão da escola abaixo na íntegra e escreva UMA frase em português que:\n"
+            f"- Diga o que a escola quer que seja construído ou melhorado (a solução proposta)\n"
+            f"- Seja compreensível para quem nunca viu esse pedido antes\n"
+            f"- Seja direta e objetiva: sem 'a escola sugere', sem 'foi solicitado', sem rodeios\n"
+            f"- Máximo 120 caracteres\n"
+            f"- Não copie o título, não comece com 'A escola'\n\n"
+            f"Título: {title}\n"
+            f"Sugestão da escola: {suggestion}\n"
+            f"Contexto: {context}\n\n"
+            f"Responda apenas com a frase, sem aspas, sem ponto final."
+        )
+        msg = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=100,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return msg.content[0].text.strip().strip('"').rstrip('.')
+    except Exception as e:
+        log(f"  summary_suggestion API erro: {e}")
+        return ""
+
+def gerar_summary(title, context, suggestion=""):
+    try:
+        client = get_anthropic()
+        prompt = (
+            f"Você é um analista de produto que escreve para um painel executivo.\n\n"
+            f"Leia o pedido abaixo na íntegra e escreva UMA frase em português que:\n"
+            f"- Diga o que a escola NÃO consegue fazer hoje (a dor real)\n"
+            f"- Seja compreensível para quem nunca viu esse pedido antes\n"
+            f"- Seja direta: sem 'a escola precisa', sem 'foi solicitado', sem rodeios\n"
+            f"- Máximo 120 caracteres\n"
+            f"- Não copie o título, não comece com 'A escola'\n\n"
+            f"Título: {title}\n"
+            f"Contexto: {context}\n"
+            f"Sugestão da escola: {suggestion}\n\n"
+            f"Responda apenas com a frase, sem aspas, sem ponto final."
+        )
+        msg = client.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=100,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return msg.content[0].text.strip().strip('"').rstrip('.')
+    except Exception as e:
+        log(f"  summary API erro: {e}")
+        return ""
 
 CATEGORY_RULES = [
     (["neurodivergent", "neurodivergente", "pei", "inclusion", "inclusão", "inclusao",
@@ -146,132 +236,19 @@ def extrair_itens(texto):
 
         category = classify(title, bloco[:400])
 
+        summary            = gerar_summary(title, context, suggestion)
+        time.sleep(0.15)
+        summary_suggestion = gerar_summary_suggestion(title, suggestion, context)
+        time.sleep(0.15)
+        impacto            = gerar_impacto(title, context, suggestion, category, priority)
+        time.sleep(0.15)
+
         items.append({
-            "title":      title,
-            "school":     school,
-            "priority":   priority,
-            "category":   category,
-            "context":    context,
-            "suggestion": suggestion,
-        })
-
-    return items
-
-# ---------------------------------------------------------------
-#  NOVO: divide PDF multi-semana em seções por "Week XX – DD.MM"
-# ---------------------------------------------------------------
-def split_semanas(texto, nome_arquivo):
-    """
-    Retorna lista de (nome_semana, texto_semana).
-    Se encontrar cabeçalhos "Week XX – DD.MM" divide o PDF em seções.
-    Se não encontrar, trata como semana única.
-    """
-    # Padrão: "Week 07 – 06.02" ou "Week 07 - 06/02" (com traço normal ou em-dash)
-    pattern = re.compile(r'Week\s+(\d+)\s*[–\-]\s*([\d.\/]+)', re.IGNORECASE)
-    matches = list(pattern.finditer(texto))
-
-    if not matches:
-        # Formato desconhecido — semana única derivada do nome do arquivo
-        base = os.path.splitext(nome_arquivo)[0]
-        nome = base.replace("_", " ").replace("-", " – ")
-        return [(nome, texto)]
-
-    # Divide em seções
-    semanas = []
-    for i, m in enumerate(matches):
-        week_num = m.group(1).zfill(2)
-        week_date = m.group(2)
-        nome = f"Week {week_num} – {week_date}"
-        start = m.start()
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(texto)
-        semanas.append((nome, texto[start:end]))
-
-    return semanas
-
-def carregar_dados():
-    if os.path.exists(ARQUIVO_DADOS):
-        with open(ARQUIVO_DADOS, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return {"semanas": [], "pdfs_processados": [], "updated_at": ""}
-
-def salvar_dados(dados):
-    os.makedirs(os.path.dirname(ARQUIVO_DADOS), exist_ok=True)
-    dados["updated_at"] = datetime.now().isoformat()
-    with open(ARQUIVO_DADOS, "w", encoding="utf-8") as f:
-        json.dump(dados, f, ensure_ascii=False, indent=2)
-
-def hash_arquivo(caminho):
-    h = hashlib.md5()
-    with open(caminho, "rb") as f:
-        h.update(f.read())
-    return h.hexdigest()
-
-def processar_pdf(caminho, nome_arquivo, dados):
-    log(f"Processando: {nome_arquivo}")
-    try:
-        texto = extrair_texto_pdf(caminho)
-        if not texto.strip():
-            log(f"  PDF sem texto legível.")
-            dados["pdfs_processados"].append(hash_arquivo(caminho))
-            salvar_dados(dados)
-            return
-
-        semanas_extraidas = split_semanas(texto, nome_arquivo)
-        total_itens = 0
-
-        for nome_semana, texto_semana in semanas_extraidas:
-            itens = extrair_itens(texto_semana)
-            if not itens:
-                log(f"  '{nome_semana}' — nenhum item encontrado, pulando.")
-                continue
-
-            semanas = dados["semanas"]
-            existente = next((s for s in semanas if s["name"] == nome_semana), None)
-            if existente:
-                existente["items"] = itens
-                log(f"  '{nome_semana}' atualizada — {len(itens)} itens")
-            else:
-                semanas.append({"name": nome_semana, "items": itens})
-                log(f"  '{nome_semana}' adicionada — {len(itens)} itens")
-
-            total_itens += len(itens)
-
-        dados["pdfs_processados"].append(hash_arquivo(caminho))
-        salvar_dados(dados)
-        log(f"  Total: {len(semanas_extraidas)} semanas, {total_itens} itens — salvo em {ARQUIVO_DADOS}")
-
-    except Exception as e:
-        log(f"  ERRO: {e}")
-        import traceback; traceback.print_exc()
-
-def monitorar():
-    os.makedirs(PASTA_PDFS, exist_ok=True)
-    log("=" * 56)
-    log("Weekly Signals Watcher iniciado")
-    log(f"Pasta PDFs : {PASTA_PDFS}")
-    log(f"Dados JSON : {ARQUIVO_DADOS}")
-    log(f"Intervalo  : {INTERVALO_SEGUNDOS}s  —  Ctrl+C para parar")
-    log("=" * 56)
-
-    dados = carregar_dados()
-    dados["pdfs_processados"] = []   # força reprocessamento
-
-    while True:
-        try:
-            arquivos = sorted(f for f in os.listdir(PASTA_PDFS) if f.lower().endswith(".pdf"))
-            for nome in arquivos:
-                caminho = os.path.join(PASTA_PDFS, nome)
-                h = hash_arquivo(caminho)
-                if h not in dados["pdfs_processados"]:
-                    processar_pdf(caminho, nome, dados)
-                    dados = carregar_dados()
-        except KeyboardInterrupt:
-            log("Encerrado.")
-            break
-        except Exception as e:
-            log(f"Erro no loop: {e}")
-
-        time.sleep(INTERVALO_SEGUNDOS)
-
-if __name__ == "__main__":
-    monitorar()
+            "title":              title,
+            "school":             school,
+            "priority":           priority,
+            "category":           category,
+            "context":            context,
+            "suggestion":         suggestion,
+            "summary":            summary,
+            "summary_suggestion": summary_su
