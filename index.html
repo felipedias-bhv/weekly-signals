@@ -543,7 +543,7 @@ function renderConsolidado(data) {
         quarter,
         tema_central: item.category||'',
         escola: isUnknownSchool(item.school)?'':(item.school||''),
-        dor_curta: fs(item.context)||item.title||'',
+        dor_curta: item.summary||fs(item.context)||item.title||'',
         resolve_curto: item.title||'',
         dor_detalhada: item.context||'',
         resolve_detalhado: item.suggestion||'',
