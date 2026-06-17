@@ -511,44 +511,44 @@
       "name": "Week 11 – 06.03",
       "items": [
         {
-          "title": "Socioemotional Monitoring with Family Visibility",
+          "title": "Monitoramento Socioemocional com Visibilidade para as Famílias",
           "school": "Escola não identificada",
           "priority": "Muito Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Schools highlighted the need to systematically track students’ socioemotional development, including behaviors such as participation, collaboration, discipline, and behavioral challenges. Currently, these observations are often recorded informally or through fragmented tools, which limits consistency, long-term monitoring, and structured communication with families. School Suggestion Develop a socioemotional monitoring feature that allows teacher",
-          "suggestion": "Develop a socioemotional monitoring feature that allows teachers to log daily behavioral observations for each student, share these updates with families in a structured way, and automatically consolidate them into a summary report at the end of each academic period."
+          "category": "Outros",
+          "context": "As escolas destacaram a necessidade de acompanhar de forma sistemática o desenvolvimento socioemocional dos estudantes, incluindo comportamentos como participação, colaboração, disciplina e desafios comportamentais. Atualmente, essas observações costumam ser registradas de maneira informal ou em ferramentas fragmentadas, o que dificulta a consistência, o acompanhamento ao longo do tempo e a comunicação estruturada com as famílias.",
+          "suggestion": "Desenvolver uma funcionalidade de monitoramento socioemocional que permita aos professores registrar observações comportamentais diárias de cada aluno, compartilhar essas informações com as famílias de forma estruturada e consolidar automaticamente os registros em um relatório ao final de cada período letivo."
         },
         {
-          "title": "Teacher Availability & Timetable Automation",
-          "school": "Colégio Gênesis",
+          "title": "Automação de Disponibilidade Docente e Montagem de Horários",
+          "school": "Escola não identificada",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Organizar a disponibilidade dos professores e construir a grade horária da escola é um processo altamente complexo, que exige equilibrar múltiplas variáveis, como disponibilidade dos docentes, disciplinas ministradas, carga horária e períodos disponíveis. Atualmente, os coordenadores realizam esse trabalho manualmente e precisam fazer diversas revisões até chegar a uma grade viável.",
+          "suggestion": "Desenvolver uma funcionalidade de planejamento de horários que permita cadastrar disponibilidade dos professores, períodos de aula, disciplinas e restrições de carga horária, utilizando essas informações para auxiliar automaticamente na geração e organização da grade semanal da escola."
+        },
+        {
+          "title": "Adaptações de Acessibilidade Mais Avançadas para Materiais",
+          "school": "Escola não identificada",
           "priority": "Alta",
           "category": "Inclusão / Acessibilidade",
-          "context": "Organizing teachers’ weekly schedules and constructing the school timetable is a highly complex process that requires balancing multiple variables such as teacher availability, subjects taught, teaching workload, and available teaching periods. Currently, coordinators perform this process manually and must iterate several times until a viable timetable is reached. School Suggestion Develop a scheduling feature that allows coordinators to register",
-          "suggestion": "Develop a scheduling feature that allows coordinators to register teacher availability, teaching periods, subjects, and workload constraints, enabling the platform to automatically assist in generating and organizing the weekly school timetable."
+          "context": "Os professores precisam de adaptações de acessibilidade mais avançadas ao preparar materiais para estudantes neurodivergentes. As ferramentas atuais focam principalmente na simplificação textual, enquanto as adaptações realizadas em sala de aula frequentemente exigem mudanças estruturais e visuais que auxiliam os alunos a processar melhor as informações. Exemplos incluem conversão de texto para caixa alta, destaque de conceitos-chave, uso de cores para categorizar informações, transformação de conteúdos em diagramas ou estruturas visuais, divisão das atividades em etapas numeradas, inclusão de exemplos resolvidos, simplificação de instruções, suporte por áudio e modelos de resposta.",
+          "suggestion": "Expandir as ferramentas de adaptação de materiais para incluir transformações estruturais, visuais e instrucionais, permitindo que os professores adaptem rapidamente os conteúdos para diferentes necessidades cognitivas e de acessibilidade."
         },
         {
-          "title": "Expanded Accessibility Adaptations for Learning",
-          "school": "Colégio Evolução",
-          "priority": "Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Teachers need more advanced accessibility adaptations when preparing materials for neurodivergent students. Current tools focus mostly on text simplification, while real classroom adaptations often require structural and visual changes that help students process information more effectively. Examples include converting text to uppercase, highlighting key concepts, using color-coded information, transforming paragraphs into diagrams or visual stru",
-          "suggestion": "Expand the material adaptation tools to include structural, visual, and instructional transformations that allow teachers to quickly adapt learning materials to different cognitive and accessibility needs."
-        },
-        {
-          "title": "Dedicated Workspace for Pedagogical Advisors",
-          "school": "Colégio MJP",
+          "title": "Espaço de Trabalho Dedicado para Orientadores Pedagógicos",
+          "school": "Escola não identificada",
           "priority": "Média-Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Pedagogical advisors have a different workflow from teachers and coordinators, focusing on student monitoring, family meetings, and documentation of pedagogical interventions. Currently, many of these tasks are handled manually, including writing meeting minutes, preparing presentations for family meetings, and organizing diagnostic reports. School Suggestion Create a dedicated workspace for pedagogical advisors with tools such as access to diagn",
-          "suggestion": "Create a dedicated workspace for pedagogical advisors with tools such as access to diagnostic student reports, automatic generation of meeting minutes, and AI-assisted creation of presentations for family meetings based on the meeting topic."
+          "category": "Outros",
+          "context": "Os orientadores pedagógicos possuem um fluxo de trabalho diferente do de professores e coordenadores, com foco no acompanhamento dos estudantes, reuniões com famílias e registro de intervenções pedagógicas. Atualmente, muitas dessas atividades ainda são realizadas manualmente, incluindo elaboração de atas, preparação de apresentações para reuniões e organização de relatórios diagnósticos.",
+          "suggestion": "Criar um ambiente dedicado para orientadores pedagógicos, com ferramentas como acesso a relatórios diagnósticos dos alunos, geração automática de atas de reunião e criação assistida por IA de apresentações para reuniões com famílias, a partir do tema discutido."
         },
         {
-          "title": "Assessment Generation Based on Bloom’s",
-          "school": "Adventist School (Director Feedback)",
+          "title": "Geração de Avaliações Baseada na Taxonomia de Bloom",
+          "school": "Escola não identificada",
           "priority": "Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Current test generation allows teachers to create assessments through prompts and later edit them, but there is no structured way to intentionally design the cognitive distribution of the test from the beginning. This makes it harder to ensure pedagogical balance across cognitive levels. School Suggestion Enhance the assessment generation flow to allow teachers to predefine both the cognitive distribution (based on Bloom’s Taxonomy) and the diffi",
-          "suggestion": "Enhance the assessment generation flow to allow teachers to predefine both the cognitive distribution (based on Bloom’s Taxonomy) and the difficulty ratio (easy, medium, hard). The system would then generate the test respecting this matrix and display a visual heat map showing the distribution of questions across cognitive levels and difficulty."
+          "category": "Avaliação / Simulados",
+          "context": "O fluxo atual de geração de avaliações permite que os professores criem provas por meio de prompts e realizem ajustes posteriormente, mas não oferece uma forma estruturada de definir previamente a distribuição cognitiva da avaliação. Isso dificulta a construção intencional de avaliações equilibradas do ponto de vista pedagógico.",
+          "suggestion": "Aprimorar o fluxo de criação de avaliações para permitir que os professores definam previamente tanto a distribuição cognitiva (com base na Taxonomia de Bloom) quanto a proporção de dificuldade (fácil, média e difícil). O sistema geraria a avaliação respeitando essa matriz e exibiria um mapa de calor visual mostrando a distribuição das questões por nível cognitivo e grau de dificuldade."
         }
       ]
     },
@@ -985,7 +985,7 @@
         {
           "title": "Configuração de Rigor na Correção de Caligrafia em",
           "school": "Escola não identificada",
-          "priority": "Alta",
+          "priority": "Média",
           "category": "Inclusão / Acessibilidade",
           "context": "A escola destacou que avaliações manuscritas são corrigidas de forma intencionalmente rigorosa quando a caligrafia do aluno é ilegível. No entanto, durante os fluxos de correção na Teachy, a plataforma tenta inferir palavras pouco legíveis com base no contexto, o que pode acabar aumentando a nota do estudante de maneira indevida. Isso gera um desalinhamento entre a filosofia de avaliação da escola e o comportamento da plataforma, especialmente em instituições onde a qualidade da escrita faz parte dos critérios avaliativos.",
           "suggestion": "Introduzir configurações de rigor na correção, permitindo que escolas ou professores definam o nível de tolerância para respostas com caligrafia ilegível durante o processo de correção."
@@ -1424,56 +1424,8 @@
           "suggestion": "Disponibilizar modelos personalizáveis de entrega de trabalhos para serem utilizados como padrão pelos alunos."
         }
       ]
-    },
-    {
-      "name": "Week 26 – 27/02",
-      "items": [
-        {
-          "title": "Socioemotional Monitoring with Family Visibility",
-          "school": "Escola não identificada",
-          "priority": "Muito Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Schools highlighted the need to systematically track students’ socioemotional development, including behaviors such as participation, collaboration, discipline, and behavioral challenges. Currently, these observations are often recorded informally or through fragmented tools, which limits consistency, long-term monitoring, and structured communication with families. School Suggestion Develop a socioemotional monitoring feature that allows teachers to log daily behavioral observations for each student, share these updates with families in a structured way, and automatically consolidate them into a summary report at the end of each academic period.",
-          "suggestion": "Develop a socioemotional monitoring feature that allows teachers to log daily behavioral observations for each student, share these updates with families in a structured way, and automatically consolidate them into a summary report at the end of each academic period."
-        },
-        {
-          "title": "Teacher Availability & Timetable Automation",
-          "school": "Colégio Gênesis",
-          "priority": "Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Organizing teachers’ weekly schedules and constructing the school timetable is a highly complex process that requires balancing multiple variables such as teacher availability, subjects taught, teaching workload, and available teaching periods. Currently, coordinators perform this process manually and must iterate several times until a viable timetable is reached. School Suggestion Develop a scheduling feature that allows coordinators to register teacher availability, teaching periods, subjects, and workload constraints, enabling the platform to automatically assist in generating and organizing the weekly school timetable.",
-          "suggestion": "Develop a scheduling feature that allows coordinators to register teacher availability, teaching periods, subjects, and workload constraints, enabling the platform to automatically assist in generating and organizing the weekly school timetable."
-        },
-        {
-          "title": "Expanded Accessibility Adaptations for Learning",
-          "school": "Colégio Evolução",
-          "priority": "Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Teachers need more advanced accessibility adaptations when preparing materials for neurodivergent students. Current tools focus mostly on text simplification, while real classroom adaptations often require structural and visual changes that help students process information more effectively. Examples include converting text to uppercase, highlighting key concepts, using color-coded information, transforming paragraphs into diagrams or visual structures, breaking activities into numbered steps, adding solved examples, simplifying instructions, providing audio support, and offering response templates. School Suggestion Expand the material adaptation tools to include structural, visual, and instructional transformations that allow teachers to quickly adapt learning materials to different cogn",
-          "suggestion": "Expand the material adaptation tools to include structural, visual, and instructional transformations that allow teachers to quickly adapt learning materials to different cognitive and accessibility needs."
-        },
-        {
-          "title": "Dedicated Workspace for Pedagogical Advisors",
-          "school": "Colégio MJP",
-          "priority": "Média-Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Pedagogical advisors have a different workflow from teachers and coordinators, focusing on student monitoring, family meetings, and documentation of pedagogical interventions. Currently, many of these tasks are handled manually, including writing meeting minutes, preparing presentations for family meetings, and organizing diagnostic reports. School Suggestion Create a dedicated workspace for pedagogical advisors with tools such as access to diagnostic student reports, automatic generation of meeting minutes, and AI-assisted creation of presentations for family meetings based on the meeting topic.",
-          "suggestion": "Create a dedicated workspace for pedagogical advisors with tools such as access to diagnostic student reports, automatic generation of meeting minutes, and AI-assisted creation of presentations for family meetings based on the meeting topic."
-        },
-        {
-          "title": "Assessment Generation Based on Bloom’s",
-          "school": "Adventist School (Director Feedback)",
-          "priority": "Alta",
-          "category": "Inclusão / Acessibilidade",
-          "context": "Current test generation allows teachers to create assessments through prompts and later edit them, but there is no structured way to intentionally design the cognitive distribution of the test from the beginning. This makes it harder to ensure pedagogical balance across cognitive levels. School Suggestion Enhance the assessment generation flow to allow teachers to predefine both the cognitive distribution (based on Bloom’s Taxonomy) and the difficulty ratio (easy, medium, hard). The system would then generate the test respecting this matrix and display a visual heat map showing the distribution of questions across cognitive levels and difficulty.",
-          "suggestion": "Enhance the assessment generation flow to allow teachers to predefine both the cognitive distribution (based on Bloom’s Taxonomy) and the difficulty ratio (easy, medium, hard). The system would then generate the test respecting this matrix and display a visual heat map showing the distribution of questions across cognitive levels and difficulty."
-        }
-      ]
     }
   ],
-  "pdfs_processados": [
-    "0e02376f4b807ce3ae8eeca899aa436c",
-    "dcc66cf13ab7173e764afb16156ba775"
-  ],
-  "updated_at": "2026-06-16T21:17:11.157444"
+  "pdfs_processados": [],
+  "updated_at": "2026-06-17T02:07:15.194538"
 }
