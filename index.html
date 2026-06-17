@@ -1030,8 +1030,8 @@ function render(data){
 
 
     function rowHtml(item, hide){
-      const deText=trimSentence(item.context||item.title||'', 240);
-      const sug=trimSentence(item.suggestion||item.title||'', 280);
+      const deText=item.summary||trimSentence(item.context||item.title||'', 240);
+      const sug=item.summary_suggestion||trimSentence(item.suggestion||item.title||'', 280);
       return `<div class="pain-row${hide?' hidden pain-row-extra':''}">
         <div class="pain-row-de">${deText}</div>
         <div class="pain-row-para">${sug}</div>
