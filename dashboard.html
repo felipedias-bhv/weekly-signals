@@ -320,7 +320,9 @@ let allData=null,weekCI=null,qCI=null,pdCI=null,currentFilter="all";
 
 function filterSemanas(semanas){
   if(currentFilter==="Q1") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
-  if(currentFilter==="Q2") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15;});
+  if(currentFilter==="Q2") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=15&&n<=26;});
+  if(currentFilter==="Q3") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=27&&n<=39;});
+  if(currentFilter==="Q4") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=40;});
   return semanas;
 }
 function setFilter(f,btn){
@@ -338,10 +340,10 @@ function render(data){
 
   // TOP 3 DA SEMANA
   (function(){
-    const allS=data.semanas||[];
-    if(!allS.length) return;
-    const last=allS[allS.length-1];
-    document.getElementById("top3-bar-title").textContent="Top 3 · "+last.name;
+    if(!semanas.length) return;
+    const last=semanas[semanas.length-1];
+    const filterLabel=currentFilter==="all"?"":"Top 3 do "+currentFilter+" · ";
+    document.getElementById("top3-bar-title").textContent=(currentFilter==="all"?"Top 3 · ":filterLabel)+last.name;
     document.getElementById("top3-week-label").style.display="none";
     const CAT_B2B={"Avaliação / Simulados":4,"Avaliacao / Simulados":4,"Gestão Administrativa":4,"Gestao Administrativa":4,"Analytics / Personalização":3,"Analytics / Personalizacao":3,"Conteúdo Didático / Autoria":3,"Conteudo Didatico / Autoria":3,"Inclusão / Acessibilidade":3,"Inclusao / Acessibilidade":3,"Plataforma / Integração":3,"Plataforma / Integracao":3,"Criação de Conteúdo":2,"Criacao de Conteudo":2,"IA Pedagógica":2,"IA Pedagogica":2,"Comunicação":1,"Comunicacao":1,"Engajamento Familiar":1};
     const PW={"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
@@ -526,4 +528,11 @@ async function load(){
     allData=await r.json();
     render(allData);
   }catch(e){
-    document.getElementById("error-area").innerHTML=`<div class="error-box"><strong>Não foi possível carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br><small style="opacity:.7">${e.message}
+    document.getElementById("error-area").innerHTML=`<div class="error-box"><strong>Não foi possível carregar dados.json</strong><br>Abra via <code>abrir_dashboard.bat</code> (porta 8765).<br><small style="opacity:.7">${e.message}</small></div>`;
+  }
+}
+load();
+setInterval(load,30000);
+</script>
+</body>
+</html>
