@@ -56,7 +56,25 @@ body {
 .top3-bar-title { font-size: 17px; font-weight: 700; letter-spacing: -.2px; font-family: 'Quicksand', sans-serif; }
 .top3-bar-week { font-size: 12px; font-weight: 500; opacity: .45; margin-left: auto; background: rgba(255,255,255,0.1); padding: 3px 10px; border-radius: 20px; }
 .top3-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.top3-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; transition: background .15s; }
+.top3-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; transition: background .15s; position:relative; }
+.top3-edit-btn { position:absolute; top:9px; right:9px; width:22px; height:22px; border-radius:6px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.55); font-size:12px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .12s; padding:0; line-height:1; }
+.top3-edit-btn:hover { background:rgba(255,255,255,0.22); color:#fff; }
+/* PICKER */
+.picker-overlay { display:none; position:fixed; inset:0; background:rgba(10,15,40,0.65); backdrop-filter:blur(5px); z-index:300; align-items:center; justify-content:center; padding:20px; }
+.picker-modal { background:var(--surface); border-radius:16px; width:100%; max-width:560px; max-height:82vh; display:flex; flex-direction:column; box-shadow:0 24px 64px rgba(0,0,0,0.35); }
+.picker-hd { display:flex; align-items:center; justify-content:space-between; padding:16px 20px; border-bottom:1px solid var(--border); }
+.picker-hd-title { font-size:15px; font-weight:700; font-family:'Quicksand',sans-serif; }
+.picker-hd-sub { font-size:12px; color:var(--text3); margin-top:1px; }
+.picker-close { width:28px; height:28px; border-radius:8px; border:1px solid var(--border); background:transparent; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; color:var(--text3); }
+.picker-close:hover { background:var(--bg); }
+.picker-items { overflow-y:auto; padding:10px; flex:1; display:flex; flex-direction:column; gap:5px; }
+.picker-item { padding:11px 13px; border-radius:10px; border:1px solid var(--border); cursor:pointer; transition:background .12s, border-color .12s; }
+.picker-item:hover:not(.picker-item-intop3) { background:var(--bg); border-color:var(--accent); }
+.picker-item-current { border-color:var(--accent); background:rgba(79,106,245,0.06); }
+.picker-item-intop3 { opacity:.4; cursor:default; }
+.picker-ft { padding:12px 20px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.picker-reset-btn { font-size:12px; color:var(--text3); background:transparent; border:none; cursor:pointer; padding:0; }
+.picker-reset-btn:hover { color:#EF4444; text-decoration:underline; }
 .top3-card:hover { background: rgba(255,255,255,0.12); }
 .top3-rank-row { display: flex; align-items: center; gap: 8px; }
 .top3-medal { font-size: 15px; }
@@ -299,6 +317,24 @@ body {
 
 </div>
 
+<!-- PICKER MODAL -->
+<div id="picker-overlay" class="picker-overlay" onclick="if(event.target===this)closePicker()">
+  <div class="picker-modal">
+    <div class="picker-hd">
+      <div>
+        <div class="picker-hd-title" id="picker-slot-label">Escolher item</div>
+        <div class="picker-hd-sub" id="picker-week-label"></div>
+      </div>
+      <button class="picker-close" onclick="closePicker()">✕</button>
+    </div>
+    <div class="picker-items" id="picker-items"></div>
+    <div class="picker-ft">
+      <button class="picker-reset-btn" id="picker-reset-btn" onclick="resetTop3Current()" style="display:none;">↺ Restaurar automático desta semana</button>
+      <span style="font-size:12px;color:var(--text3);">Clique em qualquer item para substituir</span>
+    </div>
+  </div>
+</div>
+
 <script>
 const CATS = {
   "Avaliacao / Simulados":"#6366F1","Avaliação / Simulados":"#6366F1",
@@ -317,6 +353,53 @@ function catColor(cat){return CATS[cat]||"#94A3B8";}
 function isUnknownSchool(s){return !s||s.toLowerCase().includes("nao identificad")||s.toLowerCase().includes("não identificad");}
 
 let allData=null,weekCI=null,qCI=null,pdCI=null,currentFilter="all";
+let _top3State={weekName:'',allScored:[],current:[]};
+function getTop3Overrides(){try{return JSON.parse(localStorage.getItem('top3_overrides')||'{}');}catch(e){return {};}}
+function saveTop3Overrides(o){localStorage.setItem('top3_overrides',JSON.stringify(o));}
+function closePicker(){document.getElementById('picker-overlay').style.display='none';}
+function resetTop3Current(){
+  const o=getTop3Overrides();delete o[_top3State.weekName];saveTop3Overrides(o);
+  closePicker();if(allData)render(allData);
+}
+function selectPickerItem(idx){
+  const item=_top3State.allScored[idx];
+  const o=getTop3Overrides();
+  if(!o[_top3State.weekName])o[_top3State.weekName]={};
+  o[_top3State.weekName][_top3State.slot]={title:item.title,school:item.school||''};
+  saveTop3Overrides(o);closePicker();if(allData)render(allData);
+}
+function openTopPicker(slot){
+  _top3State.slot=slot;
+  const {weekName,allScored,current}=_top3State;
+  const inTop3=new Set(current.map(i=>i.title));
+  const cur=current[slot];
+  document.getElementById('picker-slot-label').textContent=`Substituir posição #${slot+1}`;
+  document.getElementById('picker-week-label').textContent=weekName;
+  document.getElementById('picker-items').innerHTML=allScored.map((item,idx)=>{
+    const isCurrent=cur&&item.title===cur.title;
+    const isInTop3=inTop3.has(item.title)&&!isCurrent;
+    const pc=item.priority==="Muito Alta"?"chip-red":item.priority==="Alta"?"chip-amber":"chip-blue";
+    const school=isUnknownSchool(item.school)?'':item.school;
+    return `<div class="picker-item${isCurrent?' picker-item-current':''}${isInTop3?' picker-item-intop3':''}" onclick="${isInTop3?'':''} ${isCurrent?'':isInTop3?'':''} selectPickerItem(${idx})">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="font-size:11px;font-weight:700;color:var(--text3);width:18px;flex-shrink:0;text-align:right;">${idx+1}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:600;line-height:1.35;color:var(--text);">${item.title}</div>
+          <div style="font-size:11px;color:var(--text3);margin-top:1px;">${item.category}${school?' · '+school:''} <span style="color:var(--accent);font-weight:600;">· score ${item.score}</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+          <span class="chip ${pc}" style="font-size:10px;">${item.priority}</span>
+          ${isCurrent?'<span style="font-size:10px;font-weight:700;color:var(--accent);">atual</span>':''}
+          ${isInTop3?'<span style="font-size:10px;color:var(--text3);">no top3</span>':''}
+        </div>
+      </div>
+      ${item.context?`<div style="font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5;padding-left:28px;">${item.context.slice(0,130)}${item.context.length>130?'…':''}</div>`:''}
+    </div>`;
+  }).join('');
+  const hasOv=Object.keys(getTop3Overrides()[weekName]||{}).length>0;
+  document.getElementById('picker-reset-btn').style.display=hasOv?'block':'none';
+  document.getElementById('picker-overlay').style.display='flex';
+}
 
 function filterSemanas(semanas){
   if(currentFilter==="Q1") return semanas.filter(s=>{const n=parseInt((s.name.match(/\d+/)||[0])[0]);return n>=4&&n<=14;});
@@ -347,14 +430,26 @@ function render(data){
     document.getElementById("top3-week-label").style.display="none";
     const CAT_B2B={"Avaliação / Simulados":4,"Avaliacao / Simulados":4,"Gestão Administrativa":4,"Gestao Administrativa":4,"Analytics / Personalização":3,"Analytics / Personalizacao":3,"Conteúdo Didático / Autoria":3,"Conteudo Didatico / Autoria":3,"Inclusão / Acessibilidade":3,"Inclusao / Acessibilidade":3,"Plataforma / Integração":3,"Plataforma / Integracao":3,"Criação de Conteúdo":2,"Criacao de Conteudo":2,"IA Pedagógica":2,"IA Pedagogica":2,"Comunicação":1,"Comunicacao":1,"Engajamento Familiar":1};
     const PW={"Muito Alta":4,"Alta":3,"Média-Alta":2,"Media-Alta":2,"Média":1,"Media":1};
-    const scored=(last.items||[]).map(i=>({...i,score:(PW[i.priority]||1)*2+(CAT_B2B[i.category]||1)})).sort((a,b)=>b.score-a.score).slice(0,3);
+    const allScored=(last.items||[]).map(i=>({...i,score:(PW[i.priority]||1)*2+(CAT_B2B[i.category]||1)})).sort((a,b)=>b.score-a.score);
+    // Apply manual overrides
+    const ovAll=getTop3Overrides();
+    const weekOv=ovAll[last.name]||{};
+    const used=new Set();
+    const top3=[null,null,null];
+    for(let s=0;s<3;s++){const ov=weekOv[s];if(ov){const f=allScored.find(i=>i.title===ov.title);if(f){top3[s]=f;used.add(f.title);}}}
+    let ai=0;
+    for(let s=0;s<3;s++){if(!top3[s]){while(ai<allScored.length&&used.has(allScored[ai].title))ai++;if(ai<allScored.length){top3[s]=allScored[ai];used.add(allScored[ai].title);ai++;}}}
+    const scored=top3.filter(Boolean);
+    _top3State={slot:-1,weekName:last.name,allScored,current:scored};
     const MEDALS=["🥇","🥈","🥉"];
     document.getElementById("top3-grid").innerHTML=scored.map((item,i)=>{
       const pc=item.priority==="Muito Alta"?"top3-chip-red":item.priority==="Alta"?"top3-chip-amber":"";
-      const why=item.context?item.context.slice(0,155)+(item.context.length>155?"…":""):item.suggestion?item.suggestion.slice(0,155)+"…":"";
+      const why=item.summary?item.summary:item.context?item.context.slice(0,155)+(item.context.length>155?"…":""):item.suggestion?item.suggestion.slice(0,155)+"…":"";
       const school=isUnknownSchool(item.school)?"":item.school;
+      const isOv=weekOv[i]!=null;
       return `<div class="top3-card">
-        <div class="top3-rank-row"><span class="top3-medal">${MEDALS[i]}</span><span class="top3-cat">#${i+1} · ${item.category}</span></div>
+        <button class="top3-edit-btn" onclick="openTopPicker(${i})" title="Trocar este item">✎</button>
+        <div class="top3-rank-row"><span class="top3-medal">${MEDALS[i]}</span><span class="top3-cat">#${i+1} · ${item.category}${isOv?' · ✏':''}  </span></div>
         <div class="top3-title">${item.title}</div>
         <div class="top3-why">${why}</div>
         <div class="top3-chips">
