@@ -2249,11 +2249,161 @@
           "recorrencias": 1
         }
       ]
+    },
+    {
+      "name": "Week 26 – 19/06",
+      "items": [
+        {
+          "title": "Planos de Recuperação com Vídeos Integrados",
+          "school": "Ateneu de São Vicente",
+          "priority": "Muito Alta",
+          "category": "IA Pedagógica",
+          "context": "Muitos alunos precisam de explicações complementares além das atividades escritas para superar dificuldades de aprendizagem. Atualmente, professores compartilham vídeos por canais externos, fragmentando a experiência do estudante e dificultando o acompanhamento do plano de recuperação. School Suggestion Transformar os planos de recuperação em um ambiente centralizado que reúna atividades, orientações e recursos audiovisuais em um único fluxo de aprendizagem.",
+          "suggestion": "Transformar os planos de recuperação em um ambiente centralizado que reúna atividades, orientações e recursos audiovisuais em um único fluxo de aprendizagem.",
+          "summary": "Professores perdem visibilidade sobre progresso quando compartilham vídeos em plataformas externas durante a recuperação",
+          "summary_suggestion": "Centralizar planos de recuperação integrando atividades, orientações e vídeos em um único ambiente de aprendizagem",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Banco de Questões Próprio da Escola",
+          "school": "Múltiplas Escolas",
+          "priority": "Muito Alta",
+          "category": "Conteúdo Didático / Autoria",
+          "context": "As escolas desejam construir e manter um banco de questões institucional próprio, acessível por todos os professores durante a criação de avaliações. Hoje não existe uma forma estruturada de centralizar e reutilizar questões produzidas internamente. School Suggestion Permitir a criação e gestão de um banco de questões da escola, integrado diretamente ao fluxo de elaboração de provas e avaliações.",
+          "suggestion": "Permitir a criação e gestão de um banco de questões da escola, integrado diretamente ao fluxo de elaboração de provas e avaliações.",
+          "summary": "Professores criam questões isoladas e perdem o acesso a materiais já produzidos, duplicando esforço",
+          "summary_suggestion": "Centralizar e reutilizar questões internas dos professores na criação de provas",
+          "impacto": 5,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Calibração de Dificuldade e Correção por Escola",
+          "school": "Perfil",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "Cada escola possui padrões acadêmicos diferentes. Instituições de alta performance costumam trabalhar com níveis de dificuldade mais elevados e critérios de correção de redação mais rigorosos do que a média do mercado. School Suggestion Permitir que escolas configurem níveis próprios de dificuldade para geração de questões e critérios personalizados para correção de redações.",
+          "suggestion": "Permitir que escolas configurem níveis próprios de dificuldade para geração de questões e critérios personalizados para correção de redações.",
+          "summary": "Questões e redações são corrigidas com o mesmo padrão para todas as escolas, ignorando diferenças de rigor acadêmico entre instituições",
+          "summary_suggestion": "Permitir que cada escola configure seus próprios níveis de dificuldade para questões e critérios de correção de redações",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Upload de Materiais com Diagramação Automática",
+          "school": "Luiz de Queiroz",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A criação e diagramação de materiais pedagógicos consome muito tempo dos professores. A escola deseja subir conteúdos e realizar toda a formatação diretamente dentro da Teachy. School Suggestion Permitir upload de materiais e geração automática da diagramação, reduzindo o tempo necessário para produzir conteúdos com qualidade visual.",
+          "suggestion": "Permitir upload de materiais e geração automática da diagramação, reduzindo o tempo necessário para produzir conteúdos com qualidade visual.",
+          "summary": "Materiais pedagógicos precisam de formatação manual, consumindo horas de trabalho docente",
+          "summary_suggestion": "Gerar diagramação automática de materiais enviados para reduzir tempo de formatação de conteúdos pedagógicos",
+          "impacto": 3,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Acessibilidade para Alunos Daltônicos",
+          "school": "Escola Canto Vivo",
+          "priority": "Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "Parte dos conteúdos visuais utilizados em sala depende de diferenciação por cores, dificultando a interpretação por alunos com daltonismo. School Suggestion Disponibilizar recursos que identifiquem elementos dependentes de cor e adaptem imagens para melhorar a compreensão por estudantes daltônicos.",
+          "suggestion": "Disponibilizar recursos que identifiquem elementos dependentes de cor e adaptem imagens para melhorar a compreensão por estudantes daltônicos.",
+          "summary": "Conteúdos visuais com diferenciação por cores não são acessíveis para alunos daltônicos",
+          "summary_suggestion": "Adaptar imagens e conteúdos visuais para que alunos daltônicos consigam compreender elementos diferenciados por cor",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Relatórios Automáticos a partir de Resultados de",
+          "school": "Luiz de Queiroz",
+          "priority": "Alta",
+          "category": "Analytics / Personalização",
+          "context": "Transformar resultados de avaliações em relatórios claros e acionáveis exige esforço manual significativo por parte da equipe pedagógica. School Suggestion Gerar automaticamente relatórios estruturados a partir dos dados de desempenho dos alunos, facilitando análises e tomadas de decisão.",
+          "suggestion": "Gerar automaticamente relatórios estruturados a partir dos dados de desempenho dos alunos, facilitando análises e tomadas de decisão.",
+          "summary": "Equipes pedagógicas gastam horas transformando manualmente dados de avaliações em relatórios",
+          "summary_suggestion": "Automatizar a geração de relatórios de desempenho a partir de dados de avaliações dos alunos",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Geração de Slides a partir de Materiais Existentes",
+          "school": "Colégio ETL de Lins",
+          "priority": "Alta",
+          "category": "Criação de Conteúdo",
+          "context": "Os professores querem transformar materiais já existentes em apresentações, mantendo integralmente o conteúdo original e utilizando a IA apenas para melhorar o design. School Suggestion Permitir a geração automática de slides a partir de materiais pedagógicos, preservando o conteúdo e otimizando apenas a apresentação visual.",
+          "suggestion": "Permitir a geração automática de slides a partir de materiais pedagógicos, preservando o conteúdo e otimizando apenas a apresentação visual.",
+          "summary": "Materiais pedagógicos bem estruturados ficam visualmente desorganizados sem IA para transformá-los em apresentações profissionais",
+          "summary_suggestion": "Converter materiais pedagógicos em slides automaticamente, mantendo o conteúdo e melhorando apenas o design visual",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Download Simplificado de Boletins",
+          "school": "Colégio ETL de Lins",
+          "priority": "Média-Alta",
+          "category": "Gestão Administrativa",
+          "context": "A escola precisa imprimir e enviar boletins individuais para as famílias, mas o processo atual de acesso e download é pouco eficiente. School Suggestion Criar um fluxo simplificado para download de boletins individuais dos alunos.",
+          "suggestion": "Criar um fluxo simplificado para download de boletins individuais dos alunos.",
+          "summary": "Famílias recebem boletins com atraso porque o download individual de cada documento consome muito tempo",
+          "summary_suggestion": "Implementar um processo simplificado de download de boletins individuais para facilitar impressão e envio às famílias",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Avaliações por Área do Conhecimento",
+          "school": "Colégio São José de Caxias do Sul",
+          "priority": "Muito Alta",
+          "category": "Avaliação / Simulados",
+          "context": "A escola encontra dificuldades para criar listas, provas e avaliações que combinem múltiplas disciplinas dentro da mesma área do conhecimento. Atualmente, o fluxo é organizado apenas por disciplina. School Suggestion Permitir a criação de avaliações organizadas por área do conhecimento, combinando disciplinas relacionadas e integrando banco de questões e questões autorais.",
+          "suggestion": "Permitir a criação de avaliações organizadas por área do conhecimento, combinando disciplinas relacionadas e integrando banco de questões e questões autorais.",
+          "summary": "Avaliações que combinam múltiplas disciplinas de uma mesma área do conhecimento ficam fragmentadas e exigem trabalho manual repetido",
+          "summary_suggestion": "Permitir criar avaliações por área do conhecimento, integrando disciplinas relacionadas e banco de questões",
+          "impacto": 5,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Livro de Ocorrências Digital para Compliance",
+          "school": "Rede Elite",
+          "priority": "Alta",
+          "category": "Gestão Administrativa",
+          "context": "Escolas precisam manter livros de ocorrência para auditorias e fiscalizações. Muitas instituições ainda utilizam registros físicos ou documentos descentralizados, aumentando riscos de perda de informação e dificuldades de auditoria. School Suggestion Criar um livro de ocorrências digital com histórico pesquisável, rastreabilidade e armazenamento centralizado de registros.",
+          "suggestion": "Criar um livro de ocorrências digital com histórico pesquisável, rastreabilidade e armazenamento centralizado de registros.",
+          "summary": "Registros dispersos em papel ou sistemas desconectados impedem rastreabilidade completa em auditorias",
+          "summary_suggestion": "Sistema centralizado de registro digital de ocorrências com busca, rastreabilidade e histórico para compliance",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        },
+        {
+          "title": "Materiais Próprios como Alternativa aos Sistemas",
+          "school": "Colégio Aplicação – Resende/RJ",
+          "priority": "Muito Alta",
+          "category": "Inclusão / Acessibilidade",
+          "context": "A escola sente que os sistemas de ensino tradicionais são rígidos, pouco alinhados à sua proposta de metodologias ativas e ainda geram custos elevados devido aos contratos com editoras. School Suggestion Posicionar o Teachy Studio como uma alternativa para construção de materiais próprios, permitindo maior alinhamento pedagógico e redução da dependência de sistemas tradicionais.",
+          "suggestion": "Posicionar o Teachy Studio como uma alternativa para construção de materiais próprios, permitindo maior alinhamento pedagógico e redução da dependência de sistemas tradicionais.",
+          "summary": "Sistemas tradicionais bloqueiam inovação pedagógica e consomem orçamento sem flexibilidade",
+          "summary_suggestion": "Desenvolver o Teachy Studio como ferramenta para criar materiais pedagógicos personalizados, reduzindo custos e dependência de sistemas tradicionais",
+          "impacto": 4,
+          "cluster_id": "",
+          "recorrencias": 1
+        }
+      ]
     }
   ],
   "pdfs_processados": [
     "9b7c65e651eef50e8cd5b40850f7f8fa",
-    "dcc66cf13ab7173e764afb16156ba775"
+    "dcc66cf13ab7173e764afb16156ba775",
+    "7c45ff7a116efc1a2ec2701a34d79470",
+    "7c45ff7a116efc1a2ec2701a34d79470"
   ],
-  "updated_at": "2026-06-17T01:08:11.868466"
+  "updated_at": "2026-06-22T11:57:27.590723"
 }
